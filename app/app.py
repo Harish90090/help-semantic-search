@@ -377,7 +377,17 @@ MIN_SCORE = 0.48   # absolute floor — anything below is definitely unrelated
 if query and (search_btn or query != st.session_state.last_query):
     with st.spinner("Searching…"):
         raw = searcher.search(query, top_k=top_k)
-        filtered = [r for r in raw if r["score"] >= MIN_SCORE]
+        # Step 1: drop below absolute floor
+        above_floor = [r for r in raw if r["score"] >= MIN_SCORE]
+        # Step 2: lock to the domain of the top result so DRB and IgniteIQ never mix
+        if above_floor:
+            top_domain = "igniteiq" if "igniteiq" in above_floor[0].get("chunk_id", "") else "drb"
+            if top_domain == "igniteiq":
+                filtered = [r for r in above_floor if "igniteiq" in r.get("chunk_id", "")]
+            else:
+                filtered = [r for r in above_floor if "igniteiq" not in r.get("chunk_id", "")]
+        else:
+            filtered = []
         st.session_state.results      = filtered
         st.session_state.last_query   = query
         st.session_state.selected_doc = None
