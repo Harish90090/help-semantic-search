@@ -372,12 +372,21 @@ if searcher is None:
 # ── Trigger search ────────────────────────────────────────────────────────────
 query = query_input.strip()
 
-RELEVANCE_THRESHOLD = 0.50   # results below 50% similarity are considered unrelated
+MIN_SCORE     = 0.50   # absolute floor — anything below is definitely unrelated
+SCORE_GAP     = 0.05   # relative gap — drop results more than 5% below the top result
 
 if query and (search_btn or query != st.session_state.last_query):
     with st.spinner("Searching…"):
         raw = searcher.search(query, top_k=top_k)
-        st.session_state.results      = [r for r in raw if r["score"] >= RELEVANCE_THRESHOLD]
+        # Step 1: drop anything below the absolute floor
+        above_floor = [r for r in raw if r["score"] >= MIN_SCORE]
+        # Step 2: drop anything that falls more than SCORE_GAP below the best result
+        if above_floor:
+            best = above_floor[0]["score"]
+            filtered = [r for r in above_floor if r["score"] >= best - SCORE_GAP]
+        else:
+            filtered = []
+        st.session_state.results      = filtered
         st.session_state.last_query   = query
         st.session_state.selected_doc = None
         # Save to history (avoid duplicates, keep latest 20)
