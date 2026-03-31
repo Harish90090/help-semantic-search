@@ -278,7 +278,7 @@ with st.sidebar:
 
     st.markdown("## ⚙️ Search Settings")
     top_k = st.slider("Results to return", min_value=1, max_value=20, value=5)
-    min_score = st.slider("Min relevance score (%)", min_value=0, max_value=90, value=0, step=5)
+    min_score = st.slider("Min relevance score (%)", min_value=0, max_value=90, value=50, step=5)
 
     st.markdown("---")
 
