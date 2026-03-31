@@ -1,0 +1,29 @@
+# Environment
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Test artifacts (keep production files)
+data/*_test.json
+embeddings/*_test.*
+
+# Claude memory (local only)
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,491 @@
+"""
+app.py — Streamlit UI for the semantic search system.
+
+Run with:
+    streamlit run app/app.py
+"""
+
+import html as _html
+import os
+import sys
+
+import streamlit as st
+
+# ── Path setup (must happen before project imports) ───────────────────────────
+_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, _ROOT)
+
+# Load .env so the search engine can reach the Gemini API
+from dotenv import load_dotenv
+load_dotenv(os.path.join(_ROOT, ".env"))
+
+from search.search import SemanticSearcher
+
+
+# ── Content formatter ─────────────────────────────────────────────────────────
+
+def _format_as_points(text: str) -> str:
+    """
+    Convert scraped content into structured HTML:
+      - Intro / context sentences  → paragraph
+      - Short unlabelled phrases   → bold subheading
+      - Outcome sentences          → indented italic note
+      - Action / imperative steps  → numbered ordered list
+    """
+    import re
+
+    # Verbs that start an action step (imperative mood)
+    IMPERATIVE = {
+        "log", "select", "click", "enter", "press", "open", "close", "tap",
+        "scan", "insert", "remove", "type", "choose", "navigate", "verify",
+        "confirm", "check", "uncheck", "enable", "disable", "turn", "set",
+        "add", "save", "submit", "cancel", "return", "print", "test",
+        "raise", "lower", "view", "change", "record", "ask", "use", "sell",
+        "give", "swipe", "sign", "complete", "wait", "accept", "do", "place",
+        "pull", "push", "hold", "release", "ensure", "repeat", "proceed",
+    }
+
+    raw = re.split(r'(?<=[.!?])\s+', text.strip())
+    sentences = [s.strip() for s in raw if len(s.strip()) > 8]
+
+    if not sentences:
+        return f"<p>{_html.escape(text)}</p>"
+
+    parts = []
+    steps: list[str] = []
+    intro_written = False
+
+    def flush_steps():
+        if steps:
+            items = "".join(f"<li>{_html.escape(s)}</li>" for s in steps)
+            parts.append(
+                "<ol style='padding-left:1.6rem; margin:0.5rem 0 0.9rem; "
+                "line-height:2.0; color:#333;'>" + items + "</ol>"
+            )
+            steps.clear()
+
+    for sentence in sentences:
+        words = sentence.split()
+        if not words:
+            continue
+        first = words[0].lower().rstrip(".,;:")
+
+        # Short phrase with no terminal punctuation → subheading
+        if sentence[-1] not in ".!?" and len(words) <= 7:
+            flush_steps()
+            parts.append(
+                f"<p style='font-size:0.97rem; font-weight:700; color:#1A4896; "
+                f"margin:1.1rem 0 0.25rem;'>{_html.escape(sentence)}</p>"
+            )
+            continue
+
+        # Outcome / result observation (starts with article or pronoun)
+        if first in ("the", "a", "an", "this", "your", "it"):
+            flush_steps()
+            parts.append(
+                f"<p style='margin:0.1rem 0 0.35rem 1.4rem; color:#666; "
+                f"font-style:italic; font-size:0.88rem;'>{_html.escape(sentence)}</p>"
+            )
+            continue
+
+        # First non-action sentence → introductory paragraph
+        if not intro_written and first not in IMPERATIVE:
+            flush_steps()
+            parts.append(
+                f"<p style='margin:0 0 0.75rem; color:#444; font-size:0.94rem; "
+                f"line-height:1.75;'>{_html.escape(sentence)}</p>"
+            )
+            intro_written = True
+            continue
+
+        # Action step → numbered list
+        steps.append(sentence)
+
+    flush_steps()
+    return "".join(parts) if parts else f"<p>{_html.escape(text)}</p>"
+
+# ── Page configuration ────────────────────────────────────────────────────────
+st.set_page_config(
+    page_title="Help.DRB Search",
+    page_icon="🔍",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+
+# ── Custom CSS ────────────────────────────────────────────────────────────────
+st.markdown(
+    """
+<style>
+/* ── Global ── */
+[data-testid="stAppViewContainer"] { background: #f5f7fa; }
+[data-testid="stSidebar"]          { background: #ffffff; border-right: 1px solid #e8ecf0; }
+
+/* ── Search input ── */
+.stTextInput > div > div > input {
+    font-size: 1.05rem;
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    border: 2px solid #dde3ed;
+    background: #ffffff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.stTextInput > div > div > input:focus {
+    border-color: #4f8ef7;
+    box-shadow: 0 0 0 3px rgba(79,142,247,0.15);
+    outline: none;
+}
+
+/* ── Result cards ── */
+.result-card {
+    background: #ffffff;
+    border: 1.5px solid #e4e9f2;
+    border-radius: 14px;
+    padding: 1.1rem 1.4rem;
+    margin-bottom: 0.9rem;
+    transition: border-color 0.18s, box-shadow 0.18s;
+}
+.result-card:hover {
+    border-color: #4f8ef7;
+    box-shadow: 0 4px 18px rgba(79,142,247,0.13);
+}
+.result-card.selected {
+    border-color: #4f8ef7;
+    background: #f0f6ff;
+    box-shadow: 0 4px 18px rgba(79,142,247,0.22);
+}
+
+/* ── Typography inside cards ── */
+.card-rank  { font-size: 0.72rem; font-weight: 700; color: #aaa; letter-spacing: 0.06em; text-transform: uppercase; }
+.card-title { font-size: 1.05rem; font-weight: 700; color: #1a1a2e; margin: 0.25rem 0 0.45rem; line-height: 1.4; }
+.card-snip  { font-size: 0.88rem; color: #555; line-height: 1.65; }
+.card-url   { font-size: 0.78rem; color: #4f8ef7; margin-top: 0.55rem; word-break: break-all; }
+
+/* ── Score badge ── */
+.badge {
+    display: inline-block;
+    background: #e6f4ea;
+    color: #2a7d35;
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+/* ── Detail panel ── */
+.detail-panel {
+    background: #ffffff;
+    border: 1.5px solid #e4e9f2;
+    border-radius: 16px;
+    padding: 2rem 2.2rem;
+}
+.detail-title { font-size: 1.45rem; font-weight: 800; color: #1a1a2e; margin-bottom: 0.6rem; }
+.detail-url   { font-size: 0.88rem; color: #4f8ef7; margin-bottom: 1.2rem; word-break: break-all; }
+.detail-body  { font-size: 0.93rem; color: #333; line-height: 1.85; white-space: pre-wrap; }
+
+/* ── Section labels ── */
+.section-label {
+    font-size: 0.75rem; font-weight: 700; color: #9aa5b4;
+    text-transform: uppercase; letter-spacing: 0.09em;
+    margin-bottom: 0.8rem;
+}
+
+/* ── Result count line ── */
+.result-count { font-size: 0.88rem; color: #666; margin-bottom: 1.2rem; }
+
+/* ── Divider ── */
+.hr { height: 1px; background: #e4e9f2; margin: 2rem 0; border: none; }
+
+/* ── Empty state ── */
+.empty-state {
+    text-align: center; padding: 4rem 1rem; color: #bbb;
+}
+.empty-state .icon { font-size: 3.5rem; }
+.empty-state p { font-size: 1rem; margin-top: 0.8rem; color: #999; }
+
+/* Hide Streamlit chrome */
+#MainMenu { visibility: hidden; }
+footer     { visibility: hidden; }
+header     { visibility: hidden; }
+</style>
+""",
+    unsafe_allow_html=True,
+)
+
+
+# ── Session state defaults ────────────────────────────────────────────────────
+def _init_state() -> None:
+    defaults = {
+        "results":        [],
+        "selected_doc":   None,
+        "last_query":     "",
+        "search_history": [],   # list of past query strings
+    }
+    for k, v in defaults.items():
+        if k not in st.session_state:
+            st.session_state[k] = v
+
+
+_init_state()
+
+
+# ── Cached search engine loader ───────────────────────────────────────────────
+@st.cache_resource(show_spinner="Loading search index…")
+def _load_searcher() -> SemanticSearcher | None:
+    """
+    Instantiate the SemanticSearcher once and cache it for the lifetime of
+    the Streamlit process.  Loading the FAISS index is expensive; caching
+    keeps subsequent queries fast.
+
+    Returns None (with a visible Streamlit error) on missing index or bad API key,
+    so the app degrades gracefully instead of crashing.
+    """
+    idx  = os.path.join(_ROOT, "embeddings", "faiss_index.bin")
+    meta = os.path.join(_ROOT, "embeddings", "metadata.json")
+    if not (os.path.exists(idx) and os.path.exists(meta)):
+        return None
+    try:
+        return SemanticSearcher(idx, meta)
+    except EnvironmentError as exc:
+        st.error(f"**API key error:** {exc}")
+        return None
+    except Exception as exc:
+        st.error(f"**Failed to load search engine:** {exc}")
+        return None
+
+
+# ── Sidebar ───────────────────────────────────────────────────────────────────
+with st.sidebar:
+    # Sidebar logo
+    _logo_path = os.path.join(_ROOT, "assets", "drb_logo.svg")
+    if os.path.exists(_logo_path):
+        with open(_logo_path, "r", encoding="utf-8") as _f:
+            _svg = _f.read()
+        st.markdown(
+            f'<div style="padding:0.6rem 0 1.4rem;">'
+            f'<div style="display:inline-block;border-radius:10px;overflow:hidden;'
+            f'box-shadow:0 2px 10px rgba(26,72,150,0.12);">'
+            f'{_svg}</div></div>',
+            unsafe_allow_html=True,
+        )
+
+    st.markdown("## ⚙️ Search Settings")
+    top_k = st.slider("Results to return", min_value=1, max_value=20, value=5)
+
+    st.markdown("---")
+
+    # ── Recent Search History ─────────────────────────────────────────────────
+    st.markdown("## 🕘 Recent Searches")
+    history = st.session_state.search_history
+
+    if not history:
+        st.caption("No searches yet.")
+    else:
+        for past_q in reversed(history[-10:]):   # show last 10, newest first
+            if st.button(f"🔎  {past_q}", key=f"hist_{past_q}", use_container_width=True):
+                st.session_state["_rerun_query"] = past_q
+                st.rerun()
+
+    if history:
+        st.markdown("")
+        if st.button("🗑️  Clear history", use_container_width=True):
+            st.session_state.search_history = []
+            st.rerun()
+
+
+# ── Page header ───────────────────────────────────────────────────────────────
+_logo_svg = ""
+if os.path.exists(_logo_path):
+    with open(_logo_path, "r", encoding="utf-8") as _f:
+        _logo_svg = _f.read()
+
+st.markdown(
+    f"""
+<div style="
+    display:flex; align-items:center; justify-content:center; gap:1.2rem;
+    padding: 1.8rem 0 0.6rem;
+">
+  <!-- DRB logo -->
+  <div style="
+      display:flex; align-items:center;
+      box-shadow: 0 4px 20px rgba(26,72,150,0.15);
+      border-radius:10px; overflow:hidden;
+  ">
+    {_logo_svg}
+  </div>
+
+  <!-- Title block -->
+  <div>
+    <h1 style="
+        font-size:2.1rem; font-weight:900; color:#1A4896;
+        margin:0; letter-spacing:-0.5px; line-height:1.1;
+    ">Help.DRB Search</h1>
+    <p style="color:#EF5025; font-size:0.9rem; margin:0.25rem 0 0; font-weight:600;">
+        Powered by Gemini Embedding 2 &nbsp;·&nbsp; FAISS Vector Search
+    </p>
+  </div>
+</div>
+<div style="height:1px; background:linear-gradient(90deg,transparent,#1A4896,#EF5025,transparent); margin-bottom:1.4rem;"></div>
+""",
+    unsafe_allow_html=True,
+)
+
+# ── Pre-fill from history click ───────────────────────────────────────────────
+_prefill = st.session_state.pop("_rerun_query", "")
+
+# ── Search bar row ────────────────────────────────────────────────────────────
+col_input, col_btn = st.columns([6, 1])
+
+with col_input:
+    query_input = st.text_input(
+        label="query",
+        value=_prefill,
+        placeholder='Search help articles e.g. "how to log in" or "reset password"',
+        label_visibility="collapsed",
+    )
+
+with col_btn:
+    search_btn = st.button("Search", type="primary", use_container_width=True)
+
+# ── Load search engine ────────────────────────────────────────────────────────
+searcher = _load_searcher()
+
+if searcher is None:
+    st.warning(
+        "**Search index not found.**  "
+        "Run the pipeline first:\n\n"
+        "```\n"
+        "python scraper/scrape.py\n"
+        "python processor/chunk.py\n"
+        "python embedding/embed.py\n"
+        "```"
+    )
+    st.stop()
+
+# ── Trigger search ────────────────────────────────────────────────────────────
+query = query_input.strip()
+
+if query and (search_btn or query != st.session_state.last_query):
+    with st.spinner("Searching…"):
+        st.session_state.results      = searcher.search(query, top_k=top_k)
+        st.session_state.last_query   = query
+        st.session_state.selected_doc = None
+        # Save to history (avoid duplicates, keep latest 20)
+        history = st.session_state.search_history
+        if query not in history:
+            history.append(query)
+        if len(history) > 20:
+            history.pop(0)
+
+# ── Results section ───────────────────────────────────────────────────────────
+results = st.session_state.results
+
+if not results and not st.session_state.last_query:
+    # Landing / empty state
+    st.markdown(
+        '<div class="empty-state">'
+        "<p>Enter a query above to search through your documents.</p></div>",
+        unsafe_allow_html=True,
+    )
+    st.stop()
+
+if not results and st.session_state.last_query:
+    st.warning("No results found — try a different query or rebuild the index.")
+    st.stop()
+
+# ── Result count ──────────────────────────────────────────────────────────────
+st.markdown(
+    f'<p class="result-count">Found <strong>{len(results)}</strong> result(s) for '
+    f'"<em>{st.session_state.last_query}</em>"</p>',
+    unsafe_allow_html=True,
+)
+
+st.markdown('<p class="section-label">Results</p>', unsafe_allow_html=True)
+
+# ── Result cards with inline detail expansion ─────────────────────────────────
+for result in results:
+    is_selected = (
+        st.session_state.selected_doc is not None
+        and st.session_state.selected_doc.get("chunk_id") == result["chunk_id"]
+    )
+    card_cls   = "result-card selected" if is_selected else "result-card"
+    raw_snip   = result["content"][:190] + "…" if len(result["content"]) > 190 else result["content"]
+    safe_title = _html.escape(result["title"])
+    safe_snip  = _html.escape(raw_snip)
+    safe_url   = _html.escape(result["url"])
+    score_pct  = round(result["score"] * 100, 1)
+
+    has_image = bool(result.get("images"))
+    if has_image:
+        col_text, col_thumb = st.columns([5, 1])
+    else:
+        col_text  = st.container()
+        col_thumb = None
+
+    with col_text:
+        st.markdown(
+            f"""
+<div class="{card_cls}">
+  <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;">
+    <span class="card-rank">#{result['rank']}</span>
+    <span class="badge">Match {score_pct}%</span>
+  </div>
+  <div class="card-title">{safe_title}</div>
+  <div class="card-snip">{safe_snip}</div>
+  <div class="card-url">🔗 {safe_url}</div>
+</div>
+""",
+            unsafe_allow_html=True,
+        )
+        btn_label = "▲ Close" if is_selected else "View Details"
+        if st.button(btn_label, key=f"view_{result['chunk_id']}"):
+            st.session_state.selected_doc = None if is_selected else result
+            st.rerun()
+
+    if col_thumb is not None:
+        with col_thumb:
+            try:
+                st.image(result["images"][0], use_container_width=True)
+            except Exception:
+                pass
+
+    # ── Inline detail panel — shown directly below this card ──────────────────
+    if is_selected:
+        doc = st.session_state.selected_doc
+        d_title = _html.escape(doc["title"])
+        d_url   = _html.escape(doc["url"])
+
+        st.markdown(
+            f"""
+<div class="detail-panel" style="margin-bottom:1rem;">
+  <div class="detail-title">{d_title}</div>
+  <div class="detail-url">🔗 <a href="{d_url}" target="_blank">{d_url}</a></div>
+</div>
+""",
+            unsafe_allow_html=True,
+        )
+
+        images = doc.get("images", [])
+        if images:
+            st.markdown('<div style="margin-top:1.4rem;"></div>', unsafe_allow_html=True)
+            img_cols = st.columns(min(len(images), 3))
+            for i, img_url in enumerate(images[:3]):
+                with img_cols[i]:
+                    try:
+                        st.image(img_url, use_container_width=True)
+                    except Exception:
+                        pass
+            st.markdown('<div style="margin-bottom:1.2rem;"></div>', unsafe_allow_html=True)
+
+        with st.expander("📄 Full Content", expanded=True):
+            st.markdown(
+                f'<div class="detail-body">{_format_as_points(doc["content"])}</div>',
+                unsafe_allow_html=True,
+            )
+
+        col_meta1, col_meta2, col_meta3 = st.columns(3)
+        col_meta1.metric("Relevance", f"{doc['score']:.4f}")
+        col_meta2.metric("Chunk ID", doc["chunk_id"])
+        col_meta3.metric("Page ID", doc["page_id"])
+
+

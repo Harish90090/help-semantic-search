@@ -1,0 +1,454 @@
+[
+  {
+    "chunk_id": "0_0",
+    "page_id": 0,
+    "title": "Log In to Cashier Application",
+    "content": "Log In to Cashier Application Use these steps to log in to the cashier application. The cashier application logs out after 300 seconds of inactivity. Power on the cashier terminal. A DRB Patheon Point of Sale dialog opens. Enter the employee username. Enter the password. Select Log In. If a user's password has expired, a Password reset required dialog opens; otherwise, the cashier application opens.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/cshr-lg-in.png",
+      "https://help.drb.com/assets/images/applications/pos/pos-pw-rst-dlg.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-app-sls.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/cashier/auth/log-in-to-point-of-sale-application.htm",
+    "faiss_index": 0
+  },
+  {
+    "chunk_id": "1_0",
+    "page_id": 1,
+    "title": "Log In to Cashier Application with Employee Card",
+    "content": "Log In to Cashier Application with Employee Card Use these steps to log in to the cashier application by scanning an employee ID card. The cashier application logs out after 300 seconds of inactivity. Open the cashier application. The DRB Patheon POINT OF SALE dialog prompts, \"Please scan your employee ID card or enter your Username & Password.\" Scan the employee ID card. The DRB Patheon POINT OF SALE dialog closes and the cashier application opens with the corresponding employee logged in. If the corresponding employee doesn't have cashier terminal permission, a message stating, \"You do not have POS terminal access permission. Please contact your administrator for help.\" is displayed. Note: If the barcode is not a valid employee ID code, an message stating, \"Scanned barcode was not recognized. Please try again or enter your Username & Password.\" is displayed. Open the cashier application. The DRB Patheon POINT OF SALE dialog prompts, \"Please scan your employee ID card or enter your Username & Password.\" Scan the employee ID card. The DRB Patheon POINT OF SALE dialog prompts, \"Please enter your PIN.\" Enter the corresponding PIN (4-16 digits). Select Log In. The DRB Patheon POINT OF SALE dialog closes and the cashier application opens with the corresponding employee logged in.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/cshr-lg-in.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-app-sls.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-lg-in-pin.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/cashier/auth/lgn-cshr-app-emply-crd-scn.htm",
+    "faiss_index": 1
+  },
+  {
+    "chunk_id": "2_0",
+    "page_id": 2,
+    "title": "Log Out of Cashier Application",
+    "content": "Log Out of Cashier Application Use these steps to log out of the cashier application. The cashier application logs out a user after 300 seconds of inactivity. Select the user initials in the top right corner. A menu appears. Select Logout. The user is logged out and the DRB Patheon Point of Sale dialog opens. See Log In to Cashier Application for steps to log in.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/cshr-lgout.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-lg-in.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/cashier/auth/log-out-of-point-of-sale-application.htm",
+    "faiss_index": 2
+  },
+  {
+    "chunk_id": "3_0",
+    "page_id": 3,
+    "title": "Forgot Username",
+    "content": "Use these steps to retrieve an employee's username when signing into the cashier application. Ask a manager to look up the employee username in the employee record in Patheon Portal. Open the cashier application. A DRB Patheon Point of Sale dialog opens. Enter the employee username. Enter the employee password. Select Log In. The cashier application opens.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/cshr-lg-in.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/cashier/auth/forgot-employee-id.htm",
+    "faiss_index": 3
+  },
+  {
+    "chunk_id": "4_0",
+    "page_id": 4,
+    "title": "Forgot Password",
+    "content": "Use these steps to reset a password when signing in to the cashier application. Ask a manager to record a new password in the employee record in Patheon Portal. After the new password is recorded, open the cashier application. A DRB Patheon Point of Sale dialog opens. Enter the employee username. Enter the new password. Select Log In. The cashier application opens.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/cshr-lg-in.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/cashier/auth/forgot-password.htm",
+    "faiss_index": 4
+  },
+  {
+    "chunk_id": "5_0",
+    "page_id": 5,
+    "title": "Change Password",
+    "content": "Use these steps to change a user's password from the cashier application. Log in to the cashier application. Select the user initials in the top right corner. A menu appears. Select Change Password. The CHANGE PASSWORD panel appears. In Current Password*, enter the current employee password. In New Password*, enter the new employee password. In Confirm New Password*, re-enter the new password.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/cshr-lgout.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-chng-psswrd.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/cashier/auth/change-password.htm",
+    "faiss_index": 5
+  },
+  {
+    "chunk_id": "6_0",
+    "page_id": 6,
+    "title": "Lock/Unlock a Cash Drawer",
+    "content": "Lock/Unlock a Cash Drawer Use these steps to lock or unlock a cashier terminal cash drawer with its key. Insert the key, smooth edge up, serrated edge down, in the key-hole. Turn the key clockwise 1/2 rotation. Remove the key. The cash drawer is locked. Unlock the Drawer Insert the key, smooth edge down, serrated edge up, in the key-hole. Turn the key counterclockwise 1/2 rotation. Remove the key. The cash drawer is unlocked.",
+    "images": [],
+    "url": "https://help.drb.com/topics/manuals/cashier/cash-drawer/lock-unlock-cash-drawer.htm",
+    "faiss_index": 6
+  },
+  {
+    "chunk_id": "8_0",
+    "page_id": 8,
+    "title": "Record a Cash Drawer Start Balance",
+    "content": "Record a Cash Drawer Start Balance Use these steps to record a cash drawer's starting balance. A cash drawer starting balance can be recorded by specifying the total cash value (e.g., $270) added to the drawer, or by specifying the quantity of each denomination (e.g., $10 x 20, $5 x 10, $10 x 10, $20 x 5) added to the drawer. Note: A cashier terminal with a cash drawer can't be used until its starting balance is recorded. Any attempt to open the Sales panel before a starting balance is recorded opens a Navigation Restricted dialog stating, \"Navigation to Sales is prohibited until a starting balance is recorded for this terminal.\" This restriction does not apply to cashier terminals that don't have a cash drawer. Record by Denomination Count Log in to the cashier application. Select Cash Balance. The Cash Balance panel opens. Select Record Starting Balance. The Starting Balance panel opens. Select Denomination count. The Starting Balance panel displays specific entry fields for Bills and Coins. For Bills, enter the quantity of each bill added to the cash drawer: 1.00, 2.00, 5.00, 10.00, 20.00, and 50.00. For Coins, enter the quantity of each coin added to the cash drawer: 0.01, 0.05, 0.10, 0.25, 0.50, and 1.00. Select Submit. An Are you sure? dialog opens, stating, \"Starting balance for <Terminal Name>: $100.00.\" Select Submit. The dialog closes, the Starting Balance panel closes, and the Cash Balance panel opens. Note: The Record Starting Balance function is now disabled. It can only be enabled again by recording an ending balance. A cashier can now navigate to the Sales panel and record sales. Record by Total Value Log in to the cashier application. Select Cash Balance. The Cash Balance panel opens. Select Record Starting Balance. The Starting Balance panel opens. Select Total value. The Starting Balance panel displays a single Total (USD)* entry field. In Total (USD)*, enter the total value of cash (bills + coins) added to the cash drawer, for example, 100. Select Submit. An Are you sure? dialog opens, stating, \"Starting balance for <Terminal Name>: $100.00.\" Select Submit. The dialog closes, the Starting Balance panel closes, and the Cash Balance panel opens. Note: The Record Starting Balance function is now disabled. It can only be enabled again by recording an ending balance. A cashier can now navigate to the Sales panel and record sales.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/cshr-csh-bal-nv-rstrctd.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-csh-bal.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-csh-bal-strtng-bal-dnm.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-csh-bal-strtng-bal-dnm-ntrd.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-csh-bal-strtng-sure-dlg.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/cashier/cash-drawer/record-cash-drawer-start-balance.htm",
+    "faiss_index": 7
+  },
+  {
+    "chunk_id": "9_0",
+    "page_id": 9,
+    "title": "Record a Cash Deposit",
+    "content": "Record a Cash Deposit Use these steps to record a cash drawer deposit. Do this when the amount of cash in a drawer exceeds the amount needed to provide change to customers. Record by Denomination Count Log in to the cashier application. Select Cash Balance. The Cash Balance panel opens. Note that only the Record Cash Drop function and Record Ending Balance function are enabled. Select Record Cash Drop. The Cash Drop panel opens. Select Denomination count. The Cash Drop panel displays specific entry fields for Bills, Coins, and Checks. For Bills, enter the quantity of each bill removed from the cash drawer: 1.00, 2.00, 5.00, 10.00, 20.00, and 50.00. For Coins, enter the quantity of each coin removed from the cash drawer: 0.01, 0.05, 0.10, 0.25, 0.50, and 1.00. For Checks, enter the total value of all checks removed from the cash drawer, for example, 100.00. Select Submit. An Are you sure? dialog opens, stating, \"Cash drop for <Terminal Name>: $235.00.\". Select Submit. The dialog closes, the Cash Drop panel closes, and the Cash Balance panel opens. The cashier can open the Sales panel and resume recording sales. Record by Total Value Log in to the cashier application. Select Cash Balance. The Cash Balance panel opens. Note that only the Record Cash Drop function and Record Ending Balance function are enabled. Select Record Cash Drop. The Cash Drop panel opens. Select Total value. The Cash Drop panel displays a single Total (USD)* entry field. In Total (USD)*, enter the total value of cash (bills + coins + checks) removed from the cash drawer, for example, 235. Select Submit. An Are you sure? dialog opens, stating, \"Cash drop for <Terminal Name>: $235.00.\". Select Submit. The dialog closes, the Cash Drop panel closes, and the Cash Balance panel opens. The cashier can open the Sales panel and resume recording sales.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/cshr-csh-bal-strtng-rcrdd.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-csh-bal-drp-dnm.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-csh-bal-strtng-rcrdd.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-csh-bal-strtng-rcrdd.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-csh-bal-drp-dnm.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/cashier/cash-drawer/record-cash-drop.htm",
+    "faiss_index": 8
+  },
+  {
+    "chunk_id": "10_0",
+    "page_id": 10,
+    "title": "Record a Cash Drawer End Balance",
+    "content": "Record a Cash Drawer End Balance Use these steps to record a cash drawer's ending balance. Do this at each terminal with a cash drawer. Record by Denomination Count Sign in to the cashier application. Select Cash Balance. The Cash Balance panel opens. Note that only the Record Cash Drop function and Record Ending Balance function are enabled. Select Record Ending Balance. The Edit Ending Balance panel opens. Select Denomination count. The Edit Ending Balance panel displays specific entry fields for Bills and Coins. For Bills, enter the quantity of each bill removed from the cash drawer: 1.00, 2.00, 5.00, 10.00, 20.00, and 50.00. For Coins, enter the quantity of each coin removed from the cash drawer: 0.01, 0.05, 0.10, 0.25, 0.50, and 1.00. Select Submit. An Are you sure? dialog opens, stating, \"Ending balance for <Terminal Name>: $235.00.\". Select Submit. The dialog closes, the Edit Ending Balance panel closes, and the Cash Balance panel opens. In the cash balance transaction list, when the Start Balance and End Balance amounts mirror what the system tracked, the Adjustment column displays --. If the ending balance recorded is less than the amount the system tracked, the difference appears in the Adjustment column as a negative value. If the ending balance recorded is greater than the amount the system tracked, the difference appears as a positive value. The cashier can no longer record sales at this cashier terminal until a starting cash balance is recorded for its cash drawer. Record by Total Value Sign in to the cashier application. Select Cash Balance. The Cash Balance panel opens. Note that only the Record Cash Drop function and Record Ending Balance function are enabled. Select Record Ending Balance. The Edit Ending Balance panel opens. .Select Total value. The Edit Ending Balance panel displays a single Total (USD)* entry field. In Total (USD)*, enter the total value of cash (bills + coins) removed from the cash drawer, for example, 235. Select Submit. An Are you sure? dialog opens, stating, \"Ending balance for <Terminal Name>: $235.00.\". Select Submit. The dialog closes, the Edit Ending Balance panel closes, and the Cash Balance panel opens. In the cash balance transaction list, when the Start Balance and End Balance amounts mirror what the system tracked, the Adjustment column displays --. If the ending balance recorded is less than the amount the system tracked, the difference appears in the Adjustment column as a negative value. If the ending balance recorded is greater than the amount the system tracked, the difference appears as a positive value. The cashier can no longer record sales at this cashier terminal until a starting cash balance is recorded for its cash drawer.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/cshr-csh-bal-strtng-rcrdd.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-csh-bal-edt-end-bal-dnm.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-csh-bal-edt-end-bal-dnm-ntrd.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-csh-bal-end-sure-dlg.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-csh-bal.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/cashier/cash-drawer/record-cash-drawer-end-balance.htm",
+    "faiss_index": 9
+  },
+  {
+    "chunk_id": "12_0",
+    "page_id": 12,
+    "title": "Rewash a Vehicle",
+    "content": "Rewash a Vehicle Use these steps to rewash a vehicle at a cashier terminal. The Rewash tab auto-generates a rewash for each main wash a site configures for their system. The Rewash tab can't be edited or configured. Log in to the cashier application. Select Sales. The Sales panel opens. Select the Rewash tab. The Rewash tab opens with all rewashes available for the site. Select the rewash to provide the customer. A Rewash dialog opens. In the Reason field, select an explanation for the rewash: Other, Friends/Family, Bad Wash, Promotion/Marketing, or Employee Wash. Select Submit. The Rewash dialog closes, the wash is automatically added to the wash queue, and a receipt prints.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/cshr-rwsh.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-rwsh-dlg.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/cashier/sales/rewash-vehicle.htm",
+    "faiss_index": 10
+  },
+  {
+    "chunk_id": "13_0",
+    "page_id": 13,
+    "title": "Sell an A La Carte Product",
+    "content": "Sell an A La Carte Product Use these steps to add an a la carte product to a sale at a cashier terminal. A la carte products can include tunnel-application extra services, such as tire shine, underbody spray, and wax coatings, as well as offline, manual-application extra services, such as tire shine, leather protectant, or even an extra dirty charge. Important: A wash must be added to the cart before a tunnel-application a la carte product can be added to the cart. Manual-application a la carte products can be added to the cart (and sold) without requiring a wash service in the cart. Use these steps to sell an a la carte product at a cashier terminal. Log in to the cashier application. Select Sales. The Sales panel opens. Add a wash product to the sale. Select an a la carte service. If an a la carte service is open priced, a Submit Product Price dialog opens; enter the price and select Submit. The a la carte service is added to the cart. Tender the sale.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/cshr-sls-wsh.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-opn-prc-prdct-dlg.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-sls-wsh-alacrt.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/cashier/sales/add-alacarte-prdct-to-sale.htm",
+    "faiss_index": 11
+  },
+  {
+    "chunk_id": "14_0",
+    "page_id": 14,
+    "title": "Sell a Lobby Product",
+    "content": "Sell a Lobby Product Use these steps to add a lobby product to a sale at a cashier terminal. Lobby products can include air freshener products, snacks, drinks, windshield wipers, and other car accessories. Use these steps to sell a lobby product at a cashier terminal. Log in to the cashier application. Select Sales. The Sales panel opens. Use the tab navigation functions (< >) to select the Lobby tab. Select the lobby product to add to the sale. Note: Products with a folder icon have multiple variations, for example, different scented air fresheners. Selecting the product opens a dialog from which to select the specific variation of the product. Select the specific product from the dialog. If the lobby product is open priced, a Submit Product Price dialog opens; enter the price and select Submit. The lobby product is added to the cart. Tip: Select the expand function () next to the product in the cart to edit the quantity being sold.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/cshr-sls-wsh.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-sls-lbby.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-sls-lbby-fldr.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-opn-prc-prdct-dlg.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-sls-crt-qty-dwn.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/cashier/sales/add-lbby-prdct-sale.htm",
+    "faiss_index": 12
+  },
+  {
+    "chunk_id": "15_0",
+    "page_id": 15,
+    "title": "Sell a Gift Card",
+    "content": "Sell a Gift Card Use the following steps to sell a gift card. Log in to the cashier application. Select Sales. The Sales panel opens. Select Manual Entry. The Manual Entry dialog opens. Select Activate Card Reader. The cashier terminal barcode scanner activates. Scan the gift card barcode. The Code* field displays the gift card code. Alternatively, type the gift card code in the Code* field. Select Barcode. The Manual Entry dialog closes and the Assign Card Type panel opens with the barcode value in the Code* field. In the Type* field, select Gift Card. Do not select Prepaid Card; it's used to sell a prepaid. Select Next. The Assign Card Type panel closes and the Assign Value panel opens. In the Value* field, select the gift card product to assign to the card. Only gift card products are listed; prepaid products are not listed. Select Submit. The Assign Value panel closes and the Sales panel opens with the gift card product in the cart. Note: The gift card barcode is not activated and assigned to the selected gift card product until the sale is tendered. If the gift card is removed from the cart before the sale is tendered, the gift card barcode is NOT activated and can still be sold and activated for any gift card (or prepaid) product. Tender the sale. The gift card is activated.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/cshr-sls-wsh.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-sll-gft-crd-assgn-typ.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-sll-gft-crd-assgn-val.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-sll-gft-crd-crt.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/cashier/gift-cards/sell-gft-crd.htm",
+    "faiss_index": 13
+  },
+  {
+    "chunk_id": "16_0",
+    "page_id": 16,
+    "title": "Check a Gift Card Balance",
+    "content": "Check a Gift Card Balance Use these steps to check a gift card balance at a cashier terminal. Log in to the cashier application. Select Sales. The Sales panel opens. Select Manual Entry. The Manual Entry dialog opens. Select Activate Card Reader. The cashier terminal barcode scanner activates. Scan the gift card barcode. The Code* field displays the gift card code. Alternatively, type the gift card code in the Code* field. Select Barcode. The Manual Entry dialog closes and a Gift Card dialog opens, displaying the gift card code and current balance. Select Close. The Gift Card dialog closes. Select Cancel to close the dialog.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/cshr-sls-wsh.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-mnl-entr.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/cashier/gift-cards/chck-gft-crd-blnc.htm",
+    "faiss_index": 14
+  },
+  {
+    "chunk_id": "17_0",
+    "page_id": 17,
+    "title": "Tender a Sale to Cash",
+    "content": "Tender a Sale to Cash Use the following steps to tender a sale to cash at a cashier terminal. Log in to the cashier application. Select Sales. The Sales panel opens. Add at least one product to the cart. Select Cash. A Cash dialog opens with the amount due, for example, 19.00. Enter the cash amount provided by the customer, for example, 20.00. Select Enter. The Cash dialog closes, the cash drawer opens, a receipt prints, and a new Cash modal opens with the amount tendered and change due, for example, Tendered: $19.00 and Change due: $1.00. Hand the change and receipt to the customer, and close the cash drawer. Select Close. The dialog closes.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/cshr-sls-wsh.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-tndr-csh-amt-due.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-tndr-csh-pd.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/cashier/tender/tender-a-sale-to-cash.htm",
+    "faiss_index": 15
+  },
+  {
+    "chunk_id": "18_0",
+    "page_id": 18,
+    "title": "Tender a Sale to Credit Card",
+    "content": "Tender a Sale to Credit Card Use these steps to tender a sale to a credit card at a cashier terminal. Steps are available for both card present (insert or tap at card reader) entry and manual entry on the cashier terminal. Use these steps to tender a sale to a credit card when the card is present. Log in to the cashier application. Select Sales. The Sales panel opens. Add at least one product to the cart. Select Credit. A Credit dialog briefly opens with Payment terminal has been activated. Direct the customer to follow the payment terminal prompts. After the sale is tendered, a Credit dialog opens with Tendered: $#.## and a receipt prints. Hand the receipt to the customer. Select Close. The dialog closes. Use these steps to tender a sale to a credit card by manually entering the card account number and when the card is not present. Log in to the cashier application. Select Sales. The Sales panel opens. Add at least one product to the cart. Select Credit. An Add Credit Card dialog opens. Select manual entry. The Add Credit Card dialog closes, a Credit dialog stating Payment terminal has been activated opens, and the attached card reader prompts, Please Key In Card Number. Enter the credit card account number using the card reader's numeric keypad. Select enter (green circle). The card reader prompts, Enter Expiration Date. Enter the credit card expiration date, in MMYY format (for example, 0328 for March 2028), using the card reader's numeric keypad. Select enter (green circle). The credit card is submitted for processing, and displays Approved, if the card is successfully processed; the Credit dialog updates to state Tendered. Select Close. The dialog closes.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/cshr-sls-wsh.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-tndr-crdt-amt-due.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-tndr-crdt-pd.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-sls-wsh.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/cashier/tender/tndr-sale-to-crdt-crd.htm",
+    "faiss_index": 16
+  },
+  {
+    "chunk_id": "19_0",
+    "page_id": 19,
+    "title": "Add a New Customer",
+    "content": "Add a New Customer Use these steps to add a new customer at a cashier sales terminal. Note: First name, last name, phone number, and state/province/region are all that's required to add a customer. Additional customer information, including vehicle(s) information, can optionally be recorded for each customer. Log in to the cashier application. Select Customers. The Customers panel opens. Select ADD NEW CUSTOMER. The CUSTOMER DETAILS panel opens. In First Name*, enter the customer's first name, 50 characters or less. In Last Name*, enter the customer's last name, 50 characters or less. In Phone 1*, enter the customer's phone number and select the type: Mobile, Work, or Home. Use ADD PHONE NUMBER to enter up to 3 phone numbers. In State/Province/Region, select the customer's geographic state/province/region. Optionally, enter additional customer information. Select SAVE CUSTOMER. A New Customer Added dialog opens. Select VIEW CUSTOMER to close the dialog.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/pos-cashier-customers.png",
+      "https://help.drb.com/assets/images/applications/pos/pos-cashier-customers-customer-details.png",
+      "https://help.drb.com/assets/images/applications/pos/pos-cashier-customers-new-cust-added.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/cashier/customers/add-a-new-customer.htm",
+    "faiss_index": 17
+  },
+  {
+    "chunk_id": "20_0",
+    "page_id": 20,
+    "title": "Edit Customer Information",
+    "content": "Edit Customer Information Use these steps to edit an existing customer's information. Log in to the cashier application. Select Customers. The Customers panel opens. Locate the customer to edit. Select the customer's name. The Customer Summary panel opens. Select the edit function. The CUSTOMER DETAILS panel opens. Update the customer information.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/pos-cashier-customers.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/cashier/customers/edt-cstnr-info.htm",
+    "faiss_index": 18
+  },
+  {
+    "chunk_id": "21_0",
+    "page_id": 21,
+    "title": "Add a Customer Note",
+    "content": "Add a Customer Note Use these steps to add a new customer note for an existing customer at a cashier sales terminal. Log in to the cashier application. Select Customers. The Customers panel opens. Select the Customer Name for the customer for which you want to add a note. The Customer Details panel opens. Navigate to the Notes section and select Add Note. An Add Note dialog opens. Enter the text for the note. Note: Notes are limited to 250 characters. Set the Alert at setting for the terminal type(s) the note should appear. Select Save. The Add Note dialog closes and the new note appears in the Notes list for the customer.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/prtl/prtl-cust-notes-add-r11.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/cashier/customers/add-customer-note.htm",
+    "faiss_index": 19
+  },
+  {
+    "chunk_id": "22_0",
+    "page_id": 22,
+    "title": "Void a Sale",
+    "content": "Use these steps to void a sale. This refunds the total amount tendered to the original tender. Log in to the cashier application. Select Sales History. The Sales History panel opens. Look up the sale to void. Select the sale's edit () function. The Sale ID panel opens. Select Select All. All products in the sale are selected and the Void function is enabled. Select VOID. A Void Item(s) dialog opens. In Reason, select an explanation: Customer Satisfaction, Operator Error, or Equipment Malfunction. Select VOID. The dialog closes, the sale is voided, a Refund dialog prompts the cashier to issue the change due, and a receipt prints.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/pos-cashier-sales-history-sale-details.png",
+      "https://help.drb.com/assets/images/applications/pos/pos-cashier-sales-history-void-1-select-all.png",
+      "https://help.drb.com/assets/images/applications/pos/pos-cashier-sales-history-void-1-items.png",
+      "https://help.drb.com/assets/images/applications/pos/pos-cashier-sales-history-void-1-items-reason.png",
+      "https://help.drb.com/assets/images/applications/pos/pos-cashier-sales-history-void-1-refund.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/cashier/edit-void-refund/void-a-sale-cashier.htm",
+    "faiss_index": 20
+  },
+  {
+    "chunk_id": "23_0",
+    "page_id": 23,
+    "title": "Turn On Semi-Attended Mode",
+    "content": "Turn On Semi-Attended Mode To use semi-attended mode at a cashier terminal in the semi-attended lane (SAL) or \"Members Lane,\" it must be turned on manually from the terminal. Semi-attended mode can't be turned on or off automatically based on a schedule. Sites may turn on semi-attended mode when they're busy so they can process cars as quickly as possible. Semi-attended mode must be enabled for the terminal in Patheon Portal for the function to appear on the HARDWARE panel. Log in to the cashier application. Select Hardware. The Hardware panel opens. In the Terminal section, set Semi-attended mode to On.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/pos-hardware-sal.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/cashier/members-lane/turn-on-semi-attended-mode.htm",
+    "faiss_index": 21
+  },
+  {
+    "chunk_id": "24_0",
+    "page_id": 24,
+    "title": "Turn Off Semi-Attended Mode",
+    "content": "Turn Off Semi-Attended Mode Use these steps to turn off semi-attended mode for a cashier terminal in a semi-attended lane (SAL) or \"Members Lane.\" It must be manually turned off from the terminal; semi-attended mode can't be turned off automatically based on a schedule. If a site isn't busy, it can turn off semi-attended mode and place an attendant at the cashier terminal to upsell customers on plans and extra services. Semi-attended mode must be enabled for the terminal in Patheon Portal for the function to appear on the HARDWARE panel. Log in to the cashier application. Select Hardware. The Hardware panel opens. In the Terminal section, set Semi-attended mode to Off.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/pos-hardware-sal.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/cashier/members-lane/trn-off-smi-attndd-md.htm",
+    "faiss_index": 22
+  },
+  {
+    "chunk_id": "27_0",
+    "page_id": 27,
+    "title": "Open a Members Lane to House Accounts",
+    "content": "Open a Members Lane to House Accounts Use these steps to accept house account members at a members lane (semi-attended mode is enabled). Patheon house account configuration requires a specific wash be configured as the default wash for its members. This allows the house account's members to use the members lane and receive a wash if semi-attended mode is enabled. Semi-attended mode must be enabled for the terminal in Patheon Portal for the function to appear on the HARDWARE panel. Log in to the cashier application. Select Hardware. The Hardware panel opens. In the Terminal section, set Semi-attended mode to On.",
+    "images": [],
+    "url": "https://help.drb.com/topics/manuals/cashier/members-lane/accpt-hs-accnt-mmbrs-sal.htm",
+    "faiss_index": 23
+  },
+  {
+    "chunk_id": "28_0",
+    "page_id": 28,
+    "title": "Log In to Kiosk Staff Screen",
+    "content": "Log In to Kiosk Staff Screen Use these steps to log in to the kiosk terminal staff management system. There are 3 methods. The method that applies is based on how a site is configured. Steps for all three methods are provided below. Enter Code + Enter PIN Use these steps for staff that don't have an employee card and are required to enter a PIN. Hold the kiosk help button for 5 seconds. The kiosk staff management Status panel opens. Select one of the header options. An Employee Access modal opens. In the Barcode field, enter the employee code. Note: This value is not masked. In the PIN field, enter the code's corresponding PIN. Note: This value is masked. Select Submit. The kiosk management screen opens. Scan Card + Enter PIN Use these steps for staff that have an employee card and are required to enter a PIN. Hold the kiosk help button for 5 seconds. The kiosk staff management Status panel opens. Select one of the header options. An Employee Access modal opens. Scan the employee card with the kiosk barcode scanner. The employee code is auto-entered in the Barcode field. Note: This value is not masked. In the PIN field, manually enter the employee's PIN. Note: This value is masked. Select Submit. The kiosk management screen opens. Use these steps for staff that have an employee card and aren't required to enter a PIN. Hold the kiosk help button for 5 seconds. The kiosk staff management Status panel opens. Select one of the header options. An Employee Access modal opens. Scan the employee card with the kiosk barcode scanner. The kiosk management screen opens.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-emplaccss.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/kiosk/access/log-in-ksk-stff-scrn.htm",
+    "faiss_index": 24
+  },
+  {
+    "chunk_id": "29_0",
+    "page_id": 29,
+    "title": "Log Out of Kiosk Staff Screen",
+    "content": "Log Out of Kiosk Staff Screen Use these steps to log out the current user and display the Status panel. Note: Use the Resume function to close the kiosk staff screen (log out the current user and return the kiosk to the current workflow). From the kiosk management screen, select Menu. The Menu panel opens. Select Logout. The Menu panel closes, the current user is logged out, and the Status panel is displayed. To open the Employee Access login modal again, select one of the other header options.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-menu.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/kiosk/access/log-out-ksk-stff-scrn.htm",
+    "faiss_index": 25
+  },
+  {
+    "chunk_id": "30_0",
+    "page_id": 30,
+    "title": "Clear a Kiosk Cart",
+    "content": "Clear a Kiosk Cart Use these steps to clear a kiosk terminal's cart. Open the kiosk staff screen. Select Customer. The Customer panel opens. Select Cart. The Cart panel opens. Select Clear Cart. Select the close () function to return to the Customer panel, or Resume to return to the kiosk's current workflow.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-cust-crt-rwsh.png",
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-dgnstcs-cls.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/kiosk/sales/ksk-clr-ksk-crt.htm",
+    "faiss_index": 26
+  },
+  {
+    "chunk_id": "31_0",
+    "page_id": 31,
+    "title": "Rewash a Vehicle at a Kiosk",
+    "content": "Rewash a Vehicle at a Kiosk Use these steps to rewash a vehicle from a kiosk terminal. Open the kiosk staff screen. Select Customer. The Customer panel opens. Select Cart. The Cart panel opens. Select the rewash from the Rewash tab. An Are you sure? dialog opens for confirmation. Select Submit. The dialog closes and the rewash is added to the cart. Select Menu. The Menu panel opens.. Select Open Gate. The gate raises. Direct the vehicle to pull forward. Log out of the staff screen.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-cust-crt-rwsh.png",
+      "https://help.drb.com/assets/images/applications/pos/pos-kiosk-rewash-apply-dialog.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/kiosk/sales/ksk-rwsh-vhcl.htm",
+    "faiss_index": 27
+  },
+  {
+    "chunk_id": "32_0",
+    "page_id": 32,
+    "title": "Change the RFID Reader Power",
+    "content": "Change the RFID Reader Power Use the following steps to change a kiosk terminal RFID reader's power. The recommended \"High\" power setting is \"9\" and \"Low\" power setting is \"0\". Open the kiosk staff screen. Select Diagnostics from the kiosk management header. The Diagnostics panel opens. Select RFID Reader. The RFID Reader diagnostics panel opens. Enter a value, 1-10, in the High field. Note: The recommended setting is 9. If the read zone is too big, set High power to 8. If it is too small, set it to 10. Adjust the High power level in increments of 1 as necessary. If power is 1 or 10 and the read zone is still wrong, adjust the Sensitivity. Enter a value, 0-10, in the Low field. Note: The recommended setting is 0. Setting it to 1 or higher enables the reader to perform a second read after the reader detects an RFID tag. The second read is designed to confirm the tag is from this reader's lane, and not another lane. Setting Low to 1 or higher can create read issues; do not set it without assistance from DRB. Instead, determine the optimum Sensitivity and High power settings that work best for the lane. Select the close () function in the top right corner. The RFID Reader panel closes and the Diagnostics panel opens.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-diagnostics.png",
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-dgnstcs-rfidrdr.png",
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-dgnstcs-cls.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/kiosk/diagnostics/rfidreader/change-rfid-rdr-pwr.htm",
+    "faiss_index": 28
+  },
+  {
+    "chunk_id": "33_0",
+    "page_id": 33,
+    "title": "Change the RFID Reader Sensitivity",
+    "content": "Change the RFID Reader Sensitivity Use these steps to change a kiosk terminal RFID reader's sensitivity. The easiest way to perform this adjustment is to perform a walk-around test while holding a known, good tag, with the RFID Reader diagnostics panel open. This will allow you to determine the outer limits of the read zone. The recommended \"Sensitivity\" setting is \"3\". Sensitivity settings must be carefully adjusted to avoid reading tags from adjacent lanes, but still read tags quickly on a variety of cars with various windshield properties. Open the kiosk staff screen. Select Diagnostics from the kiosk management header. The Diagnostics panel opens. Select RFID Reader. The RFID Reader diagnostics panel opens. Enter a value, 0-10, in the Sensitivity field. Note: The recommended setting is 3. Test the read zone. If the read zone is too small, set Sensitivity to 4. Test the read zone. If the read zone is still too small, set Sensitivity to 5. Test the read zone. If the read zone is still too small, contact DRB before increasing the sensitivity further. Select the close () function in the top right corner. The RFID Reader panel closes and the Diagnostics panel opens.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-diagnostics.png",
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-dgnstcs-rfidrdr.png",
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-dgnstcs-cls.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/kiosk/diagnostics/rfidreader/change-rfid-rdr-snstvty.htm",
+    "faiss_index": 29
+  },
+  {
+    "chunk_id": "34_0",
+    "page_id": 34,
+    "title": "Change Receipt Printer Density",
+    "content": "Change Receipt Printer Density Use the following steps to change the print density for a kiosk terminal receipt printer in Patheon Portal. The minimum setting is 0 and the maximum setting is 225. The optimum setting depends on thermal paper type and outside temperature. After changing the density, print a test receipt from the kiosk terminal to determine whether the new setting is acceptable. Note: A kiosk terminal receipt printer density can only be changed in Patheon Portal. It can't be changed from the kiosk terminal. Log in to Patheon Portal. Select Configuration. Select Sites & Groups. The Sites panel opens. Under Name, select the site where the kiosk terminal is located. The Site Overview panel opens. Select Site Hardware. The Site Hardware panel opens. Locate the kiosk terminal in the hardware list. Select edit () for the kiosk terminal. The Kiosk Details panel opens. Navigate to the Peripheral Configuration section. Select Receipt Printer. In Print Density*, enter a value 0-225. Go to the kiosk terminal and print a test receipt. Adjust the density and test until the setting is acceptable.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/prtl/prtl-sts.png",
+      "https://help.drb.com/assets/images/applications/prtl/prtl-sts-ovw.png",
+      "https://help.drb.com/assets/images/applications/prtl/prtl-sts-st-hdwr.png",
+      "https://help.drb.com/assets/images/applications/prtl/prtl-sts-st-hdwr-ksk-dtls.png",
+      "https://help.drb.com/assets/images/applications/prtl/prtl-sts-st-hdwr-ksk-dtls-rcpt.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/kiosk/diagnostics/receiptprinter/change-rcpt-prntr-dnsty.htm",
+    "faiss_index": 30
+  },
+  {
+    "chunk_id": "35_0",
+    "page_id": 35,
+    "title": "Print a Kiosk Test Receipt",
+    "content": "Print a Kiosk Test Receipt Use the following steps to print a test receipt from a kiosk terminal receipt printer. Do this after changing the receipt printer density in Patheon Portal to test the new setting. Open the kiosk staff screen. Select Diagnostics. The Diagnostics panel opens. Select Receipt Printer. The Receipt Printer diagnostics panel opens. Select Print Receipt. A test receipt prints. Select close (). The Receipt Printer panel closes and the Diagnostics panel opens.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-diagnostics.png",
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-dgnstcs-rcptprntr.png",
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-dgnstcs-cls.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/kiosk/diagnostics/receiptprinter/prnt-ksk-tst-rcpt.htm",
+    "faiss_index": 31
+  },
+  {
+    "chunk_id": "36_0",
+    "page_id": 36,
+    "title": "Raise the Gate",
+    "content": "Use the following steps to raise (open) a kiosk terminal gate from the kiosk terminal. Open the kiosk staff screen. Select Diagnostics from the kiosk management header. The Diagnostics panel opens. Select Gate. The Gate diagnostics panel opens. Select Open Gate. The gate raises. Select the close () function in the top right corner. The Gate panel closes and the Diagnostics panel opens.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-diagnostics.png",
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-dgnstcs-gt.png",
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-dgnstcs-cls.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/kiosk/diagnostics/gate/raise-gate.htm",
+    "faiss_index": 32
+  },
+  {
+    "chunk_id": "37_0",
+    "page_id": 37,
+    "title": "Lower the Gate",
+    "content": "Use the following steps to lower (close) a kiosk terminal gate from the kiosk terminal. Open the kiosk staff screen. Select Diagnostics from the kiosk management header. The Diagnostics panel opens. Select Gate. The Gate diagnostics panel opens. Select Close Gate. The gate lowers. Select the close () function in the top right corner. The Gate panel closes and the Diagnostics panel opens.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-diagnostics.png",
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-dgnstcs-gt.png",
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-dgnstcs-cls.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/kiosk/diagnostics/gate/lower-gate.htm",
+    "faiss_index": 33
+  },
+  {
+    "chunk_id": "38_0",
+    "page_id": 38,
+    "title": "View the Gate State",
+    "content": "View the Gate State Use the following steps to view a kiosk terminal gate's current position. Open the kiosk staff screen. Select Diagnostics from the kiosk management header. The Diagnostics panel opens. Select Gate. The Gate diagnostics panel opens. View State. If it displays Down, the gate is lowered/closed; if it displays Up, the gate is raised/opened. Select the close () function in the top right corner. The Gate panel closes and the Diagnostics panel opens.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-diagnostics.png",
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-dgnstcs-gt.png",
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-dgnstcs-cls.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/kiosk/diagnostics/gate/view-gate-state.htm",
+    "faiss_index": 34
+  },
+  {
+    "chunk_id": "39_0",
+    "page_id": 39,
+    "title": "Test the IP Camera",
+    "content": "Test the IP Camera Use the following steps to test a kiosk terminal vehicle (IP) camera by taking a picture. Open the kiosk staff screen. Select Diagnostics from the kiosk management header. The Diagnostics panel opens. Select IP Camera. The IP Camera diagnostics panel opens. Select Capture Image. The camera takes a picture and displays it. Select the close () function in the top right corner. The IP Camera panel closes and the Diagnostics panel opens.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-diagnostics.png",
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-dgnstcs-ipcmr.png",
+      "https://help.drb.com/assets/images/applications/pos/pos-ksk-dgnstcs-cls.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/kiosk/diagnostics/ipcamera/test-ip-camera.htm",
+    "faiss_index": 35
+  }
+]

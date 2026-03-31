@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="90" viewBox="0 0 130 90">
+  <!-- Dark blue background -->
+  <rect width="130" height="90" rx="9" ry="9" fill="#1A4896"/>
+  <!-- Orange bracket top-right -->
+  <polyline points="98,8 122,8 122,30" fill="none" stroke="#EF5025" stroke-width="8" stroke-linecap="square" stroke-linejoin="miter"/>
+  <!-- DRB white text — padded so no letter is clipped -->
+  <text x="8" y="70"
+        font-family="Arial Black, Arial, sans-serif"
+        font-weight="900"
+        font-size="50"
+        fill="#ffffff">DRB</text>
+  <!-- Registered mark — small, white, bottom-right of B -->
+  <text x="113" y="76"
+        font-family="Arial, sans-serif"
+        font-size="12"
+        font-weight="700"
+        fill="#ffffff">&#174;</text>
+</svg>
