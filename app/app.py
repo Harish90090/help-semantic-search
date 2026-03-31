@@ -117,8 +117,9 @@ st.markdown(
     """
 <style>
 /* ── Global ── */
-[data-testid="stAppViewContainer"] { background: #f5f7fa; }
-[data-testid="stSidebar"]          { background: #ffffff; border-right: 1px solid #e8ecf0; }
+[data-testid="stAppViewContainer"] { background: #f5f7fa; color: #1a1a2e; }
+[data-testid="stSidebar"]          { background: #ffffff; border-right: 1px solid #e8ecf0; color: #1a1a2e; }
+body, p, div, span, label         { color: #1a1a2e; }
 
 /* ── Search input ── */
 .stTextInput > div > div > input {
@@ -126,8 +127,14 @@ st.markdown(
     padding: 0.7rem 1rem;
     border-radius: 10px;
     border: 2px solid #dde3ed;
-    background: #ffffff;
+    background: #ffffff !important;
+    color: #1a1a2e !important;
+    caret-color: #1a1a2e !important;
     transition: border-color 0.2s, box-shadow 0.2s;
+}
+.stTextInput > div > div > input::placeholder {
+    color: #aab0bc !important;
+    opacity: 1;
 }
 .stTextInput > div > div > input:focus {
     border-color: #4f8ef7;
