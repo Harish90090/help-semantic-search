@@ -541,7 +541,7 @@
     "chunk_id": "audio_1",
     "page_id": 101,
     "title": "Void a Sale",
-    "content": "Here is how you void a sale in the cashier application. Open the Sales History from the navigation menu. Find the transaction you need to void and tap on it to open the sale details. Select the Void Sale option. Choose which items you want to void \u00e2\u20ac\u201d you can select all of them or just specific items. Pick a reason for the void from the dropdown list. Confirm by tapping Submit. The full amount will be refunded to the customer's original payment method automatically.",
+    "content": "Here is how you void a sale in the cashier application. Open the Sales History from the navigation menu. Find the transaction you need to void and tap on it to open the sale details. Select the Void Sale option. Choose which items you want to void â€” you can select all of them or just specific items. Pick a reason for the void from the dropdown list. Confirm by tapping Submit. The full amount will be refunded to the customer's original payment method automatically.",
     "images": [],
     "url": "",
     "media_type": "audio",
@@ -552,7 +552,7 @@
     "chunk_id": "audio_2",
     "page_id": 102,
     "title": "Sell a Gift Card",
-    "content": "Here is how you sell a gift card at the cashier terminal. Log in to the cashier application and select Sales from the menu. Tap Manual Entry to open the manual entry dialog. Select Activate Card Reader \u00e2\u20ac\u201d the barcode scanner on the terminal will activate. Scan the gift card barcode. Enter the value you want to load onto the gift card. Add it to the cart and then tender the sale as normal. The gift card is now active and ready for the customer to use.",
+    "content": "Here is how you sell a gift card at the cashier terminal. Log in to the cashier application and select Sales from the menu. Tap Manual Entry to open the manual entry dialog. Select Activate Card Reader â€” the barcode scanner on the terminal will activate. Scan the gift card barcode. Enter the value you want to load onto the gift card. Add it to the cart and then tender the sale as normal. The gift card is now active and ready for the customer to use.",
     "images": [],
     "url": "",
     "media_type": "audio",
@@ -563,7 +563,7 @@
     "chunk_id": "audio_3",
     "page_id": 103,
     "title": "Record a Cash Drawer Start Balance",
-    "content": "Here is how you record a cash drawer starting balance. Log in to the cashier application and go to Cash Drawer in the navigation. Select Start Balance. Carefully count the cash in the drawer for each denomination \u00e2\u20ac\u201d pennies, nickels, dimes, quarters, dollar bills and so on. Enter the count for each denomination in the fields provided. The system will calculate the total starting balance for you. Review the total to make sure it looks correct. Then tap Submit to officially record the starting balance for this shift.",
+    "content": "Here is how you record a cash drawer starting balance. Log in to the cashier application and go to Cash Drawer in the navigation. Select Start Balance. Carefully count the cash in the drawer for each denomination â€” pennies, nickels, dimes, quarters, dollar bills and so on. Enter the count for each denomination in the fields provided. The system will calculate the total starting balance for you. Review the total to make sure it looks correct. Then tap Submit to officially record the starting balance for this shift.",
     "images": [],
     "url": "",
     "media_type": "audio",
@@ -745,5 +745,49 @@
     "media_type": "video",
     "media_path": "assets/video/clear_cart_video.mp4",
     "faiss_index": 55
+  },
+  {
+    "chunk_id": "igniteiq_audio_0",
+    "page_id": "igniteiq_a0",
+    "title": "IgniteIQ — AI Solutions for Business",
+    "content": "Welcome to IgniteIQ. We help businesses unlock the power of artificial intelligence. At IgniteIQ, our mission is simple: bring practical, scalable AI solutions to organisations of every size. Whether you are a startup looking to automate your first workflow, or an enterprise ready to transform your operations end to end, IgniteIQ has the tools and expertise to get you there. Our platform integrates seamlessly with your existing systems, so you can start seeing results in days, not months. From intelligent data analysis to natural language processing and predictive modelling, IgniteIQ covers the full spectrum of modern AI. Get in touch today and ignite your business with the power of AI.",
+    "images": [],
+    "url": "https://igniteiq.ai/",
+    "media_type": "audio",
+    "media_path": "assets/audio/igniteiq_intro_audio.mp3",
+    "faiss_index": 56
+  },
+  {
+    "chunk_id": "igniteiq_audio_1",
+    "page_id": "igniteiq_a1",
+    "title": "IgniteIQ — Real Business Use Cases",
+    "content": "Let us talk about how IgniteIQ helps real businesses solve real problems. First, customer support automation. IgniteIQ's conversational AI can handle up to eighty percent of routine support queries, freeing your team to focus on complex cases. Second, sales forecasting. Our predictive models analyse historical data and market signals to give your sales team accurate revenue forecasts every quarter. Third, document intelligence. Upload contracts, invoices, or reports and IgniteIQ extracts key information instantly, cutting manual data entry by ninety percent. Fourth, employee productivity. Our AI assistant integrates with Slack, Teams, and email to summarise threads, draft replies, and surface relevant information on demand. IgniteIQ — AI that works as hard as you do.",
+    "images": [],
+    "url": "https://igniteiq.ai/",
+    "media_type": "audio",
+    "media_path": "assets/audio/igniteiq_usecase_audio.mp3",
+    "faiss_index": 57
+  },
+  {
+    "chunk_id": "igniteiq_video_0",
+    "page_id": "igniteiq_v0",
+    "title": "IgniteIQ Platform Overview",
+    "content": "We build AI tools that plug into your existing business workflows. - Natural Language Processing - Predictive Analytics - Document AI - Conversational Agents",
+    "images": [],
+    "url": "https://igniteiq.ai/",
+    "media_type": "video",
+    "media_path": "assets/video/igniteiq_platform_video.mp4",
+    "faiss_index": 58
+  },
+  {
+    "chunk_id": "igniteiq_video_1",
+    "page_id": "igniteiq_v1",
+    "title": "IgniteIQ — Measurable Business Results",
+    "content": "Automate routine queries with IgniteIQ Conversational AI. Document Intelligence extracts data from any file instantly.",
+    "images": [],
+    "url": "https://igniteiq.ai/",
+    "media_type": "video",
+    "media_path": "assets/video/igniteiq_results_video.mp4",
+    "faiss_index": 59
   }
 ]
