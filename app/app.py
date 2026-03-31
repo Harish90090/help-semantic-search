@@ -448,6 +448,7 @@ for result in results:
             "video":      '<span style="background:#f3e5f5;color:#6a1b9a;border-radius:20px;padding:2px 9px;font-size:0.72rem;font-weight:700;">🎬 VIDEO</span>',
             "text_image": '<span style="background:#e3f2fd;color:#1565c0;border-radius:20px;padding:2px 9px;font-size:0.72rem;font-weight:700;">🖼 IMAGE+TEXT</span>',
         }.get(_mtype, "")
+        _is_pure_media = _mtype in ("audio", "video")
         st.markdown(
             f"""
 <div class="{card_cls}">
@@ -457,7 +458,7 @@ for result in results:
     {_media_badge}
   </div>
   <div class="card-title">{safe_title}</div>
-  <div class="card-snip">{safe_snip}</div>
+  {"" if _is_pure_media else f'<div class="card-snip">{safe_snip}</div>'}
   <div class="card-url">🔗 {safe_url}</div>
 </div>
 """,
@@ -523,11 +524,12 @@ for result in results:
                             pass
                 st.markdown('<div style="margin-bottom:1.2rem;"></div>', unsafe_allow_html=True)
 
-        with st.expander("📄 Full Content", expanded=True):
-            st.markdown(
-                f'<div class="detail-body">{_format_as_points(doc["content"])}</div>',
-                unsafe_allow_html=True,
-            )
+        if media_type not in ("audio", "video"):
+            with st.expander("📄 Full Content", expanded=True):
+                st.markdown(
+                    f'<div class="detail-body">{_format_as_points(doc["content"])}</div>',
+                    unsafe_allow_html=True,
+                )
 
         col_meta1, col_meta2, col_meta3 = st.columns(3)
         col_meta1.metric("Relevance", f"{doc['score']:.4f}")
