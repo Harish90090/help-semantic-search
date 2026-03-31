@@ -230,7 +230,7 @@ _init_state()
 
 
 # ── Cached search engine loader ───────────────────────────────────────────────
-@st.cache_resource(show_spinner="Loading search index…")
+@st.cache_resource(show_spinner="Loading search index…", max_entries=1)
 def _load_searcher() -> SemanticSearcher | None:
     """
     Instantiate the SemanticSearcher once and cache it for the lifetime of
@@ -423,12 +423,19 @@ for result in results:
         col_thumb = None
 
     with col_text:
+        _mtype = result.get("media_type", "text")
+        _media_badge = {
+            "audio":      '<span style="background:#fff3e0;color:#e65100;border-radius:20px;padding:2px 9px;font-size:0.72rem;font-weight:700;">🎧 AUDIO</span>',
+            "video":      '<span style="background:#f3e5f5;color:#6a1b9a;border-radius:20px;padding:2px 9px;font-size:0.72rem;font-weight:700;">🎬 VIDEO</span>',
+            "text_image": '<span style="background:#e3f2fd;color:#1565c0;border-radius:20px;padding:2px 9px;font-size:0.72rem;font-weight:700;">🖼 IMAGE+TEXT</span>',
+        }.get(_mtype, "")
         st.markdown(
             f"""
 <div class="{card_cls}">
   <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;">
     <span class="card-rank">#{result['rank']}</span>
     <span class="badge">Match {score_pct}%</span>
+    {_media_badge}
   </div>
   <div class="card-title">{safe_title}</div>
   <div class="card-snip">{safe_snip}</div>
@@ -465,17 +472,36 @@ for result in results:
             unsafe_allow_html=True,
         )
 
-        images = doc.get("images", [])
-        if images:
-            st.markdown('<div style="margin-top:1.4rem;"></div>', unsafe_allow_html=True)
-            img_cols = st.columns(min(len(images), 3))
-            for i, img_url in enumerate(images[:3]):
-                with img_cols[i]:
-                    try:
-                        st.image(img_url, use_container_width=True)
-                    except Exception:
-                        pass
-            st.markdown('<div style="margin-bottom:1.2rem;"></div>', unsafe_allow_html=True)
+        media_type = doc.get("media_type", "text")
+        media_path = doc.get("media_path")
+
+        # ── Audio player ──────────────────────────────────────────────────────
+        if media_type == "audio" and media_path and os.path.exists(media_path):
+            st.markdown('<div style="margin-top:1rem;"></div>', unsafe_allow_html=True)
+            st.markdown("**🎧 Audio Guide**")
+            with open(media_path, "rb") as _af:
+                st.audio(_af.read(), format="audio/mp3")
+
+        # ── Video player ──────────────────────────────────────────────────────
+        elif media_type == "video" and media_path and os.path.exists(media_path):
+            st.markdown('<div style="margin-top:1rem;"></div>', unsafe_allow_html=True)
+            st.markdown("**🎬 Video Walkthrough**")
+            with open(media_path, "rb") as _vf:
+                st.video(_vf.read())
+
+        # ── Images (text+image chunks) ────────────────────────────────────────
+        else:
+            images = doc.get("images", [])
+            if images:
+                st.markdown('<div style="margin-top:1.4rem;"></div>', unsafe_allow_html=True)
+                img_cols = st.columns(min(len(images), 3))
+                for i, img_url in enumerate(images[:3]):
+                    with img_cols[i]:
+                        try:
+                            st.image(img_url, use_container_width=True)
+                        except Exception:
+                            pass
+                st.markdown('<div style="margin-bottom:1.2rem;"></div>', unsafe_allow_html=True)
 
         with st.expander("📄 Full Content", expanded=True):
             st.markdown(

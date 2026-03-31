@@ -1,0 +1,202 @@
+[
+  {
+    "chunk_id": "audio_0",
+    "page_id": 100,
+    "title": "Log In to Cashier Application",
+    "content": "Here is how you log in to the cashier application. First, power on your cashier terminal and wait for it to boot. You will see the DRB Patheon Point of Sale login dialog appear on screen. Type in your employee username in the first field. Then enter your password in the second field. Finally tap the Log In button. If your password has expired the system will prompt you to reset it. Otherwise the cashier application opens and you are ready to serve customers.",
+    "url": "",
+    "images": [],
+    "media_type": "audio",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\login_cashier_audio.mp3"
+  },
+  {
+    "chunk_id": "audio_1",
+    "page_id": 101,
+    "title": "Void a Sale",
+    "content": "Here is how you void a sale in the cashier application. Open the Sales History from the navigation menu. Find the transaction you need to void and tap on it to open the sale details. Select the Void Sale option. Choose which items you want to void — you can select all of them or just specific items. Pick a reason for the void from the dropdown list. Confirm by tapping Submit. The full amount will be refunded to the customer's original payment method automatically.",
+    "url": "",
+    "images": [],
+    "media_type": "audio",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\void_sale_audio.mp3"
+  },
+  {
+    "chunk_id": "audio_2",
+    "page_id": 102,
+    "title": "Sell a Gift Card",
+    "content": "Here is how you sell a gift card at the cashier terminal. Log in to the cashier application and select Sales from the menu. Tap Manual Entry to open the manual entry dialog. Select Activate Card Reader — the barcode scanner on the terminal will activate. Scan the gift card barcode. Enter the value you want to load onto the gift card. Add it to the cart and then tender the sale as normal. The gift card is now active and ready for the customer to use.",
+    "url": "",
+    "images": [],
+    "media_type": "audio",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\sell_gift_card_audio.mp3"
+  },
+  {
+    "chunk_id": "audio_3",
+    "page_id": 103,
+    "title": "Record a Cash Drawer Start Balance",
+    "content": "Here is how you record a cash drawer starting balance. Log in to the cashier application and go to Cash Drawer in the navigation. Select Start Balance. Carefully count the cash in the drawer for each denomination — pennies, nickels, dimes, quarters, dollar bills and so on. Enter the count for each denomination in the fields provided. The system will calculate the total starting balance for you. Review the total to make sure it looks correct. Then tap Submit to officially record the starting balance for this shift.",
+    "url": "",
+    "images": [],
+    "media_type": "audio",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\cash_drawer_audio.mp3"
+  },
+  {
+    "chunk_id": "audio_4",
+    "page_id": 104,
+    "title": "Rewash a Vehicle",
+    "content": "Here is how you process a vehicle rewash at the cashier terminal. Select the Rewash tab from the cashier application. The system automatically identifies vehicles that are eligible for a complimentary rewash. Find and select the vehicle that needs to be rewashed from the list. Confirm the rewash. The vehicle is now authorized to go through the wash again at no additional charge. This is useful when a vehicle did not get a clean wash the first time due to equipment issues.",
+    "url": "",
+    "images": [],
+    "media_type": "audio",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\rewash_audio.mp3"
+  },
+  {
+    "chunk_id": "audio_5",
+    "page_id": 105,
+    "title": "Tender a Sale to Cash",
+    "content": "To tender a sale using cash, first add all items to the cart. Select Tender and choose Cash as the payment method. The screen shows the total amount due. Enter the cash amount the customer is giving you. The system calculates the change automatically. Hand the change back to the customer and tap Complete to finish.",
+    "url": "",
+    "images": [],
+    "media_type": "audio",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\tender_cash_audio.mp3"
+  },
+  {
+    "chunk_id": "audio_6",
+    "page_id": 106,
+    "title": "Tender a Sale to Credit Card",
+    "content": "To tender a sale to a credit card, add items to the cart and select Tender. Choose Credit Card as the payment type. Ask the customer to insert or swipe their card at the payment terminal. The system processes the payment automatically. A receipt prints when the transaction is approved.",
+    "url": "",
+    "images": [],
+    "media_type": "audio",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\tender_credit_audio.mp3"
+  },
+  {
+    "chunk_id": "audio_7",
+    "page_id": 107,
+    "title": "Add a New Customer",
+    "content": "To add a new customer record, select Customers from the navigation menu. Tap Add New Customer. Enter the customer's first name, last name, email address, and phone number. Double check the details are correct. Tap Save to create the new customer profile in the system.",
+    "url": "",
+    "images": [],
+    "media_type": "audio",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\add_customer_audio.mp3"
+  },
+  {
+    "chunk_id": "audio_8",
+    "page_id": 108,
+    "title": "Change Your Password",
+    "content": "To change your password, log in to the cashier application. Open the menu and select Change Password. Enter your current password first to verify your identity. Then type your new password and confirm it by typing it again. Select Submit. Your password is now updated.",
+    "url": "",
+    "images": [],
+    "media_type": "audio",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\change_password_audio.mp3"
+  },
+  {
+    "chunk_id": "audio_9",
+    "page_id": 109,
+    "title": "Log Out of Cashier Application",
+    "content": "To log out of the cashier application, tap the menu icon. Select Log Out from the menu options. Confirm the logout when prompted. The app returns to the login screen. Note that the application will also log you out automatically after 300 seconds of inactivity.",
+    "url": "",
+    "images": [],
+    "media_type": "audio",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\logout_cashier_audio.mp3"
+  },
+  {
+    "chunk_id": "video_0",
+    "page_id": 200,
+    "title": "Log In to Cashier Application",
+    "content": "Video walkthrough for cashier login. Power on the cashier terminal. Wait for the DRB Patheon Point of Sale dialog. Enter your employee username. Enter your password. Select Log In. Cashier application opens.",
+    "url": "",
+    "images": [],
+    "media_type": "video",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\login_cashier_video.mp4"
+  },
+  {
+    "chunk_id": "video_1",
+    "page_id": 201,
+    "title": "Void a Sale",
+    "content": "Video walkthrough to void a sale. Open Sales History. Select the transaction. Select Void Sale. Choose items to void. Select a void reason. Submit. Amount refunded to original payment.",
+    "url": "",
+    "images": [],
+    "media_type": "video",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\void_sale_video.mp4"
+  },
+  {
+    "chunk_id": "video_2",
+    "page_id": 202,
+    "title": "Sell a Gift Card",
+    "content": "Video walkthrough to sell a gift card. Log in. Select Sales. Select Manual Entry. Activate card reader. Scan gift card. Enter value. Add to cart. Tender sale. Gift card activated.",
+    "url": "",
+    "images": [],
+    "media_type": "video",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\sell_gift_card_video.mp4"
+  },
+  {
+    "chunk_id": "video_3",
+    "page_id": 203,
+    "title": "Record a Cash Drawer Start Balance",
+    "content": "Video walkthrough to record cash drawer start balance. Select Cash Drawer. Select Start Balance. Count each denomination. Enter quantities. Review total. Submit to record.",
+    "url": "",
+    "images": [],
+    "media_type": "video",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\cash_drawer_video.mp4"
+  },
+  {
+    "chunk_id": "video_4",
+    "page_id": 204,
+    "title": "Rewash a Vehicle",
+    "content": "Video walkthrough to rewash a vehicle. Select Rewash tab. System shows eligible vehicles. Select the vehicle. Confirm rewash. Vehicle authorized for complimentary rewash.",
+    "url": "",
+    "images": [],
+    "media_type": "video",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\rewash_video.mp4"
+  },
+  {
+    "chunk_id": "video_5",
+    "page_id": 205,
+    "title": "Log In to Kiosk Staff Screen",
+    "content": "Video walkthrough for kiosk staff login. Approach kiosk terminal. Tap staff access button. Enter employee PIN. Select Log In. Kiosk staff menu opens.",
+    "url": "",
+    "images": [],
+    "media_type": "video",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\kiosk_login_video.mp4"
+  },
+  {
+    "chunk_id": "video_6",
+    "page_id": 206,
+    "title": "Raise the Gate",
+    "content": "Video walkthrough to raise the kiosk gate. Open kiosk staff screen. Select Diagnostics. Select Gate. Select Raise Gate. Gate opens for vehicle entry.",
+    "url": "",
+    "images": [],
+    "media_type": "video",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\raise_gate_video.mp4"
+  },
+  {
+    "chunk_id": "video_7",
+    "page_id": 207,
+    "title": "Test the IP Camera",
+    "content": "Video walkthrough to test the IP camera. Open kiosk staff screen. Select Diagnostics. Select IP Camera. Select Test Camera. Live image captured to verify camera works.",
+    "url": "",
+    "images": [],
+    "media_type": "video",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\test_camera_video.mp4"
+  },
+  {
+    "chunk_id": "video_8",
+    "page_id": 208,
+    "title": "Print a Kiosk Test Receipt",
+    "content": "Video walkthrough to print a kiosk test receipt. Open kiosk staff screen. Select Diagnostics. Select Receipt Printer. Select Print Test Receipt. Receipt prints from kiosk terminal.",
+    "url": "",
+    "images": [],
+    "media_type": "video",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\print_receipt_video.mp4"
+  },
+  {
+    "chunk_id": "video_9",
+    "page_id": 209,
+    "title": "Clear a Kiosk Cart",
+    "content": "Video walkthrough to clear a kiosk cart. Open kiosk staff screen. Navigate to active customer cart. Select Clear Cart. Confirm the action. Cart is cleared successfully.",
+    "url": "",
+    "images": [],
+    "media_type": "video",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\clear_cart_video.mp4"
+  }
+]

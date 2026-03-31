@@ -10,6 +10,8 @@
       "https://help.drb.com/assets/images/applications/pos/cshr-app-sls.png"
     ],
     "url": "https://help.drb.com/topics/manuals/cashier/auth/log-in-to-point-of-sale-application.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 0
   },
   {
@@ -23,6 +25,8 @@
       "https://help.drb.com/assets/images/applications/pos/cshr-lg-in-pin.png"
     ],
     "url": "https://help.drb.com/topics/manuals/cashier/auth/lgn-cshr-app-emply-crd-scn.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 1
   },
   {
@@ -35,6 +39,8 @@
       "https://help.drb.com/assets/images/applications/pos/cshr-lg-in.png"
     ],
     "url": "https://help.drb.com/topics/manuals/cashier/auth/log-out-of-point-of-sale-application.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 2
   },
   {
@@ -46,6 +52,8 @@
       "https://help.drb.com/assets/images/applications/pos/cshr-lg-in.png"
     ],
     "url": "https://help.drb.com/topics/manuals/cashier/auth/forgot-employee-id.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 3
   },
   {
@@ -57,6 +65,8 @@
       "https://help.drb.com/assets/images/applications/pos/cshr-lg-in.png"
     ],
     "url": "https://help.drb.com/topics/manuals/cashier/auth/forgot-password.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 4
   },
   {
@@ -69,6 +79,8 @@
       "https://help.drb.com/assets/images/applications/pos/cshr-chng-psswrd.png"
     ],
     "url": "https://help.drb.com/topics/manuals/cashier/auth/change-password.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 5
   },
   {
@@ -76,8 +88,13 @@
     "page_id": 6,
     "title": "Lock/Unlock a Cash Drawer",
     "content": "Lock/Unlock a Cash Drawer Use these steps to lock or unlock a cashier terminal cash drawer with its key. Insert the key, smooth edge up, serrated edge down, in the key-hole. Turn the key clockwise 1/2 rotation. Remove the key. The cash drawer is locked. Unlock the Drawer Insert the key, smooth edge down, serrated edge up, in the key-hole. Turn the key counterclockwise 1/2 rotation. Remove the key. The cash drawer is unlocked.",
-    "images": [],
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/clckws.png",
+      "https://help.drb.com/assets/images/applications/pos/cntrclckws.png"
+    ],
     "url": "https://help.drb.com/topics/manuals/cashier/cash-drawer/lock-unlock-cash-drawer.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 6
   },
   {
@@ -93,6 +110,8 @@
       "https://help.drb.com/assets/images/applications/pos/cshr-csh-bal-strtng-sure-dlg.png"
     ],
     "url": "https://help.drb.com/topics/manuals/cashier/cash-drawer/record-cash-drawer-start-balance.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 7
   },
   {
@@ -108,6 +127,8 @@
       "https://help.drb.com/assets/images/applications/pos/cshr-csh-bal-drp-dnm.png"
     ],
     "url": "https://help.drb.com/topics/manuals/cashier/cash-drawer/record-cash-drop.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 8
   },
   {
@@ -123,6 +144,8 @@
       "https://help.drb.com/assets/images/applications/pos/cshr-csh-bal.png"
     ],
     "url": "https://help.drb.com/topics/manuals/cashier/cash-drawer/record-cash-drawer-end-balance.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 9
   },
   {
@@ -135,6 +158,8 @@
       "https://help.drb.com/assets/images/applications/pos/cshr-rwsh-dlg.png"
     ],
     "url": "https://help.drb.com/topics/manuals/cashier/sales/rewash-vehicle.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 10
   },
   {
@@ -148,6 +173,8 @@
       "https://help.drb.com/assets/images/applications/pos/cshr-sls-wsh-alacrt.png"
     ],
     "url": "https://help.drb.com/topics/manuals/cashier/sales/add-alacarte-prdct-to-sale.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 11
   },
   {
@@ -163,6 +190,8 @@
       "https://help.drb.com/assets/images/applications/pos/cshr-sls-crt-qty-dwn.png"
     ],
     "url": "https://help.drb.com/topics/manuals/cashier/sales/add-lbby-prdct-sale.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 12
   },
   {
@@ -177,6 +206,8 @@
       "https://help.drb.com/assets/images/applications/pos/cshr-sll-gft-crd-crt.png"
     ],
     "url": "https://help.drb.com/topics/manuals/cashier/gift-cards/sell-gft-crd.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 13
   },
   {
@@ -189,6 +220,8 @@
       "https://help.drb.com/assets/images/applications/pos/cshr-mnl-entr.png"
     ],
     "url": "https://help.drb.com/topics/manuals/cashier/gift-cards/chck-gft-crd-blnc.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 14
   },
   {
@@ -202,6 +235,8 @@
       "https://help.drb.com/assets/images/applications/pos/cshr-tndr-csh-pd.png"
     ],
     "url": "https://help.drb.com/topics/manuals/cashier/tender/tender-a-sale-to-cash.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 15
   },
   {
@@ -216,6 +251,8 @@
       "https://help.drb.com/assets/images/applications/pos/cshr-sls-wsh.png"
     ],
     "url": "https://help.drb.com/topics/manuals/cashier/tender/tndr-sale-to-crdt-crd.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 16
   },
   {
@@ -229,6 +266,8 @@
       "https://help.drb.com/assets/images/applications/pos/pos-cashier-customers-new-cust-added.png"
     ],
     "url": "https://help.drb.com/topics/manuals/cashier/customers/add-a-new-customer.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 17
   },
   {
@@ -240,6 +279,8 @@
       "https://help.drb.com/assets/images/applications/pos/pos-cashier-customers.png"
     ],
     "url": "https://help.drb.com/topics/manuals/cashier/customers/edt-cstnr-info.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 18
   },
   {
@@ -251,6 +292,8 @@
       "https://help.drb.com/assets/images/applications/prtl/prtl-cust-notes-add-r11.png"
     ],
     "url": "https://help.drb.com/topics/manuals/cashier/customers/add-customer-note.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 19
   },
   {
@@ -266,6 +309,8 @@
       "https://help.drb.com/assets/images/applications/pos/pos-cashier-sales-history-void-1-refund.png"
     ],
     "url": "https://help.drb.com/topics/manuals/cashier/edit-void-refund/void-a-sale-cashier.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 20
   },
   {
@@ -277,6 +322,8 @@
       "https://help.drb.com/assets/images/applications/pos/pos-hardware-sal.png"
     ],
     "url": "https://help.drb.com/topics/manuals/cashier/members-lane/turn-on-semi-attended-mode.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 21
   },
   {
@@ -288,6 +335,8 @@
       "https://help.drb.com/assets/images/applications/pos/pos-hardware-sal.png"
     ],
     "url": "https://help.drb.com/topics/manuals/cashier/members-lane/trn-off-smi-attndd-md.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 22
   },
   {
@@ -297,6 +346,8 @@
     "content": "Open a Members Lane to House Accounts Use these steps to accept house account members at a members lane (semi-attended mode is enabled). Patheon house account configuration requires a specific wash be configured as the default wash for its members. This allows the house account's members to use the members lane and receive a wash if semi-attended mode is enabled. Semi-attended mode must be enabled for the terminal in Patheon Portal for the function to appear on the HARDWARE panel. Log in to the cashier application. Select Hardware. The Hardware panel opens. In the Terminal section, set Semi-attended mode to On.",
     "images": [],
     "url": "https://help.drb.com/topics/manuals/cashier/members-lane/accpt-hs-accnt-mmbrs-sal.htm",
+    "media_type": "text",
+    "media_path": null,
     "faiss_index": 23
   },
   {
@@ -308,6 +359,8 @@
       "https://help.drb.com/assets/images/applications/pos/pos-ksk-emplaccss.png"
     ],
     "url": "https://help.drb.com/topics/manuals/kiosk/access/log-in-ksk-stff-scrn.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 24
   },
   {
@@ -319,6 +372,8 @@
       "https://help.drb.com/assets/images/applications/pos/pos-ksk-menu.png"
     ],
     "url": "https://help.drb.com/topics/manuals/kiosk/access/log-out-ksk-stff-scrn.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 25
   },
   {
@@ -331,6 +386,8 @@
       "https://help.drb.com/assets/images/applications/pos/pos-ksk-dgnstcs-cls.png"
     ],
     "url": "https://help.drb.com/topics/manuals/kiosk/sales/ksk-clr-ksk-crt.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 26
   },
   {
@@ -343,6 +400,8 @@
       "https://help.drb.com/assets/images/applications/pos/pos-kiosk-rewash-apply-dialog.png"
     ],
     "url": "https://help.drb.com/topics/manuals/kiosk/sales/ksk-rwsh-vhcl.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 27
   },
   {
@@ -356,6 +415,8 @@
       "https://help.drb.com/assets/images/applications/pos/pos-ksk-dgnstcs-cls.png"
     ],
     "url": "https://help.drb.com/topics/manuals/kiosk/diagnostics/rfidreader/change-rfid-rdr-pwr.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 28
   },
   {
@@ -369,6 +430,8 @@
       "https://help.drb.com/assets/images/applications/pos/pos-ksk-dgnstcs-cls.png"
     ],
     "url": "https://help.drb.com/topics/manuals/kiosk/diagnostics/rfidreader/change-rfid-rdr-snstvty.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 29
   },
   {
@@ -384,6 +447,8 @@
       "https://help.drb.com/assets/images/applications/prtl/prtl-sts-st-hdwr-ksk-dtls-rcpt.png"
     ],
     "url": "https://help.drb.com/topics/manuals/kiosk/diagnostics/receiptprinter/change-rcpt-prntr-dnsty.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 30
   },
   {
@@ -397,6 +462,8 @@
       "https://help.drb.com/assets/images/applications/pos/pos-ksk-dgnstcs-cls.png"
     ],
     "url": "https://help.drb.com/topics/manuals/kiosk/diagnostics/receiptprinter/prnt-ksk-tst-rcpt.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 31
   },
   {
@@ -410,6 +477,8 @@
       "https://help.drb.com/assets/images/applications/pos/pos-ksk-dgnstcs-cls.png"
     ],
     "url": "https://help.drb.com/topics/manuals/kiosk/diagnostics/gate/raise-gate.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 32
   },
   {
@@ -423,6 +492,8 @@
       "https://help.drb.com/assets/images/applications/pos/pos-ksk-dgnstcs-cls.png"
     ],
     "url": "https://help.drb.com/topics/manuals/kiosk/diagnostics/gate/lower-gate.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 33
   },
   {
@@ -436,6 +507,8 @@
       "https://help.drb.com/assets/images/applications/pos/pos-ksk-dgnstcs-cls.png"
     ],
     "url": "https://help.drb.com/topics/manuals/kiosk/diagnostics/gate/view-gate-state.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 34
   },
   {
@@ -449,6 +522,228 @@
       "https://help.drb.com/assets/images/applications/pos/pos-ksk-dgnstcs-cls.png"
     ],
     "url": "https://help.drb.com/topics/manuals/kiosk/diagnostics/ipcamera/test-ip-camera.htm",
+    "media_type": "text_image",
+    "media_path": null,
     "faiss_index": 35
+  },
+  {
+    "chunk_id": "audio_0",
+    "page_id": 100,
+    "title": "Log In to Cashier Application",
+    "content": "Here is how you log in to the cashier application. First, power on your cashier terminal and wait for it to boot. You will see the DRB Patheon Point of Sale login dialog appear on screen. Type in your employee username in the first field. Then enter your password in the second field. Finally tap the Log In button. If your password has expired the system will prompt you to reset it. Otherwise the cashier application opens and you are ready to serve customers.",
+    "images": [],
+    "url": "",
+    "media_type": "audio",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\login_cashier_audio.mp3",
+    "faiss_index": 36
+  },
+  {
+    "chunk_id": "audio_1",
+    "page_id": 101,
+    "title": "Void a Sale",
+    "content": "Here is how you void a sale in the cashier application. Open the Sales History from the navigation menu. Find the transaction you need to void and tap on it to open the sale details. Select the Void Sale option. Choose which items you want to void — you can select all of them or just specific items. Pick a reason for the void from the dropdown list. Confirm by tapping Submit. The full amount will be refunded to the customer's original payment method automatically.",
+    "images": [],
+    "url": "",
+    "media_type": "audio",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\void_sale_audio.mp3",
+    "faiss_index": 37
+  },
+  {
+    "chunk_id": "audio_2",
+    "page_id": 102,
+    "title": "Sell a Gift Card",
+    "content": "Here is how you sell a gift card at the cashier terminal. Log in to the cashier application and select Sales from the menu. Tap Manual Entry to open the manual entry dialog. Select Activate Card Reader — the barcode scanner on the terminal will activate. Scan the gift card barcode. Enter the value you want to load onto the gift card. Add it to the cart and then tender the sale as normal. The gift card is now active and ready for the customer to use.",
+    "images": [],
+    "url": "",
+    "media_type": "audio",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\sell_gift_card_audio.mp3",
+    "faiss_index": 38
+  },
+  {
+    "chunk_id": "audio_3",
+    "page_id": 103,
+    "title": "Record a Cash Drawer Start Balance",
+    "content": "Here is how you record a cash drawer starting balance. Log in to the cashier application and go to Cash Drawer in the navigation. Select Start Balance. Carefully count the cash in the drawer for each denomination — pennies, nickels, dimes, quarters, dollar bills and so on. Enter the count for each denomination in the fields provided. The system will calculate the total starting balance for you. Review the total to make sure it looks correct. Then tap Submit to officially record the starting balance for this shift.",
+    "images": [],
+    "url": "",
+    "media_type": "audio",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\cash_drawer_audio.mp3",
+    "faiss_index": 39
+  },
+  {
+    "chunk_id": "audio_4",
+    "page_id": 104,
+    "title": "Rewash a Vehicle",
+    "content": "Here is how you process a vehicle rewash at the cashier terminal. Select the Rewash tab from the cashier application. The system automatically identifies vehicles that are eligible for a complimentary rewash. Find and select the vehicle that needs to be rewashed from the list. Confirm the rewash. The vehicle is now authorized to go through the wash again at no additional charge. This is useful when a vehicle did not get a clean wash the first time due to equipment issues.",
+    "images": [],
+    "url": "",
+    "media_type": "audio",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\rewash_audio.mp3",
+    "faiss_index": 40
+  },
+  {
+    "chunk_id": "audio_5",
+    "page_id": 105,
+    "title": "Tender a Sale to Cash",
+    "content": "To tender a sale using cash, first add all items to the cart. Select Tender and choose Cash as the payment method. The screen shows the total amount due. Enter the cash amount the customer is giving you. The system calculates the change automatically. Hand the change back to the customer and tap Complete to finish.",
+    "images": [],
+    "url": "",
+    "media_type": "audio",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\tender_cash_audio.mp3",
+    "faiss_index": 41
+  },
+  {
+    "chunk_id": "audio_6",
+    "page_id": 106,
+    "title": "Tender a Sale to Credit Card",
+    "content": "To tender a sale to a credit card, add items to the cart and select Tender. Choose Credit Card as the payment type. Ask the customer to insert or swipe their card at the payment terminal. The system processes the payment automatically. A receipt prints when the transaction is approved.",
+    "images": [],
+    "url": "",
+    "media_type": "audio",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\tender_credit_audio.mp3",
+    "faiss_index": 42
+  },
+  {
+    "chunk_id": "audio_7",
+    "page_id": 107,
+    "title": "Add a New Customer",
+    "content": "To add a new customer record, select Customers from the navigation menu. Tap Add New Customer. Enter the customer's first name, last name, email address, and phone number. Double check the details are correct. Tap Save to create the new customer profile in the system.",
+    "images": [],
+    "url": "",
+    "media_type": "audio",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\add_customer_audio.mp3",
+    "faiss_index": 43
+  },
+  {
+    "chunk_id": "audio_8",
+    "page_id": 108,
+    "title": "Change Your Password",
+    "content": "To change your password, log in to the cashier application. Open the menu and select Change Password. Enter your current password first to verify your identity. Then type your new password and confirm it by typing it again. Select Submit. Your password is now updated.",
+    "images": [],
+    "url": "",
+    "media_type": "audio",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\change_password_audio.mp3",
+    "faiss_index": 44
+  },
+  {
+    "chunk_id": "audio_9",
+    "page_id": 109,
+    "title": "Log Out of Cashier Application",
+    "content": "To log out of the cashier application, tap the menu icon. Select Log Out from the menu options. Confirm the logout when prompted. The app returns to the login screen. Note that the application will also log you out automatically after 300 seconds of inactivity.",
+    "images": [],
+    "url": "",
+    "media_type": "audio",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\logout_cashier_audio.mp3",
+    "faiss_index": 45
+  },
+  {
+    "chunk_id": "video_0",
+    "page_id": 200,
+    "title": "Log In to Cashier Application",
+    "content": "Video walkthrough for cashier login. Power on the cashier terminal. Wait for the DRB Patheon Point of Sale dialog. Enter your employee username. Enter your password. Select Log In. Cashier application opens.",
+    "images": [],
+    "url": "",
+    "media_type": "video",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\login_cashier_video.mp4",
+    "faiss_index": 46
+  },
+  {
+    "chunk_id": "video_1",
+    "page_id": 201,
+    "title": "Void a Sale",
+    "content": "Video walkthrough to void a sale. Open Sales History. Select the transaction. Select Void Sale. Choose items to void. Select a void reason. Submit. Amount refunded to original payment.",
+    "images": [],
+    "url": "",
+    "media_type": "video",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\void_sale_video.mp4",
+    "faiss_index": 47
+  },
+  {
+    "chunk_id": "video_2",
+    "page_id": 202,
+    "title": "Sell a Gift Card",
+    "content": "Video walkthrough to sell a gift card. Log in. Select Sales. Select Manual Entry. Activate card reader. Scan gift card. Enter value. Add to cart. Tender sale. Gift card activated.",
+    "images": [],
+    "url": "",
+    "media_type": "video",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\sell_gift_card_video.mp4",
+    "faiss_index": 48
+  },
+  {
+    "chunk_id": "video_3",
+    "page_id": 203,
+    "title": "Record a Cash Drawer Start Balance",
+    "content": "Video walkthrough to record cash drawer start balance. Select Cash Drawer. Select Start Balance. Count each denomination. Enter quantities. Review total. Submit to record.",
+    "images": [],
+    "url": "",
+    "media_type": "video",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\cash_drawer_video.mp4",
+    "faiss_index": 49
+  },
+  {
+    "chunk_id": "video_4",
+    "page_id": 204,
+    "title": "Rewash a Vehicle",
+    "content": "Video walkthrough to rewash a vehicle. Select Rewash tab. System shows eligible vehicles. Select the vehicle. Confirm rewash. Vehicle authorized for complimentary rewash.",
+    "images": [],
+    "url": "",
+    "media_type": "video",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\rewash_video.mp4",
+    "faiss_index": 50
+  },
+  {
+    "chunk_id": "video_5",
+    "page_id": 205,
+    "title": "Log In to Kiosk Staff Screen",
+    "content": "Video walkthrough for kiosk staff login. Approach kiosk terminal. Tap staff access button. Enter employee PIN. Select Log In. Kiosk staff menu opens.",
+    "images": [],
+    "url": "",
+    "media_type": "video",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\kiosk_login_video.mp4",
+    "faiss_index": 51
+  },
+  {
+    "chunk_id": "video_6",
+    "page_id": 206,
+    "title": "Raise the Gate",
+    "content": "Video walkthrough to raise the kiosk gate. Open kiosk staff screen. Select Diagnostics. Select Gate. Select Raise Gate. Gate opens for vehicle entry.",
+    "images": [],
+    "url": "",
+    "media_type": "video",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\raise_gate_video.mp4",
+    "faiss_index": 52
+  },
+  {
+    "chunk_id": "video_7",
+    "page_id": 207,
+    "title": "Test the IP Camera",
+    "content": "Video walkthrough to test the IP camera. Open kiosk staff screen. Select Diagnostics. Select IP Camera. Select Test Camera. Live image captured to verify camera works.",
+    "images": [],
+    "url": "",
+    "media_type": "video",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\test_camera_video.mp4",
+    "faiss_index": 53
+  },
+  {
+    "chunk_id": "video_8",
+    "page_id": 208,
+    "title": "Print a Kiosk Test Receipt",
+    "content": "Video walkthrough to print a kiosk test receipt. Open kiosk staff screen. Select Diagnostics. Select Receipt Printer. Select Print Test Receipt. Receipt prints from kiosk terminal.",
+    "images": [],
+    "url": "",
+    "media_type": "video",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\print_receipt_video.mp4",
+    "faiss_index": 54
+  },
+  {
+    "chunk_id": "video_9",
+    "page_id": 209,
+    "title": "Clear a Kiosk Cart",
+    "content": "Video walkthrough to clear a kiosk cart. Open kiosk staff screen. Navigate to active customer cart. Select Clear Cart. Confirm the action. Cart is cleared successfully.",
+    "images": [],
+    "url": "",
+    "media_type": "video",
+    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\clear_cart_video.mp4",
+    "faiss_index": 55
   }
 ]

@@ -113,14 +113,16 @@ class SemanticSearcher:
             meta = self.metadata[idx]
             results.append(
                 {
-                    "rank":     rank,
-                    "score":    float(dist),   # cosine similarity (0–1)
-                    "chunk_id": meta["chunk_id"],
-                    "page_id":  meta["page_id"],
-                    "title":    meta["title"],
-                    "content":  meta["content"],
-                    "images":   meta.get("images", []),
-                    "url":      meta["url"],
+                    "rank":       rank,
+                    "score":      float(dist),
+                    "chunk_id":   meta["chunk_id"],
+                    "page_id":    meta["page_id"],
+                    "title":      meta["title"],
+                    "content":    meta["content"],
+                    "images":     meta.get("images", []),
+                    "url":        meta.get("url", ""),
+                    "media_type": meta.get("media_type", "text"),
+                    "media_path": meta.get("media_path"),
                 }
             )
 
