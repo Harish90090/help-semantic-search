@@ -69,10 +69,11 @@ def _fetch_image(url: str) -> tuple[bytes, str] | tuple[None, None]:
 
 def get_embedding(
     text: str,
-    image_url:   str | None = None,
-    audio_path:  str | None = None,
-    video_path:  str | None = None,
-    task_type:   str        = "RETRIEVAL_DOCUMENT",
+    image_url:    str | None = None,
+    audio_path:   str | None = None,
+    video_path:   str | None = None,
+    task_type:    str        = "RETRIEVAL_DOCUMENT",
+    media_only:   bool       = False,
 ) -> list[float] | None:
     """
     Embed content using Gemini Embedding 2.
@@ -82,11 +83,16 @@ def get_embedding(
       audio_path  → loads MP3 bytes, prepends as Part
       video_path  → loads MP4 bytes, prepends as Part (short clips only)
 
+    media_only=True  → embed ONLY the media bytes, no text appended.
+                       Use this for pure audio or pure video embedding.
+    media_only=False → append text after media (default behaviour).
+
     Falls back to text-only if media bytes cannot be loaded.
     Returns None on unrecoverable API error.
     """
     text = text[:8000]
     parts: list = []
+    has_media = False
 
     # ── Image ─────────────────────────────────────────────────────────────────
     if image_url:
@@ -95,6 +101,7 @@ def get_embedding(
             parts.append(
                 types.Part(inline_data=types.Blob(mime_type=mime, data=img_bytes))
             )
+            has_media = True
             logger.debug("  + image (%d bytes)", len(img_bytes))
 
     # ── Audio ─────────────────────────────────────────────────────────────────
@@ -104,6 +111,7 @@ def get_embedding(
         parts.append(
             types.Part(inline_data=types.Blob(mime_type="audio/mp3", data=audio_bytes))
         )
+        has_media = True
         logger.debug("  + audio (%d bytes)", len(audio_bytes))
 
     # ── Video ─────────────────────────────────────────────────────────────────
@@ -113,13 +121,15 @@ def get_embedding(
         parts.append(
             types.Part(inline_data=types.Blob(mime_type="video/mp4", data=video_bytes))
         )
+        has_media = True
         logger.debug("  + video (%d bytes)", len(video_bytes))
 
-    # ── Text (always appended last) ───────────────────────────────────────────
-    parts.append(types.Part(text=text))
+    # ── Text — skip if media_only=True and media was loaded ───────────────────
+    if not (media_only and has_media):
+        parts.append(types.Part(text=text))
 
     try:
-        if len(parts) == 1:
+        if not has_media:
             # Text-only — simpler API path
             response = _client.models.embed_content(
                 model=EMBEDDING_MODEL,
@@ -127,7 +137,7 @@ def get_embedding(
                 config=types.EmbedContentConfig(task_type=task_type),
             )
         else:
-            # Multimodal — Content with multiple Parts
+            # Multimodal (or media-only) — Content with Part list
             response = _client.models.embed_content(
                 model=EMBEDDING_MODEL,
                 contents=types.Content(parts=parts),
