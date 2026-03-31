@@ -372,7 +372,7 @@ if searcher is None:
 # ── Trigger search ────────────────────────────────────────────────────────────
 query = query_input.strip()
 
-MIN_SCORE     = 0.50   # absolute floor — anything below is definitely unrelated
+MIN_SCORE     = 0.52   # absolute floor — anything below is definitely unrelated
 SCORE_GAP     = 0.05   # relative gap — drop results more than 5% below the top result
 
 if query and (search_btn or query != st.session_state.last_query):
