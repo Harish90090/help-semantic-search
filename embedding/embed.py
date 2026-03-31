@@ -238,7 +238,7 @@ def embed_all(
             "images":     chunk.get("images", []),
             "url":        chunk.get("url", ""),
             "media_type": media_type,
-            "media_path": chunk.get("media_path"),
+            "media_path": os.path.relpath(chunk["media_path"], _ROOT).replace("\\", "/") if chunk.get("media_path") else None,
             "faiss_index": len(vectors),
         })
         vectors.append(vec)

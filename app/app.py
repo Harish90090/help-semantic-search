@@ -476,17 +476,18 @@ for result in results:
         media_path = doc.get("media_path")
 
         # ── Audio player ──────────────────────────────────────────────────────
-        if media_type == "audio" and media_path and os.path.exists(media_path):
+        _abs_media = os.path.join(_ROOT, media_path) if media_path else None
+        if media_type == "audio" and _abs_media and os.path.exists(_abs_media):
             st.markdown('<div style="margin-top:1rem;"></div>', unsafe_allow_html=True)
             st.markdown("**🎧 Audio Guide**")
-            with open(media_path, "rb") as _af:
+            with open(_abs_media, "rb") as _af:
                 st.audio(_af.read(), format="audio/mp3")
 
         # ── Video player ──────────────────────────────────────────────────────
-        elif media_type == "video" and media_path and os.path.exists(media_path):
+        elif media_type == "video" and _abs_media and os.path.exists(_abs_media):
             st.markdown('<div style="margin-top:1rem;"></div>', unsafe_allow_html=True)
             st.markdown("**🎬 Video Walkthrough**")
-            with open(media_path, "rb") as _vf:
+            with open(_abs_media, "rb") as _vf:
                 st.video(_vf.read())
 
         # ── Images (text+image chunks) ────────────────────────────────────────

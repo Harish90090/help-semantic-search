@@ -534,40 +534,40 @@
     "images": [],
     "url": "",
     "media_type": "audio",
-    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\login_cashier_audio.mp3",
+    "media_path": "assets/audio/login_cashier_audio.mp3",
     "faiss_index": 36
   },
   {
     "chunk_id": "audio_1",
     "page_id": 101,
     "title": "Void a Sale",
-    "content": "Here is how you void a sale in the cashier application. Open the Sales History from the navigation menu. Find the transaction you need to void and tap on it to open the sale details. Select the Void Sale option. Choose which items you want to void — you can select all of them or just specific items. Pick a reason for the void from the dropdown list. Confirm by tapping Submit. The full amount will be refunded to the customer's original payment method automatically.",
+    "content": "Here is how you void a sale in the cashier application. Open the Sales History from the navigation menu. Find the transaction you need to void and tap on it to open the sale details. Select the Void Sale option. Choose which items you want to void \u00e2\u20ac\u201d you can select all of them or just specific items. Pick a reason for the void from the dropdown list. Confirm by tapping Submit. The full amount will be refunded to the customer's original payment method automatically.",
     "images": [],
     "url": "",
     "media_type": "audio",
-    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\void_sale_audio.mp3",
+    "media_path": "assets/audio/void_sale_audio.mp3",
     "faiss_index": 37
   },
   {
     "chunk_id": "audio_2",
     "page_id": 102,
     "title": "Sell a Gift Card",
-    "content": "Here is how you sell a gift card at the cashier terminal. Log in to the cashier application and select Sales from the menu. Tap Manual Entry to open the manual entry dialog. Select Activate Card Reader — the barcode scanner on the terminal will activate. Scan the gift card barcode. Enter the value you want to load onto the gift card. Add it to the cart and then tender the sale as normal. The gift card is now active and ready for the customer to use.",
+    "content": "Here is how you sell a gift card at the cashier terminal. Log in to the cashier application and select Sales from the menu. Tap Manual Entry to open the manual entry dialog. Select Activate Card Reader \u00e2\u20ac\u201d the barcode scanner on the terminal will activate. Scan the gift card barcode. Enter the value you want to load onto the gift card. Add it to the cart and then tender the sale as normal. The gift card is now active and ready for the customer to use.",
     "images": [],
     "url": "",
     "media_type": "audio",
-    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\sell_gift_card_audio.mp3",
+    "media_path": "assets/audio/sell_gift_card_audio.mp3",
     "faiss_index": 38
   },
   {
     "chunk_id": "audio_3",
     "page_id": 103,
     "title": "Record a Cash Drawer Start Balance",
-    "content": "Here is how you record a cash drawer starting balance. Log in to the cashier application and go to Cash Drawer in the navigation. Select Start Balance. Carefully count the cash in the drawer for each denomination — pennies, nickels, dimes, quarters, dollar bills and so on. Enter the count for each denomination in the fields provided. The system will calculate the total starting balance for you. Review the total to make sure it looks correct. Then tap Submit to officially record the starting balance for this shift.",
+    "content": "Here is how you record a cash drawer starting balance. Log in to the cashier application and go to Cash Drawer in the navigation. Select Start Balance. Carefully count the cash in the drawer for each denomination \u00e2\u20ac\u201d pennies, nickels, dimes, quarters, dollar bills and so on. Enter the count for each denomination in the fields provided. The system will calculate the total starting balance for you. Review the total to make sure it looks correct. Then tap Submit to officially record the starting balance for this shift.",
     "images": [],
     "url": "",
     "media_type": "audio",
-    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\cash_drawer_audio.mp3",
+    "media_path": "assets/audio/cash_drawer_audio.mp3",
     "faiss_index": 39
   },
   {
@@ -578,7 +578,7 @@
     "images": [],
     "url": "",
     "media_type": "audio",
-    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\rewash_audio.mp3",
+    "media_path": "assets/audio/rewash_audio.mp3",
     "faiss_index": 40
   },
   {
@@ -589,7 +589,7 @@
     "images": [],
     "url": "",
     "media_type": "audio",
-    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\tender_cash_audio.mp3",
+    "media_path": "assets/audio/tender_cash_audio.mp3",
     "faiss_index": 41
   },
   {
@@ -600,7 +600,7 @@
     "images": [],
     "url": "",
     "media_type": "audio",
-    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\tender_credit_audio.mp3",
+    "media_path": "assets/audio/tender_credit_audio.mp3",
     "faiss_index": 42
   },
   {
@@ -611,7 +611,7 @@
     "images": [],
     "url": "",
     "media_type": "audio",
-    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\add_customer_audio.mp3",
+    "media_path": "assets/audio/add_customer_audio.mp3",
     "faiss_index": 43
   },
   {
@@ -622,7 +622,7 @@
     "images": [],
     "url": "",
     "media_type": "audio",
-    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\change_password_audio.mp3",
+    "media_path": "assets/audio/change_password_audio.mp3",
     "faiss_index": 44
   },
   {
@@ -633,7 +633,7 @@
     "images": [],
     "url": "",
     "media_type": "audio",
-    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\audio\\logout_cashier_audio.mp3",
+    "media_path": "assets/audio/logout_cashier_audio.mp3",
     "faiss_index": 45
   },
   {
@@ -644,7 +644,7 @@
     "images": [],
     "url": "",
     "media_type": "video",
-    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\login_cashier_video.mp4",
+    "media_path": "assets/video/login_cashier_video.mp4",
     "faiss_index": 46
   },
   {
@@ -655,7 +655,7 @@
     "images": [],
     "url": "",
     "media_type": "video",
-    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\void_sale_video.mp4",
+    "media_path": "assets/video/void_sale_video.mp4",
     "faiss_index": 47
   },
   {
@@ -666,7 +666,7 @@
     "images": [],
     "url": "",
     "media_type": "video",
-    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\sell_gift_card_video.mp4",
+    "media_path": "assets/video/sell_gift_card_video.mp4",
     "faiss_index": 48
   },
   {
@@ -677,7 +677,7 @@
     "images": [],
     "url": "",
     "media_type": "video",
-    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\cash_drawer_video.mp4",
+    "media_path": "assets/video/cash_drawer_video.mp4",
     "faiss_index": 49
   },
   {
@@ -688,7 +688,7 @@
     "images": [],
     "url": "",
     "media_type": "video",
-    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\rewash_video.mp4",
+    "media_path": "assets/video/rewash_video.mp4",
     "faiss_index": 50
   },
   {
@@ -699,7 +699,7 @@
     "images": [],
     "url": "",
     "media_type": "video",
-    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\kiosk_login_video.mp4",
+    "media_path": "assets/video/kiosk_login_video.mp4",
     "faiss_index": 51
   },
   {
@@ -710,7 +710,7 @@
     "images": [],
     "url": "",
     "media_type": "video",
-    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\raise_gate_video.mp4",
+    "media_path": "assets/video/raise_gate_video.mp4",
     "faiss_index": 52
   },
   {
@@ -721,7 +721,7 @@
     "images": [],
     "url": "",
     "media_type": "video",
-    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\test_camera_video.mp4",
+    "media_path": "assets/video/test_camera_video.mp4",
     "faiss_index": 53
   },
   {
@@ -732,7 +732,7 @@
     "images": [],
     "url": "",
     "media_type": "video",
-    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\print_receipt_video.mp4",
+    "media_path": "assets/video/print_receipt_video.mp4",
     "faiss_index": 54
   },
   {
@@ -743,7 +743,7 @@
     "images": [],
     "url": "",
     "media_type": "video",
-    "media_path": "d:\\Downloads\\Gemini_Embedings_Search\\assets\\video\\clear_cart_video.mp4",
+    "media_path": "assets/video/clear_cart_video.mp4",
     "faiss_index": 55
   }
 ]
