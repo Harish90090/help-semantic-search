@@ -278,7 +278,6 @@ with st.sidebar:
 
     st.markdown("## ⚙️ Search Settings")
     top_k = st.slider("Results to return", min_value=1, max_value=20, value=5)
-    min_score = st.slider("Min relevance score (%)", min_value=0, max_value=90, value=50, step=5)
 
     st.markdown("---")
 
@@ -373,10 +372,12 @@ if searcher is None:
 # ── Trigger search ────────────────────────────────────────────────────────────
 query = query_input.strip()
 
+RELEVANCE_THRESHOLD = 0.50   # results below 50% similarity are considered unrelated
+
 if query and (search_btn or query != st.session_state.last_query):
     with st.spinner("Searching…"):
         raw = searcher.search(query, top_k=top_k)
-        st.session_state.results      = [r for r in raw if r["score"] * 100 >= min_score]
+        st.session_state.results      = [r for r in raw if r["score"] >= RELEVANCE_THRESHOLD]
         st.session_state.last_query   = query
         st.session_state.selected_doc = None
         # Save to history (avoid duplicates, keep latest 20)
