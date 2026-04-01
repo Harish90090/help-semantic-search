@@ -210,6 +210,20 @@ body, p, div, span, label         { color: #1a1a2e; }
 .empty-state .icon { font-size: 3.5rem; }
 .empty-state p { font-size: 1rem; margin-top: 0.8rem; color: #999; }
 
+/* ── Buttons ── */
+.stButton > button {
+    background: #ffffff !important;
+    color: #1a1a2e !important;
+    border: 1.5px solid #dde3ed !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+}
+.stButton > button:hover {
+    background: #f0f6ff !important;
+    border-color: #4f8ef7 !important;
+    color: #1a4896 !important;
+}
+
 /* Hide Streamlit chrome */
 #MainMenu { visibility: hidden; }
 footer     { visibility: hidden; }
