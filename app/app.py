@@ -379,13 +379,15 @@ if query and (search_btn or query != st.session_state.last_query):
         raw = searcher.search(query, top_k=top_k)
         # Step 1: drop below absolute floor
         above_floor = [r for r in raw if r["score"] >= MIN_SCORE]
-        # Step 2: lock to the domain of the top result so DRB and IgniteIQ never mix
+        # Step 2: lock to the domain of the top result so domains never mix
+        def _domain(chunk_id):
+            if "igniteiq" in chunk_id: return "igniteiq"
+            if "robot"    in chunk_id: return "robot"
+            return "drb"
+
         if above_floor:
-            top_domain = "igniteiq" if "igniteiq" in above_floor[0].get("chunk_id", "") else "drb"
-            if top_domain == "igniteiq":
-                filtered = [r for r in above_floor if "igniteiq" in r.get("chunk_id", "")]
-            else:
-                filtered = [r for r in above_floor if "igniteiq" not in r.get("chunk_id", "")]
+            top_domain = _domain(above_floor[0].get("chunk_id", ""))
+            filtered = [r for r in above_floor if _domain(r.get("chunk_id", "")) == top_domain]
         else:
             filtered = []
         st.session_state.results      = filtered
@@ -450,7 +452,7 @@ for result in results:
             "video":      '<span style="background:#f3e5f5;color:#6a1b9a;border-radius:20px;padding:2px 9px;font-size:0.72rem;font-weight:700;">🎬 VIDEO</span>',
             "text_image": '<span style="background:#e3f2fd;color:#1565c0;border-radius:20px;padding:2px 9px;font-size:0.72rem;font-weight:700;">🖼 IMAGE+TEXT</span>',
         }.get(_mtype, "")
-        _is_igniteiq_media = _mtype in ("audio", "video") and "igniteiq" in result.get("chunk_id", "")
+        _is_igniteiq_media = _mtype in ("audio", "video") and ("igniteiq" in result.get("chunk_id", "") or "robot" in result.get("chunk_id", ""))
         st.markdown(
             f"""
 <div class="{card_cls}">
@@ -526,7 +528,7 @@ for result in results:
                             pass
                 st.markdown('<div style="margin-bottom:1.2rem;"></div>', unsafe_allow_html=True)
 
-        _is_igniteiq_media = media_type in ("audio", "video") and "igniteiq" in doc.get("chunk_id", "")
+        _is_igniteiq_media = media_type in ("audio", "video") and ("igniteiq" in doc.get("chunk_id", "") or "robot" in doc.get("chunk_id", ""))
         if not _is_igniteiq_media:
             with st.expander("📄 Full Content", expanded=True):
                 st.markdown(

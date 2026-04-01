@@ -789,5 +789,27 @@
     "media_type": "video",
     "media_path": "assets/video/igniteiq_results_video.mp4",
     "faiss_index": 59
+  },
+  {
+    "chunk_id": "robot_video_0",
+    "page_id": "robot_v0",
+    "title": "Robot — Video 1",
+    "content": "",
+    "images": [],
+    "url": "",
+    "media_type": "video",
+    "media_path": "assets/video/8084758-uhd_3840_2160_25fps.mp4",
+    "faiss_index": 60
+  },
+  {
+    "chunk_id": "robot_video_1",
+    "page_id": "robot_v1",
+    "title": "Robot — Video 2",
+    "content": "",
+    "images": [],
+    "url": "",
+    "media_type": "video",
+    "media_path": "assets/video/8087025-uhd_2160_3840_25fps.mp4",
+    "faiss_index": 61
   }
 ]
