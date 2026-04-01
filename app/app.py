@@ -511,8 +511,10 @@ for result in results:
         elif media_type == "video" and _abs_media and os.path.exists(_abs_media):
             st.markdown('<div style="margin-top:1rem;"></div>', unsafe_allow_html=True)
             st.markdown("**🎬 Video Walkthrough**")
-            with open(_abs_media, "rb") as _vf:
-                st.video(_vf.read())
+            _vid_col, _ = st.columns([2, 1])
+            with _vid_col:
+                with open(_abs_media, "rb") as _vf:
+                    st.video(_vf.read())
 
         # ── Images (text+image chunks) ────────────────────────────────────────
         else:
