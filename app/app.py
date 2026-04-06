@@ -418,40 +418,36 @@ with st.sidebar:
         key="filter_types",
     )
 
-    # Radio — only ONE system at a time (or All)
-    _sys_choice = st.radio(
+    filter_systems = st.multiselect(
         "System",
-        options=["All"] + _ALL_SYSTEMS,
-        index=0,
-        key="filter_system_radio",
-        horizontal=False,
+        options=_ALL_SYSTEMS,
+        default=_ALL_SYSTEMS,
+        key="filter_systems",
     )
 
-    # Topics for the chosen system only
-    if _sys_choice == "All":
-        _available_topics: list[str] = []
-        _seen: set = set()
-        for _t_list in _SYSTEM_TOPICS.values():
-            for _t in _t_list:
-                if _t not in _seen:
-                    _available_topics.append(_t)
-                    _seen.add(_t)
-        filter_systems = _ALL_SYSTEMS   # match all three
-    else:
-        _available_topics = _SYSTEM_TOPICS[_sys_choice]
-        filter_systems = [_sys_choice]
+    # Topics = union of topics from every selected system
+    _active_systems = filter_systems if filter_systems else _ALL_SYSTEMS
+    _available_topics: list[str] = []
+    _seen: set = set()
+    for _sys in _active_systems:
+        for _t in _SYSTEM_TOPICS.get(_sys, []):
+            if _t not in _seen:
+                _available_topics.append(_t)
+                _seen.add(_t)
 
+    # Key includes selected systems so topic list resets when systems change
+    _topic_key = "filter_topics_" + "_".join(sorted(_active_systems))
     filter_topics = st.multiselect(
         "Topic",
         options=_available_topics,
         default=_available_topics,
-        key=f"filter_topics_{_sys_choice}",   # key changes with system → auto-resets
+        key=_topic_key,
     )
 
     if st.button("↩ Reset Filters", use_container_width=True):
-        for _k in ("filter_types", "filter_system_radio",
-                   *[f"filter_topics_{s}" for s in ["All"] + _ALL_SYSTEMS]):
-            st.session_state.pop(_k, None)
+        for _k in list(st.session_state.keys()):
+            if _k.startswith("filter_"):
+                st.session_state.pop(_k, None)
         st.rerun()
 
 
