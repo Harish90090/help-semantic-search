@@ -22,6 +22,72 @@ load_dotenv(os.path.join(_ROOT, ".env"))
 from search.search import SemanticSearcher
 
 
+# ── Metadata enrichment helpers ──────────────────────────────────────────────
+
+def _get_system(doc: dict) -> str:
+    """Derive which product system a document belongs to."""
+    url   = doc.get("url", "")
+    cid   = doc.get("chunk_id", "")
+    title = doc.get("title", "").lower()
+    if "igniteiq" in cid:
+        return "IgniteIQ"
+    if "robot" in cid:
+        return "Robot Demo"
+    if "/cashier/" in url:
+        return "Patheon Cashier"
+    if "/kiosk/" in url:
+        return "Patheon Kiosk"
+    # fallback for DRB audio/video (no URL) — guess from title
+    if any(w in title for w in ["kiosk", "gate", "camera", "receipt", "cart", "rfid"]):
+        return "Patheon Kiosk"
+    return "Patheon Cashier"
+
+
+def _get_topic(doc: dict) -> str:
+    """Derive a one-word topic label for grouping."""
+    url   = doc.get("url", "")
+    cid   = doc.get("chunk_id", "")
+    title = doc.get("title", "").lower()
+    if "igniteiq" in cid:
+        return "IgniteIQ"
+    if "robot" in cid:
+        return "Robotics"
+    # URL-based (text_image chunks have structured URLs)
+    _url_topic_map = [
+        ("/auth/",            "Authentication"),
+        ("/cash-drawer/",     "Cash Drawer"),
+        ("/gift-cards/",      "Gift Cards"),
+        ("/tender/",          "Tender"),
+        ("/customers/",       "Customers"),
+        ("/edit-void-refund/","Void & Refund"),
+        ("/members-lane/",    "Members"),
+        ("/diagnostics/",     "Diagnostics"),
+        ("/access/",          "Access"),
+        ("/sales/",           "Sales"),
+    ]
+    for pattern, topic in _url_topic_map:
+        if pattern in url:
+            return topic
+    # Title-based fallback (audio/video DRB chunks have no URL)
+    if any(w in title for w in ["log in", "log out", "password", "forgot", "employee id"]):
+        return "Authentication"
+    if "cash drawer" in title:
+        return "Cash Drawer"
+    if "gift card" in title:
+        return "Gift Cards"
+    if any(w in title for w in ["void", "refund"]):
+        return "Void & Refund"
+    if any(w in title for w in ["tender", "credit card"]):
+        return "Tender"
+    if "customer" in title:
+        return "Customers"
+    if any(w in title for w in ["rewash", "sale", "alacarte", "lobby"]):
+        return "Sales"
+    if any(w in title for w in ["kiosk", "gate", "camera", "receipt", "cart", "rfid"]):
+        return "Diagnostics"
+    return "General"
+
+
 # ── Content formatter ─────────────────────────────────────────────────────────
 
 def _format_as_points(text: str) -> str:
@@ -313,6 +379,51 @@ with st.sidebar:
             st.session_state.search_history = []
             st.rerun()
 
+    st.markdown("---")
+    st.markdown("## 🔽 Filters")
+
+    _ALL_TYPES   = ["text", "text_image", "audio", "video"]
+    _ALL_SYSTEMS = ["Patheon Cashier", "Patheon Kiosk", "IgniteIQ", "Robot Demo"]
+    _ALL_TOPICS  = [
+        "Authentication", "Cash Drawer", "Sales", "Gift Cards", "Tender",
+        "Customers", "Void & Refund", "Members", "Access", "Diagnostics",
+        "IgniteIQ", "Robotics", "General",
+    ]
+
+    _TYPE_LABELS = {
+        "text":       "📄 Text",
+        "text_image": "🖼 Image + Text",
+        "audio":      "🎧 Audio",
+        "video":      "🎬 Video",
+    }
+
+    filter_media_types = st.multiselect(
+        "File Type",
+        options=_ALL_TYPES,
+        default=_ALL_TYPES,
+        format_func=lambda x: _TYPE_LABELS.get(x, x),
+    )
+    filter_systems = st.multiselect(
+        "System",
+        options=_ALL_SYSTEMS,
+        default=_ALL_SYSTEMS,
+    )
+    filter_topics = st.multiselect(
+        "Topic",
+        options=_ALL_TOPICS,
+        default=_ALL_TOPICS,
+    )
+
+    if st.button("↩ Reset Filters", use_container_width=True):
+        st.session_state["_reset_filters"] = True
+        st.rerun()
+
+    # Apply reset (re-run will re-render with defaults)
+    if st.session_state.pop("_reset_filters", False):
+        filter_media_types = _ALL_TYPES
+        filter_systems     = _ALL_SYSTEMS
+        filter_topics      = _ALL_TOPICS
+
 
 # ── Page header ───────────────────────────────────────────────────────────────
 _logo_svg = ""
@@ -415,9 +526,17 @@ if query and (search_btn or query != st.session_state.last_query):
             history.pop(0)
 
 # ── Results section ───────────────────────────────────────────────────────────
-results = st.session_state.results
+_raw_results = st.session_state.results
 
-if not results and not st.session_state.last_query:
+# Apply sidebar filters (instant — no re-query needed)
+results = [
+    r for r in _raw_results
+    if r.get("media_type") in filter_media_types
+    and _get_system(r) in filter_systems
+    and _get_topic(r) in filter_topics
+]
+
+if not _raw_results and not st.session_state.last_query:
     # Landing / empty state
     st.markdown(
         '<div class="empty-state">'
@@ -427,13 +546,22 @@ if not results and not st.session_state.last_query:
     st.stop()
 
 if not results and st.session_state.last_query:
-    st.warning("No results found — try a different query or rebuild the index.")
+    if _raw_results:
+        st.warning(
+            f"**{len(_raw_results)} result(s) found** but hidden by active filters. "
+            "Adjust the File Type / System / Topic filters in the sidebar to show them."
+        )
+    else:
+        st.warning("No results found — try a different query or rebuild the index.")
     st.stop()
 
 # ── Result count ──────────────────────────────────────────────────────────────
+_filter_note = (
+    f" ({len(_raw_results) - len(results)} hidden by filters)" if len(results) < len(_raw_results) else ""
+)
 st.markdown(
     f'<p class="result-count">Found <strong>{len(results)}</strong> result(s) for '
-    f'"<em>{st.session_state.last_query}</em>"</p>',
+    f'"<em>{st.session_state.last_query}</em>"{_filter_note}</p>',
     unsafe_allow_html=True,
 )
 
@@ -467,6 +595,8 @@ for result in results:
             "text_image": '<span style="background:#e3f2fd;color:#1565c0;border-radius:20px;padding:2px 9px;font-size:0.72rem;font-weight:700;">🖼 IMAGE+TEXT</span>',
         }.get(_mtype, "")
         _is_igniteiq_media = _mtype in ("audio", "video") and ("igniteiq" in result.get("chunk_id", "") or "robot" in result.get("chunk_id", ""))
+        _sys_tag   = _html.escape(_get_system(result))
+        _topic_tag = _html.escape(_get_topic(result))
         st.markdown(
             f"""
 <div class="{card_cls}">
@@ -474,6 +604,8 @@ for result in results:
     <span class="card-rank">#{result['rank']}</span>
     <span class="badge">Match {score_pct}%</span>
     {_media_badge}
+    <span style="background:#f0f4ff;color:#3949ab;border-radius:20px;padding:2px 9px;font-size:0.72rem;font-weight:700;">⚙ {_sys_tag}</span>
+    <span style="background:#f1f8e9;color:#33691e;border-radius:20px;padding:2px 9px;font-size:0.72rem;font-weight:700;"># {_topic_tag}</span>
   </div>
   <div class="card-title">{safe_title}</div>
   {"" if _is_igniteiq_media else f'<div class="card-snip">{safe_snip}</div>'}
