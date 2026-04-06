@@ -123,6 +123,8 @@ class SemanticSearcher:
                     "url":        meta.get("url", ""),
                     "media_type": meta.get("media_type", "text"),
                     "media_path": meta.get("media_path"),
+                    "system":     meta.get("system", ""),
+                    "topic":      meta.get("topic", ""),
                 }
             )
 
