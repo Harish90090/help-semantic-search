@@ -25,7 +25,13 @@ from search.search import SemanticSearcher
 # ── Metadata enrichment helpers ──────────────────────────────────────────────
 
 def _get_system(doc: dict) -> str:
-    """Derive which product system a document belongs to."""
+    """Return which product system a document belongs to.
+    Uses explicit 'system' field (set during scraping) when present,
+    otherwise falls back to URL-pattern detection for legacy records.
+    """
+    # Explicit field — set by scrape_new_systems.py for TunnelWatch / SiteWatch
+    if doc.get("system"):
+        return doc["system"]
     url   = doc.get("url", "")
     cid   = doc.get("chunk_id", "")
     title = doc.get("title", "").lower()
@@ -44,7 +50,13 @@ def _get_system(doc: dict) -> str:
 
 
 def _get_topic(doc: dict) -> str:
-    """Derive a one-word topic label for grouping."""
+    """Return a topic label for grouping.
+    Uses explicit 'topic' field (set during scraping) when present,
+    otherwise falls back to URL-pattern detection for legacy records.
+    """
+    # Explicit field — set by scrape_new_systems.py
+    if doc.get("topic"):
+        return doc["topic"]
     url   = doc.get("url", "")
     cid   = doc.get("chunk_id", "")
     title = doc.get("title", "").lower()
@@ -383,10 +395,22 @@ with st.sidebar:
     st.markdown("## 🔽 Filters")
 
     _ALL_TYPES   = ["text", "text_image", "audio", "video"]
-    _ALL_SYSTEMS = ["Patheon Cashier", "Patheon Kiosk", "IgniteIQ", "Robot Demo"]
+    _ALL_SYSTEMS = [
+        "Patheon Cashier", "Patheon Kiosk",
+        "TunnelWatch", "SiteWatch",
+        "IgniteIQ", "Robot Demo",
+    ]
     _ALL_TOPICS  = [
+        # Patheon Cashier
         "Authentication", "Cash Drawer", "Sales", "Gift Cards", "Tender",
-        "Customers", "Void & Refund", "Members", "Access", "Diagnostics",
+        "Customers", "Void & Refund", "Members",
+        # Patheon Kiosk
+        "Access", "Diagnostics",
+        # TunnelWatch
+        "Queue Management", "Devices", "Retracts",
+        # SiteWatch
+        "Employees", "Reports",
+        # Other
         "IgniteIQ", "Robotics", "General",
     ]
 
@@ -504,10 +528,12 @@ if query and (search_btn or query != st.session_state.last_query):
         raw = searcher.search(query, top_k=top_k)
         # Step 1: drop below absolute floor
         above_floor = [r for r in raw if r["score"] >= MIN_SCORE]
-        # Step 2: lock to the domain of the top result so domains never mix
+        # Step 2: lock to the domain of the top result so systems never mix
         def _domain(chunk_id):
-            if "igniteiq" in chunk_id: return "igniteiq"
-            if "robot"    in chunk_id: return "robot"
+            if "igniteiq"  in chunk_id: return "igniteiq"
+            if "robot"     in chunk_id: return "robot"
+            if chunk_id.startswith("tunnel"):     return "tunnelwatch"
+            if chunk_id.startswith("sitewatch"):  return "sitewatch"
             return "drb"
 
         if above_floor:

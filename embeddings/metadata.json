@@ -811,5 +811,386 @@
     "media_type": "video",
     "media_path": "assets/video/8087025-uhd_2160_3840_25fps.mp4",
     "faiss_index": 61
+  },
+  {
+    "chunk_id": "tunnel_0_0",
+    "page_id": "tunnel_0",
+    "title": "Change the Wash Queue Order",
+    "content": "Change the Wash Queue Order Use these steps to move a vehicle in the queue to a different queue position. Log in to the tunnel entrance application. Select and hold the vehicle to move. The vehicle is highlighted and left/right arrows identify it can be moved. Drag the vehicle to its new position. Drop (release) the vehicle to insert it to the new position.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/pos-washqueue.png",
+      "https://help.drb.com/assets/images/applications/pos/tnnl-queue-pstn-slct.png",
+      "https://help.drb.com/assets/images/applications/pos/tnnl-queue-pstn-drg.png",
+      "https://help.drb.com/assets/images/applications/pos/tnnl-queue-pstn-drp.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/tunnel/queue/chng-wsh-q-ordr.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "TunnelWatch",
+    "topic": "Queue Management",
+    "faiss_index": 62
+  },
+  {
+    "chunk_id": "tunnel_1_0",
+    "page_id": "tunnel_1",
+    "title": "Remove a Vehicle From Wash Queue",
+    "content": "Remove a Vehicle From Wash Queue Use these steps to remove (delete) a vehicle from the wash queue. To clear the entire wash queue, remove each vehicle, one at a time. Log in to the tunnel entrance application. Select the vehicle to remove. The vehicle is highlighted and the Remove from Queue function opens. Select Remove from Queue. The vehicle is removed from the queue and added to the unqueued cars list and the Remove from Queue function closes.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/pos-washqueue.png",
+      "https://help.drb.com/assets/images/applications/pos/tnnl-queue-rmv.png",
+      "https://help.drb.com/assets/images/applications/pos/tnnl-queue-rmv-vhcl-rmvd.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/tunnel/queue/rmv-vhcl-wsh-q.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "TunnelWatch",
+    "topic": "Queue Management",
+    "faiss_index": 63
+  },
+  {
+    "chunk_id": "tunnel_2_0",
+    "page_id": "tunnel_2",
+    "title": "Clear the Wash Queue",
+    "content": "Clear the Wash Queue Use these steps to clear the entire wash queue from a cashier terminal or tunnel entrance terminal. Clearing the wash queue will move all queued vehicles to the unqueued list, which can then be accessed from the Active Sales panel or Wash Queue panel. Important: Access to view and use the Clear Wash Queue function is controlled by the employee role permission: POS>Wash Queue>Wash queue access. Log in to the cashier terminal or tunnel entrance terminal. Select Hardware. The hardware panel opens. Navigate to the tunnel section. Select clear wash queue. The Clear wash queue dialog opens, stating, \"<#> vehicles will be removed from the wash queue. This action cannot be undone.\". Select clear queue. The wash queue is cleared.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/cshr-hw-tnnl-wsh-que.png",
+      "https://help.drb.com/assets/images/applications/pos/cshr-clr-wsh-que.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/tunnel/queue/clr-wash-q.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "TunnelWatch",
+    "topic": "Queue Management",
+    "faiss_index": 64
+  },
+  {
+    "chunk_id": "tunnel_3_0",
+    "page_id": "tunnel_3",
+    "title": "Advance the Wash Queue",
+    "content": "Advance the Wash Queue Use these steps to remove a vehicle from queue position 1 if it has already been sent to the tunnel and washed. This can occur if the vehicle in position 1 is sent and Patheon doesn't receive a confirmation signal from the tunnel controller indicating the vehicle met the minimum vehicle length, or Patheon has stopped monitoring the enter switch. Log in to the tunnel application. Select and hold the gray Send Car function. A Send Car Override dialog opens stating, Confirm car in queue was sent and refresh UI?. Select Yes. The dialog closes and the queue updates to remove the vehicle that was already sent.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/tnnl-queue-snd-cr-ovrrd-bttn.png",
+      "https://help.drb.com/assets/images/applications/pos/tnnl-queue-snd-cr-ovrrd.png",
+      "https://help.drb.com/assets/images/applications/pos/tnnl-queue-snd-cr-ovrrd-dn.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/tunnel/queue/rsnd-vhcl-pstn-1-ovrrd.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "TunnelWatch",
+    "topic": "Queue Management",
+    "faiss_index": 65
+  },
+  {
+    "chunk_id": "tunnel_4_0",
+    "page_id": "tunnel_4",
+    "title": "Send a Vehicle",
+    "content": "Use these steps to send a vehicle from the tunnel entrance application. The steps depend on whether the site's tunnel controller is configured to manually require the tunnel loader to send the vehicle or automatically (either sensor or first position in the queue). Log in to the tunnel entrance application. Select Wash Queue. The Wash Queue panel opens. Select the vehicle to send. The vehicle is highlighted. Select Send Car. The vehicle's wash program is sent to the tunnel controller and the vehicle is forwarded out of the wash queue to the Last Sent position. There are two methods available for sending vehicle wash programs to the tunnel controller automatically. If the site's tunnel controller send method is sensor, each vehicle's wash program will be automatically sent to the tunnel controller, and the vehicle forwarded out of the wash queue, when the vehicle activates an entrance sensor. If the site's tunnel controller is configured to use the first position method, each vehicle's wash program will be automatically sent to the tunnel controller, and the vehicle forwarded out of the wash queue, when the vehicle reaches position 1 in the wash queue.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/tnnl-queue.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/tunnel/queue/snd-vhcl.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "TunnelWatch",
+    "topic": "Queue Management",
+    "faiss_index": 66
+  },
+  {
+    "chunk_id": "tunnel_5_0",
+    "page_id": "tunnel_5",
+    "title": "Send a Vehicle From Any Queue Position",
+    "content": "Send a Vehicle From Any Queue Position Use these steps to send a vehicle from any position in the queue. For example, use these steps to send the vehicle from queue position 5. Log in to the tunnel entrance application. Select the vehicle to send. The vehicle is highlighted to indicate it's selected. Select Send Car. The vehicle moves to queue position 1 and its wash program is sent to the tunnel controller.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/tnnl-queue.png",
+      "https://help.drb.com/assets/images/applications/pos/tnnl-queue-5.png",
+      "https://help.drb.com/assets/images/applications/pos/tnnl-queue-1.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/tunnel/queue/snd-vhcl-any-q-pstn.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "TunnelWatch",
+    "topic": "Queue Management",
+    "faiss_index": 67
+  },
+  {
+    "chunk_id": "tunnel_6_0",
+    "page_id": "tunnel_6",
+    "title": "Enable or Disable Auto Send",
+    "content": "Enable or Disable Auto Send Use these steps to temporarily disable the wash queue's auto send function (configured for the tunnel in Patheon Portal) from the tunnel entrance application, and then re-enable it. Disable Auto Send Use these steps to temporarily disable the auto send functionality. Log in to the tunnel entrance application. Select Hardware. The Hardware panel opens. Select Disable Auto Send. The auto send function is temporarily disabled. To send a vehicle, the tunnel entrance attendant must select Send Car. Enable Auto Send Use these steps to re-enable the auto send functionality after temporarily disabling it. Log in to the tunnel entrance application. Select Wash Queue. The Wash Queue panel opens. Select Enable Auto Send. The auto send function is re-enabled and vehicles will be sent using the auto send configuration in Patheon Portal.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/pos-washqueue.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/tunnel/queue/enbl-dsbl-auto-snd.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "TunnelWatch",
+    "topic": "Queue Management",
+    "faiss_index": 68
+  },
+  {
+    "chunk_id": "tunnel_7_0",
+    "page_id": "tunnel_7",
+    "title": "Update a Vehicle's Image",
+    "content": "Update a Vehicle's Image Use these steps to update a vehicle's saved picture with the current vehicle picture from a tunnel entrance terminal. Note: This function requires Customer account access (POS) edit permission and Wash queue access (POS) edit permission. Log in to the tunnel entrance application. Select Wash Queue. The Wash Queue panel opens. Select the vehicle from the queue. The vehicle's Current car picture and Car on plan picture appear in the top right corner. Select the Update Vehicle Image function located between the two pictures. The Car on plan picture is replaced with the Current car picture. Note: The function is also replaced with a Rollback function that can be selected to revert the Car on plan picture to its previous picture.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/tnnl-queue.png",
+      "https://help.drb.com/assets/images/applications/prtl/tnnltrm-vhcl-pic-updt.png",
+      "https://help.drb.com/assets/images/applications/pos/tnnl-updt-vhcl-pic-rllbck.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/tunnel/queue/updt-vhcl-img.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "TunnelWatch",
+    "topic": "Queue Management",
+    "faiss_index": 69
+  },
+  {
+    "chunk_id": "tunnel_8_0",
+    "page_id": "tunnel_8",
+    "title": "Wet Down the Tunnel",
+    "content": "Wet Down the Tunnel Use these steps to wet down the wash tunnel. This is normally done at the open of business, before the first vehicle is washed. Log in to the tunnel application. Select Hardware. The Hardware panel opens. In the Tunnel section, select Wet Down. The tunnel wet down function activates and a Wet Down override sent confirmation message briefly appears at the top of the tunnel entrance terminal.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/tnnl-hrdwr.png",
+      "https://help.drb.com/assets/images/applications/pos/tnnl-hrdwr-wtdwn-msg.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/tunnel/devices/wt-dwn-tnnl.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "TunnelWatch",
+    "topic": "Devices",
+    "faiss_index": 70
+  },
+  {
+    "chunk_id": "tunnel_9_0",
+    "page_id": "tunnel_9",
+    "title": "Override a Device",
+    "content": "Override a Device Use these steps to activate a tunnel device override from the tunnel entrance application. Log in to the tunnel entrance application. Select Hardware. The Hardware panel opens. In the Tunnel section, select the device override. The device override activates and an <Override Name> override sent confirmation message briefly appears at the top of the tunnel entrance application.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/tnnl-hrdwr.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/tunnel/devices/ovrd-dvc.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "TunnelWatch",
+    "topic": "Devices",
+    "faiss_index": 71
+  },
+  {
+    "chunk_id": "tunnel_10_0",
+    "page_id": "tunnel_10",
+    "title": "View Retracts Assigned to a Vehicle",
+    "content": "View Retracts Assigned to a Vehicle Use these steps to view all the retracts assigned to a vehicle in the wash queue. The number of retracts assigned to the vehicle is displayed on the tab. A Show All function opens a Retracts dialog that displays all retracts. Select the vehicle. Select the Retracts tab (the number of retracts assigned to the vehicle is displayed on the tab). Note: Up to 8 retracts are displayed on the tab. If the site has more than 8 retracts (up to 16), a Show All function is available. Select Show All. A Retracts dialog opens. All retracts assigned to the vehicle are selected in the dialog. Select Cancel. The Retracts dialog closes.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/tnnl-rtrcts.png",
+      "https://help.drb.com/assets/images/applications/pos/tnnl-rtrcts-dlg.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/tunnel/retracts/vw-rtrcts-assgnd-vhcl.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "TunnelWatch",
+    "topic": "Retracts",
+    "faiss_index": 72
+  },
+  {
+    "chunk_id": "tunnel_11_0",
+    "page_id": "tunnel_11",
+    "title": "Assign a Retract to a Vehicle",
+    "content": "Assign a Retract to a Vehicle Use these steps to assign a retract to a vehicle from the tunnel entrance application. A retract can be assigned and saved for a vehicle, or assigned just for the vehicle's current visit (temporary retract). Steps for both are provided below. Note: The ability to assign and save a retract to a vehicle can be enabled or disabled for an organization by contacting DRB. Assign and Save a Retract Use these steps to assign a retract for a vehicle's current wash and save it for future visits. The retract will be automatically applied so the tunnel entrance loader won't need to assign it every time the vehicle visits. Use these steps to assign a retract to a vehicle before it's sent. Log in to the tunnel entrance application. Select the vehicle from the queue. Select the Retracts tab (the number of retracts assigned to the vehicle is displayed on the tab). Note: Up to 8 retracts are displayed on the tab. If the site has more than 8 retracts (up to 16), a Show All function is available. Select Show All. A Retracts dialog opens. Select the retract to assign to the vehicle. The retract is selected. Select Submit. The Retracts dialog closes and the change is saved. Select Send Car. Use these steps to assign a retract to a vehicle after it's sent. After Send Car is selected, the Send Car function is unavailable until a CarAdvanced signal is received from the tunnel controller. Retracts can still be added/removed while Send Car is unavailable. After the CarAdvanced signal is received, the vehicle is moved from the first queue position to \"Last Sent\" position, Send Car is available, and retracts can't be added/removed for the sent vehicle. Assign a Temporary Retract Use these steps to assign a retract to a vehicle for this visit only (temporary retract). The retract will not be saved for future visits by the vehicle. Log in to the tunnel entrance application. Select the vehicle from the queue. Select the Retracts tab (the number of retracts assigned to the vehicle is displayed on the tab). Select the retract to assign to the vehicle. A checkmark appears next to the selected retract. Select the retract a second time. The checkmark is replaced with the numeric value 1. It will only be applied to the vehicle for the current wash; it will not be saved and applied the next time the vehicle visits. Select Send Car.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/tnnl-queue.png",
+      "https://help.drb.com/assets/images/applications/pos/tnnl-rtrcts.png",
+      "https://help.drb.com/assets/images/applications/pos/tnnl-rtrcts-dlg.png",
+      "https://help.drb.com/assets/images/applications/pos/tnnl-queue.png",
+      "https://help.drb.com/assets/images/applications/pos/tnnl-rtrcts-tmp.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/tunnel/retracts/add-rtrcts.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "TunnelWatch",
+    "topic": "Retracts",
+    "faiss_index": 73
+  },
+  {
+    "chunk_id": "tunnel_12_0",
+    "page_id": "tunnel_12",
+    "title": "Remove a Retract from a Vehicle",
+    "content": "Remove a Retract from a Vehicle Use these steps to remove a retract from a vehicle from a tunnel entrance terminal. Use these steps to remove a retract from a vehicle before it's sent. Select the vehicle from the queue. Select the Retracts tab (the number of retracts assigned to the vehicle is displayed on the tab). Note: Up to 8 retracts are displayed on the tab. If the site has more than 8 retracts (up to 16), a Show All function is available. Select Show All. A Retracts dialog opens. Select the retract to remove. The retract is no longer selected. Select Submit. The Retracts dialog closes and the change is saved. Select Send Car. Use these steps to remove a retract from a vehicle after it's sent. After Send Car is selected, the Send Car function is unavailable until a CarAdvanced signal is received from the tunnel controller. Retracts can still be removed while Send Car is unavailable. After the CarAdvanced signal is received, the vehicle is moved from the first queue position to \"Last Sent\" position, Send Car is available, and retracts can't be removed from the sent vehicle.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/tnnl-queue.png",
+      "https://help.drb.com/assets/images/applications/pos/tnnl-rtrcts.png",
+      "https://help.drb.com/assets/images/applications/pos/tnnl-rtrcts-dlg.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/tunnel/retracts/remove-rtrcts.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "TunnelWatch",
+    "topic": "Retracts",
+    "faiss_index": 74
+  },
+  {
+    "chunk_id": "tunnel_13_0",
+    "page_id": "tunnel_13",
+    "title": "Replace a Vehicle's Retract",
+    "content": "Replace a Vehicle's Retract Use these steps to replace a retract assigned to a vehicle with a different retract from a tunnel entrance terminal. Use these steps to replace a retract assigned to a vehicle with a different retract before it's sent. Log in to the tunnel entrance application. Select the vehicle from the queue. Select the Retracts tab (the number of retracts assigned to the vehicle is displayed on the tab). Note: Up to 8 retracts are displayed on the tab. If the site has more than 8 retracts (up to 16), a Show All function is available. Select Show All. A Retracts dialog opens. Select the retract to remove. The retract is no longer selected. Select the new retract to assign to the vehicle. The new retract is selected. Select Submit. The Retracts dialog closes and the changes are saved. Select Send Car. Use these steps to replace a retract assigned to a vehicle with a different retract after it's sent. After Send Car is selected, the Send Car function is unavailable until a CarAdvanced signal is received from the tunnel controller. An assigned retract can be removed, and a new retract assigned, while Send Car is unavailable. Select the assigned retract. The retract is removed. Select the new retract to assign. The retract is assigned. After the CarAdvanced signal is received, the vehicle is moved from the first queue position to \"Last Sent\" position, Send Car is available, and retracts can't be replaced for the sent vehicle.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/pos/tnnl-queue.png",
+      "https://help.drb.com/assets/images/applications/pos/tnnl-rtrcts.png",
+      "https://help.drb.com/assets/images/applications/pos/tnnl-rtrcts-dlg.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/tunnel/retracts/replace-rtrcts.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "TunnelWatch",
+    "topic": "Retracts",
+    "faiss_index": 75
+  },
+  {
+    "chunk_id": "sitewatch_0_0",
+    "page_id": "sitewatch_0",
+    "title": "Log In to Patheon Portal",
+    "content": "Log In to Patheon Portal Use these steps to log in to the Patheon Portal application. Open a web browser with an internet connection and navigate to https://patheon.drb.com. A DRB Patheon dialog opens. In Username, enter the employee username. In Password, enter the corresponding password. In Client Code, enter the organization's client code. Select Log In. If a user's password has expired, a Password reset required dialog opens; otherwise, the Patheon Portal application opens.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/prtl/prtl-lgn.png",
+      "https://help.drb.com/assets/images/applications/prtl/prtl-pw-rst-rqrd-dlg.png",
+      "https://help.drb.com/assets/images/applications/prtl/prtl-stsgrps-sts.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/manage/auth/lg-in-pthn-prtl.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "SiteWatch",
+    "topic": "Authentication",
+    "faiss_index": 76
+  },
+  {
+    "chunk_id": "sitewatch_1_0",
+    "page_id": "sitewatch_1",
+    "title": "Log Out of Patheon Portal",
+    "content": "Log Out of Patheon Portal Use these steps to log out of the Patheon Portal application. Select the logged in user's initials in the top right corner. A menu opens. Select Logout. The application logs the user out, closes, and opens the log in dialog.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/prtl/prtl-stsgrps-sts-lgt.png",
+      "https://help.drb.com/assets/images/applications/prtl/prtl-lgn.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/manage/auth/lg-out-pthn-prtl.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "SiteWatch",
+    "topic": "Authentication",
+    "faiss_index": 77
+  },
+  {
+    "chunk_id": "sitewatch_2_0",
+    "page_id": "sitewatch_2",
+    "title": "Add a New Customer",
+    "content": "Add a New Customer Use these steps to add a new customer in Patheon Portal. Note that customers can also be added at a cashier terminal. Log in to Patheon Portal. Select Configuration. Select Customers. The Customers panel opens. Select Add New Customer. The Customer Details panel opens. Navigate to the Account Details section. In First Name*, enter the customer’s first name, 50 characters or less. In Last Name*, enter the customer’s last name, 50 characters or less. Navigate to the Contact section. In Phone 1*, enter the customer’s phone number. In Type, select a phone number category: Mobile, Work, or Home. Navigate to the Address section. In State/Province/Region*, select the customer's location. In Postal Code*, enter the customer's zip code. Select Save. The new customer's profile is saved.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/prtl/prtl-sts.png",
+      "https://help.drb.com/assets/images/applications/prtl/prtl-cstmrs.png",
+      "https://help.drb.com/assets/images/applications/prtl/prtl-cstmr-dtls.png",
+      "https://help.drb.com/assets/images/applications/prtl/prtl-cstmr-dtls-ddrss.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/manage/customers/add-cstmr.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "SiteWatch",
+    "topic": "Customers",
+    "faiss_index": 78
+  },
+  {
+    "chunk_id": "sitewatch_3_0",
+    "page_id": "sitewatch_3",
+    "title": "Change the Payment Card for a Customer Plan",
+    "content": "Change the Payment Card for a Customer Plan Use these steps to change the payment card used to renew a customer's plan from Patheon Portal. Note that plan renewal payment cards can also be changed from a customer's profile at a cashier terminal. Log in to Patheon Portal. Select Configuration. Select Customers. The Customers panel opens. Locate the customer to edit. Select the customer’s name. The customer overview panel opens. Navigate to the Plans section. Navigate to the Reload Payment Details section. Select the payment card to use for all future plan renewals. Select Save. The changes are saved.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/prtl/prtl-sts.png",
+      "https://help.drb.com/assets/images/applications/prtl/prtl-cstmrs.png",
+      "https://help.drb.com/assets/images/applications/prtl/prtl-cstmrs-rld-pymnt-dtls.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/manage/customers/chng-pln-pymnt-crd-cstmr.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "SiteWatch",
+    "topic": "Customers",
+    "faiss_index": 79
+  },
+  {
+    "chunk_id": "sitewatch_4_0",
+    "page_id": "sitewatch_4",
+    "title": "Remove a Payment Card from a Customer Profile",
+    "content": "Remove a Payment Card from a Customer Profile Use these steps to remove a payment card from a customer's profile in Patheon Portal. Note that payment cards can also be removed from a customer's profile at a cashier terminal. Log in to Patheon Portal. Select Configuration. Select Customers. The Customers panel opens. Locate the customer to edit. Select the customer’s name. The customer overview panel opens. Navigate to the Payment section. Select delete () for the credit card that's being removed. An Are you sure? dialog opens. Select Remove Card. The dialog closes and the credit card is removed from the customer's profile.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/prtl/prtl-sts.png",
+      "https://help.drb.com/assets/images/applications/prtl/prtl-cstmrs.png",
+      "https://help.drb.com/assets/images/applications/prtl/prtl-cstmrs-cstmr-rmv-cc-dlg.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/manage/customers/rmv-pymnt-crd-cstmr-prfl.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "SiteWatch",
+    "topic": "Customers",
+    "faiss_index": 80
+  },
+  {
+    "chunk_id": "sitewatch_5_0",
+    "page_id": "sitewatch_5",
+    "title": "Look Up an Employee Username",
+    "content": "Look Up an Employee Username Use these steps to look up an employee's username in Patheon Portal. This may be necessary if the employee needs to log in to Patheon and they forgot their username. Log in to Patheon Portal. Select Configuration. Select Employees. The Employees panel opens. Locate the employee in the employees list. The employee's username is in the Username column.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/prtl/prtl-emplys.png",
+      "https://help.drb.com/assets/images/applications/sm/sm-empl-list-username-column.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/manage/employees/look-up-employee-username.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "SiteWatch",
+    "topic": "Employees",
+    "faiss_index": 81
+  },
+  {
+    "chunk_id": "sitewatch_6_0",
+    "page_id": "sitewatch_6",
+    "title": "Reset an Employee Password",
+    "content": "Reset an Employee Password Use these steps to reset an employee's password in Patheon Portal. This may be necessary if the employee needs to log in to Patheon and they forgot their password. Log in to Patheon Portal. Select Configuration. Select Employees. The Employees panel opens. Locate the employee in the employees list. Select the employee's name. The Employee Profile panel opens. Navigate to the Credentials section. Select edit (). The Edit Employee panel opens. Navigate to the Portal/POS Login section. In Enter Password*, enter the employee's new password. In Verify Password*, re-enter the new password. Note: The password must be typed; copy/paste is not supported.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/prtl/prtl-emplys.png",
+      "https://help.drb.com/assets/images/applications/prtl/prtl-emplys-vw.png",
+      "https://help.drb.com/assets/images/applications/prtl/prtl-emplys-crntls.png",
+      "https://help.drb.com/assets/images/applications/prtl/prtl-emplys-edt-emply.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/manage/employees/reset-an-employee-password.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "SiteWatch",
+    "topic": "Employees",
+    "faiss_index": 82
+  },
+  {
+    "chunk_id": "sitewatch_7_0",
+    "page_id": "sitewatch_7",
+    "title": "View Business Insights",
+    "content": "View Business Insights Use these steps to access the Insights application. Log In to Patheon Portal. Select Insights. A DRB Patheon dialog opens. Important: The Insights option in Patheon Portal is only available if Insights access? is set to Yes for the logged in employee. In Username, enter the employee username. In Password, enter the corresponding password. In Client Code, enter the organization's client code. Select Log In. The Insights application opens. Select a dashboard to view.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/prtl/prtl-lgn.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/manage/reports/vw-bsnss-nsghts.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "SiteWatch",
+    "topic": "Reports",
+    "faiss_index": 83
+  },
+  {
+    "chunk_id": "sitewatch_8_0",
+    "page_id": "sitewatch_8",
+    "title": "View Paginated Reports",
+    "content": "View Paginated Reports Use these steps to access Patheon paginated reports. Log In to Patheon Portal. Select Reports. The Financial Reports panel opens. Select a report to generate.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/prtl/prtl-rprts-fnncl-rprts.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/manage/reports/vw-pgntd-rprts.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "SiteWatch",
+    "topic": "Reports",
+    "faiss_index": 84
   }
 ]
