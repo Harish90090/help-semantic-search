@@ -400,19 +400,17 @@ with st.sidebar:
         "TunnelWatch", "SiteWatch",
         "IgniteIQ", "Robot Demo",
     ]
-    _ALL_TOPICS  = [
-        # Patheon Cashier
-        "Authentication", "Cash Drawer", "Sales", "Gift Cards", "Tender",
-        "Customers", "Void & Refund", "Members",
-        # Patheon Kiosk
-        "Access", "Diagnostics",
-        # TunnelWatch
-        "Queue Management", "Devices", "Retracts",
-        # SiteWatch
-        "Employees", "Reports",
-        # Other
-        "IgniteIQ", "Robotics", "General",
-    ]
+
+    # Topics keyed by system — selecting a system auto-enables its topics
+    _SYSTEM_TOPICS = {
+        "Patheon Cashier": ["Authentication", "Cash Drawer", "Sales", "Gift Cards",
+                            "Tender", "Customers", "Void & Refund", "Members"],
+        "Patheon Kiosk":   ["Access", "Diagnostics"],
+        "TunnelWatch":     ["Queue Management", "Devices", "Retracts"],
+        "SiteWatch":       ["Authentication", "Customers", "Employees", "Reports"],
+        "IgniteIQ":        ["IgniteIQ"],
+        "Robot Demo":      ["Robotics"],
+    }
 
     _TYPE_LABELS = {
         "text":       "📄 Text",
@@ -421,32 +419,45 @@ with st.sidebar:
         "video":      "🎬 Video",
     }
 
+    # Apply reset before rendering widgets
+    _do_reset = st.session_state.pop("_reset_filters", False)
+
     filter_media_types = st.multiselect(
         "File Type",
         options=_ALL_TYPES,
         default=_ALL_TYPES,
         format_func=lambda x: _TYPE_LABELS.get(x, x),
+        key="filter_types",
     )
     filter_systems = st.multiselect(
         "System",
         options=_ALL_SYSTEMS,
         default=_ALL_SYSTEMS,
+        key="filter_systems",
     )
+
+    # Derive the available topics from whichever systems are selected
+    _available_topics: list[str] = []
+    _seen = set()
+    for _sys in (filter_systems or _ALL_SYSTEMS):
+        for _t in _SYSTEM_TOPICS.get(_sys, []):
+            if _t not in _seen:
+                _available_topics.append(_t)
+                _seen.add(_t)
+
     filter_topics = st.multiselect(
         "Topic",
-        options=_ALL_TOPICS,
-        default=_ALL_TOPICS,
+        options=_available_topics,
+        default=_available_topics,   # all topics for selected systems are on by default
+        key="filter_topics",
     )
 
     if st.button("↩ Reset Filters", use_container_width=True):
         st.session_state["_reset_filters"] = True
+        # Clear widget keys so Streamlit re-renders with defaults
+        for _k in ("filter_types", "filter_systems", "filter_topics"):
+            st.session_state.pop(_k, None)
         st.rerun()
-
-    # Apply reset (re-run will re-render with defaults)
-    if st.session_state.pop("_reset_filters", False):
-        filter_media_types = _ALL_TYPES
-        filter_systems     = _ALL_SYSTEMS
-        filter_topics      = _ALL_TOPICS
 
 
 # ── Page header ───────────────────────────────────────────────────────────────
