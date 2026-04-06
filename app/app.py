@@ -562,8 +562,20 @@ results = [
     and (not _topic_filter_active or _get_topic(r) in filter_topics)
 ][:top_k]
 
+# Show empty state if no query has been typed yet — filter changes alone
+# must NOT trigger results from a previous session
+if not query:
+    st.session_state.results      = []
+    st.session_state.last_query   = ""
+    st.session_state.selected_doc = None
+    st.markdown(
+        '<div class="empty-state">'
+        "<p>Enter a query above to search through your documents.</p></div>",
+        unsafe_allow_html=True,
+    )
+    st.stop()
+
 if not _raw_results and not st.session_state.last_query:
-    # Landing / empty state
     st.markdown(
         '<div class="empty-state">'
         "<p>Enter a query above to search through your documents.</p></div>",
