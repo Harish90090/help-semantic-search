@@ -25,21 +25,19 @@ from search.search import SemanticSearcher
 # ── Metadata enrichment helpers ──────────────────────────────────────────────
 
 def _get_system(doc: dict) -> str:
-    """Return which product system a document belongs to.
-    Uses explicit 'system' field (set during scraping) when present,
-    otherwise falls back to URL-pattern detection for legacy records.
-    """
-    # Explicit field — set by scrape_new_systems.py for TunnelWatch / SiteWatch
-    sys = doc.get("system", "")
-    if sys in ("TunnelWatch", "SiteWatch"):
-        return sys
-    # All Patheon sub-systems (Cashier, Kiosk) → "Patheon"
-    url = doc.get("url", "")
+    """Return which product system a document belongs to."""
+    # 1. Explicit field set during scraping (TunnelWatch / SiteWatch records)
+    explicit = doc.get("system", "")
+    if explicit in ("TunnelWatch", "SiteWatch"):
+        return explicit
+    # 2. chunk_id prefix for TunnelWatch / SiteWatch (fallback for legacy)
     cid = doc.get("chunk_id", "")
-    if any(x in cid for x in ("igniteiq", "robot")):
-        return "Other"   # kept for domain locking but hidden from form
-    if any(p in url for p in ("/cashier/", "/kiosk/", "/tunnel/", "/manage/")):
-        return "Patheon" if "/cashier/" in url or "/kiosk/" in url else sys or "Patheon"
+    if cid.startswith("tunnel"):    return "TunnelWatch"
+    if cid.startswith("sitewatch"): return "SiteWatch"
+    # 3. IgniteIQ / Robot — internal only, not shown in form
+    if "igniteiq" in cid: return "Other"
+    if "robot"    in cid: return "Other"
+    # 4. Everything else is Patheon
     return "Patheon"
 
 
@@ -523,19 +521,14 @@ if searcher is None:
 # ── Trigger search ────────────────────────────────────────────────────────────
 query = query_input.strip()
 
-MIN_SCORE_DEFAULT = 0.48   # floor when no system filter active
-MIN_SCORE_SYSTEM  = 0.38   # lower floor when user picks a specific system
+MIN_SCORE = 0.38   # relevance floor — filters handle system/topic isolation
 
 if query and (search_btn or query != st.session_state.last_query):
     with st.spinner("Searching…"):
-        # If user has narrowed to specific systems, search broadly so
-        # system-specific docs (which may rank lower overall) are not cut off
-        _all_systems_selected = set(filter_systems) == set(_ALL_SYSTEMS)
-        _fetch_k   = top_k if _all_systems_selected else min(85, searcher.index.ntotal)
-        _min_score = MIN_SCORE_DEFAULT if _all_systems_selected else MIN_SCORE_SYSTEM
-
-        raw = searcher.search(query, top_k=_fetch_k)
-        filtered = [r for r in raw if r["score"] >= _min_score]
+        # Always fetch all vectors so system-specific docs (which may rank
+        # lower overall) are not cut off before the sidebar filter sees them
+        raw = searcher.search(query, top_k=searcher.index.ntotal)
+        filtered = [r for r in raw if r["score"] >= MIN_SCORE]
         st.session_state.results      = filtered
         st.session_state.last_query   = query
         st.session_state.selected_doc = None
@@ -550,12 +543,14 @@ if query and (search_btn or query != st.session_state.last_query):
 _raw_results = st.session_state.results
 
 # Apply sidebar filters (instant — no re-query needed)
+# Results are already sorted by score; filter then cap to top_k
+_filter_systems_expanded = filter_systems + (["Other"] if set(filter_systems) == set(_ALL_SYSTEMS) else [])
 results = [
     r for r in _raw_results
     if r.get("media_type") in filter_media_types
-    and _get_system(r) in filter_systems
+    and _get_system(r) in _filter_systems_expanded
     and _get_topic(r) in filter_topics
-]
+][:top_k]
 
 if not _raw_results and not st.session_state.last_query:
     # Landing / empty state
