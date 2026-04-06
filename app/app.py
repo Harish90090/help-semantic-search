@@ -191,6 +191,43 @@ st.markdown(
 [data-testid="stSidebar"]          { background: #ffffff; border-right: 1px solid #e8ecf0; color: #1a1a2e; }
 body, p, div, span, label         { color: #1a1a2e; }
 
+/* ── Multiselect — force light theme regardless of OS dark mode ── */
+[data-baseweb="select"] > div,
+[data-baseweb="select"] > div:hover,
+[data-baseweb="select"] > div:focus-within {
+    background-color: #ffffff !important;
+    border-color: #dde3ed !important;
+    color: #1a1a2e !important;
+}
+/* Dropdown menu panel */
+[data-baseweb="popover"],
+[data-baseweb="menu"],
+ul[data-baseweb="menu"] {
+    background-color: #ffffff !important;
+    border: 1px solid #dde3ed !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
+}
+/* Each option row */
+[role="option"],
+li[role="option"] {
+    background-color: #ffffff !important;
+    color: #1a1a2e !important;
+}
+[role="option"]:hover,
+li[role="option"]:hover {
+    background-color: #f0f6ff !important;
+    color: #1a4896 !important;
+}
+/* Placeholder text */
+[data-baseweb="select"] input::placeholder,
+[data-baseweb="select"] [data-testid="stMultiSelect"] {
+    color: #aab0bc !important;
+}
+/* Input inside select */
+[data-baseweb="select"] input {
+    color: #1a1a2e !important;
+    background: transparent !important;
+}
 /* ── Multiselect pills — light green ── */
 [data-baseweb="tag"] {
     background-color: #d4edda !important;
