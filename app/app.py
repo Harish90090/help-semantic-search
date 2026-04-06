@@ -528,21 +528,8 @@ MIN_SCORE = 0.48   # absolute floor — anything below is definitely unrelated
 if query and (search_btn or query != st.session_state.last_query):
     with st.spinner("Searching…"):
         raw = searcher.search(query, top_k=top_k)
-        # Step 1: drop below absolute floor
-        above_floor = [r for r in raw if r["score"] >= MIN_SCORE]
-        # Step 2: lock to the domain of the top result so systems never mix
-        def _domain(chunk_id):
-            if "igniteiq"  in chunk_id: return "igniteiq"
-            if "robot"     in chunk_id: return "robot"
-            if chunk_id.startswith("tunnel"):     return "tunnelwatch"
-            if chunk_id.startswith("sitewatch"):  return "sitewatch"
-            return "drb"
-
-        if above_floor:
-            top_domain = _domain(above_floor[0].get("chunk_id", ""))
-            filtered = [r for r in above_floor if _domain(r.get("chunk_id", "")) == top_domain]
-        else:
-            filtered = []
+        # Keep all results above the relevance floor — sidebar filters handle system isolation
+        filtered = [r for r in raw if r["score"] >= MIN_SCORE]
         st.session_state.results      = filtered
         st.session_state.last_query   = query
         st.session_state.selected_doc = None
