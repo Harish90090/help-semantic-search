@@ -1057,7 +1057,7 @@
     "url": "https://help.drb.com/topics/manuals/manage/auth/lg-in-pthn-prtl.htm",
     "media_type": "text_image",
     "media_path": null,
-    "system": "SiteWatch",
+    "system": "Back Office",
     "topic": "Authentication",
     "faiss_index": 76
   },
@@ -1073,7 +1073,7 @@
     "url": "https://help.drb.com/topics/manuals/manage/auth/lg-out-pthn-prtl.htm",
     "media_type": "text_image",
     "media_path": null,
-    "system": "SiteWatch",
+    "system": "Back Office",
     "topic": "Authentication",
     "faiss_index": 77
   },
@@ -1091,7 +1091,7 @@
     "url": "https://help.drb.com/topics/manuals/manage/customers/add-cstmr.htm",
     "media_type": "text_image",
     "media_path": null,
-    "system": "SiteWatch",
+    "system": "Back Office",
     "topic": "Customers",
     "faiss_index": 78
   },
@@ -1108,7 +1108,7 @@
     "url": "https://help.drb.com/topics/manuals/manage/customers/chng-pln-pymnt-crd-cstmr.htm",
     "media_type": "text_image",
     "media_path": null,
-    "system": "SiteWatch",
+    "system": "Back Office",
     "topic": "Customers",
     "faiss_index": 79
   },
@@ -1125,7 +1125,7 @@
     "url": "https://help.drb.com/topics/manuals/manage/customers/rmv-pymnt-crd-cstmr-prfl.htm",
     "media_type": "text_image",
     "media_path": null,
-    "system": "SiteWatch",
+    "system": "Back Office",
     "topic": "Customers",
     "faiss_index": 80
   },
@@ -1141,7 +1141,7 @@
     "url": "https://help.drb.com/topics/manuals/manage/employees/look-up-employee-username.htm",
     "media_type": "text_image",
     "media_path": null,
-    "system": "SiteWatch",
+    "system": "Back Office",
     "topic": "Employees",
     "faiss_index": 81
   },
@@ -1159,7 +1159,7 @@
     "url": "https://help.drb.com/topics/manuals/manage/employees/reset-an-employee-password.htm",
     "media_type": "text_image",
     "media_path": null,
-    "system": "SiteWatch",
+    "system": "Back Office",
     "topic": "Employees",
     "faiss_index": 82
   },
@@ -1174,7 +1174,7 @@
     "url": "https://help.drb.com/topics/manuals/manage/reports/vw-bsnss-nsghts.htm",
     "media_type": "text_image",
     "media_path": null,
-    "system": "SiteWatch",
+    "system": "Back Office",
     "topic": "Reports",
     "faiss_index": 83
   },
@@ -1189,8 +1189,27 @@
     "url": "https://help.drb.com/topics/manuals/manage/reports/vw-pgntd-rprts.htm",
     "media_type": "text_image",
     "media_path": null,
-    "system": "SiteWatch",
+    "system": "Back Office",
     "topic": "Reports",
     "faiss_index": 84
+  },
+  {
+    "chunk_id": "sitewatch_9_0",
+    "page_id": "sitewatch_9",
+    "title": "Generate the Transaction Report V2",
+    "content": "Generate the Transaction Report V2 Use these steps to generate the Patheon Transaction Report V2 to view details for a specific transaction or set of transactions. This report provides a way to view (cash accounting format) specific transaction(s) by type(s) (sale, rewash, plan use, or recharge), by specific customer(s), specific payment card, specific sale ID, or any combination of these parameters. It can be generated for a single site, multiple sites, a site group, or multiple site groups. Note: The similar Transaction Report V1 provides details for transactions in an accrual accounting format. Log in to Patheon Portal. Select Reports. The Financial Reports panel opens. Select Transaction Report V2. The Preview Parameters section of the Transaction Report V2 panel opens. In START DATE, select the opening date and time range for the report. By default, the field is set to 1 week (7 days) prior to the current date, 12:00 AM. In END DATE, select the closing date and time range for the report. By default, the field is set to the current day, 11:59 PM. In SITE GROUP, select the site group(s) to include. All groups (default), select multiple groups, one group, or no groups can be selected. Important: The site group(s) selected here control which site(s) can be selected in SITES. In SITES, select the site(s) to include. All sites (default), select multiple sites, or one site can be selected. In TRANSACTION TYPE, select the type(s) to include. All types (default), select multiple types, or one type can be selected. In TRANSACTION STATUS, select the status(es) to include. All statuses (default), select multiple statuses, or one status can be selected. In CUSTOMER, select the customer(s) to include. All customers (default) or one customer can be selected. Note: Specific customers can't be multi-selected. Generate the report for all customers or one specific customer. In CUSTOMER EMAIL, select the customer email(s) to include. All customer emails (default) or one customer email can be selected. Note: Specific customer emails can't be multi-selected. Generate the report for all customer emails or one specific customer email. In TRAILING CC DIGITS, enter the last digits of a specific payment card account to view only charges associated with that card. Leave this blank (default) to include all payment cards. Note: More than one payment card may be returned if the last digits are identical. In SALE ID, enter the sale ID to include. Blank (default) or any numeric string can be entered. In CHANNEL, select the revenue source to include. All (default), Retail Only, or ECommerce Only can be selected. In SUMMARIZATION, select the amount of data to include. Summary (default) or Detail can be selected. Select Submit. The report generates for the provided parameters. Tip: Select the Preview Parameters icon to close the section and expand the report to the full panel. To generate the report with different parameters, open the Preview Parameters section, enter new parameters, and select Submit.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/prtl/prtl-rprts-fnncl-rprts.png",
+      "https://help.drb.com/assets/images/manuals/prtl-rprts-trnsctn-v2-rprt-prvw-prmtrs.png",
+      "https://help.drb.com/assets/images/manuals/prtl-rprts-trnsctn-rprt-v2-prvw-prmtrs-st-grp.png",
+      "https://help.drb.com/assets/images/manuals/prtl-rprts-trnsctn-rprt-v2-prvw-prmtrs-sts.png",
+      "https://help.drb.com/assets/images/manuals/prtl-rprts-trnsctn-rprt-v2-prvw-prmtrs-trnsacttyp.png"
+    ],
+    "url": "https://help.drb.com/topics/manuals/manage/reports/gnrt-rprt-trnsctn-rprt-v2.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "Back Office",
+    "topic": "Reports (Transactions)",
+    "faiss_index": 85
   }
 ]

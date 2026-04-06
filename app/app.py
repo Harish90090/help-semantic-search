@@ -26,14 +26,16 @@ from search.search import SemanticSearcher
 
 def _get_system(doc: dict) -> str:
     """Return which product system a document belongs to."""
-    # 1. Explicit field set during scraping (TunnelWatch / SiteWatch records)
+    # 1. Explicit field set during scraping (TunnelWatch / Back Office records)
     explicit = doc.get("system", "")
-    if explicit in ("TunnelWatch", "SiteWatch"):
+    if explicit in ("TunnelWatch", "Back Office"):
         return explicit
-    # 2. chunk_id prefix for TunnelWatch / SiteWatch (fallback for legacy)
+    if explicit == "SiteWatch":
+        return "Back Office"
+    # 2. chunk_id prefix (fallback)
     cid = doc.get("chunk_id", "")
     if cid.startswith("tunnel"):    return "TunnelWatch"
-    if cid.startswith("sitewatch"): return "SiteWatch"
+    if cid.startswith("sitewatch"): return "Back Office"
     # 3. IgniteIQ / Robot — internal only, not shown in form
     if "igniteiq" in cid: return "Other"
     if "robot"    in cid: return "Other"
@@ -388,7 +390,7 @@ with st.sidebar:
 
     _ALL_TYPES   = ["text", "text_image", "audio", "video"]
     # Only 3 systems shown in the form
-    _ALL_SYSTEMS = ["Patheon", "TunnelWatch", "SiteWatch"]
+    _ALL_SYSTEMS = ["Patheon", "TunnelWatch", "Back Office"]
 
     # Topics per system (one system selected = only its topics shown)
     _SYSTEM_TOPICS = {
@@ -555,7 +557,7 @@ _filter_systems_expanded = list(filter_systems) + (["Other"] if set(filter_syste
 # Topic: only filter by topic if user explicitly deselected something;
 # if all available topics are still selected, skip topic filter entirely
 _topic_filter_active = set(filter_topics) != set(_available_topics)
-# "text" in filter also matches "text_image" — TunnelWatch/SiteWatch have no pure-text pages
+# "text" in filter also matches "text_image" — TunnelWatch/Back Office have no pure-text pages
 _mt_expanded = set(filter_media_types)
 if "text" in _mt_expanded:
     _mt_expanded.add("text_image")

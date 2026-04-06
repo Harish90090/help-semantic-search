@@ -1,0 +1,64 @@
+========================================
+PATHEON — Sample Queries
+========================================
+
+TEXT / IMAGE+TEXT:
+1. How do I log in to the cashier application?
+2. How do I sell a gift card at the POS?
+3. How do I add a new customer to the system?
+4. How do I record a cash drawer start balance?
+5. How do I void a sale in the cashier application?
+
+AUDIO:
+6. How do I tender a sale to cash?
+7. How do I log out of the cashier application?
+
+VIDEO:
+8. How do I rewash a vehicle?
+9. How do I raise the kiosk gate?
+10. How do I clear the kiosk cart?
+
+========================================
+TUNNELWATCH — Sample Queries
+========================================
+
+IMAGE+TEXT (Queue Management):
+1. How do I change the wash queue order?
+2. How do I remove a vehicle from the wash queue?
+3. How do I clear the wash queue?
+4. How do I send a vehicle to any queue position?
+5. How do I enable or disable auto send?
+
+IMAGE+TEXT (Devices):
+6. How do I wait down the tunnel?
+7. How do I override a device in the tunnel?
+
+IMAGE+TEXT (Retracts):
+8. How do I add retracts to a vehicle?
+9. How do I remove retracts from a vehicle?
+10. How do I view retracts assigned to a vehicle?
+
+========================================
+BACK OFFICE — Sample Queries
+========================================
+
+NOTE: Select System = Back Office before searching.
+All Back Office results are Image+Text type.
+
+Authentication:
+1. log in to portal
+2. log out of portal
+
+Customers:
+3. add a customer back office
+4. change customer payment card
+5. remove payment card customer profile
+
+Employees:
+6. look up employee username
+7. reset employee password back office
+
+Reports:
+8. view business insights report
+9. view paginated reports site manager
+10. generate transaction report

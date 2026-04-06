@@ -75,7 +75,7 @@ def _derive_topic(url: str, system: str) -> str:
         if "/queue/"    in url: return "Queue Management"
         if "/devices/"  in url: return "Devices"
         if "/retracts/" in url: return "Retracts"
-    if system == "SiteWatch":
+    if system == "Back Office":
         if "/auth/"       in url: return "Authentication"
         if "/customers/"  in url: return "Customers"
         if "/employees/"  in url: return "Employees"
@@ -199,7 +199,7 @@ if __name__ == "__main__":
 
     logger.info("=" * 60)
     logger.info("Step 2 — Scraping SiteWatch pages (%d URLs)", len(SITEWATCH_URLS))
-    sitewatch_chunks = _scrape_and_chunk(SITEWATCH_URLS, "SiteWatch", "sitewatch")
+    sitewatch_chunks = _scrape_and_chunk(SITEWATCH_URLS, "Back Office", "sitewatch")
 
     all_new = tunnel_chunks + sitewatch_chunks
     logger.info("=" * 60)
