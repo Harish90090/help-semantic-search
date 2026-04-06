@@ -632,9 +632,9 @@ for result in results:
             "video":      '<span style="background:#f3e5f5;color:#6a1b9a;border-radius:20px;padding:2px 9px;font-size:0.72rem;font-weight:700;">🎬 VIDEO</span>',
             "text_image": '<span style="background:#e3f2fd;color:#1565c0;border-radius:20px;padding:2px 9px;font-size:0.72rem;font-weight:700;">🖼 IMAGE+TEXT</span>',
         }.get(_mtype, "")
-        _is_igniteiq_media = _mtype in ("audio", "video") and ("igniteiq" in result.get("chunk_id", "") or "robot" in result.get("chunk_id", ""))
         _sys_tag   = _html.escape(_get_system(result))
         _topic_tag = _html.escape(_get_topic(result))
+        _hide_snip = _mtype in ("audio", "video")   # no text preview for media results
         st.markdown(
             f"""
 <div class="{card_cls}">
@@ -646,7 +646,7 @@ for result in results:
     <span style="background:#f1f8e9;color:#33691e;border-radius:20px;padding:2px 9px;font-size:0.72rem;font-weight:700;"># {_topic_tag}</span>
   </div>
   <div class="card-title">{safe_title}</div>
-  {"" if _is_igniteiq_media else f'<div class="card-snip">{safe_snip}</div>'}
+  {"" if _hide_snip else f'<div class="card-snip">{safe_snip}</div>'}
   <div class="card-url">🔗 {safe_url}</div>
 </div>
 """,
@@ -714,8 +714,8 @@ for result in results:
                             pass
                 st.markdown('<div style="margin-bottom:1.2rem;"></div>', unsafe_allow_html=True)
 
-        _is_igniteiq_media = media_type in ("audio", "video") and ("igniteiq" in doc.get("chunk_id", "") or "robot" in doc.get("chunk_id", ""))
-        if not _is_igniteiq_media:
+        # Hide Full Content for ALL audio and video — user selected that file type to hear/watch, not read
+        if media_type not in ("audio", "video"):
             with st.expander("📄 Full Content", expanded=True):
                 st.markdown(
                     f'<div class="detail-body">{_format_as_points(doc["content"])}</div>',
