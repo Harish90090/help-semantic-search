@@ -523,13 +523,19 @@ if searcher is None:
 # ── Trigger search ────────────────────────────────────────────────────────────
 query = query_input.strip()
 
-MIN_SCORE = 0.48   # absolute floor — anything below is definitely unrelated
+MIN_SCORE_DEFAULT = 0.48   # floor when no system filter active
+MIN_SCORE_SYSTEM  = 0.38   # lower floor when user picks a specific system
 
 if query and (search_btn or query != st.session_state.last_query):
     with st.spinner("Searching…"):
-        raw = searcher.search(query, top_k=top_k)
-        # Keep all results above the relevance floor — sidebar filters handle system isolation
-        filtered = [r for r in raw if r["score"] >= MIN_SCORE]
+        # If user has narrowed to specific systems, search broadly so
+        # system-specific docs (which may rank lower overall) are not cut off
+        _all_systems_selected = set(filter_systems) == set(_ALL_SYSTEMS)
+        _fetch_k   = top_k if _all_systems_selected else min(85, searcher.index.ntotal)
+        _min_score = MIN_SCORE_DEFAULT if _all_systems_selected else MIN_SCORE_SYSTEM
+
+        raw = searcher.search(query, top_k=_fetch_k)
+        filtered = [r for r in raw if r["score"] >= _min_score]
         st.session_state.results      = filtered
         st.session_state.last_query   = query
         st.session_state.selected_doc = None
