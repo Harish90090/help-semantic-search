@@ -191,6 +191,18 @@ st.markdown(
 [data-testid="stSidebar"]          { background: #ffffff; border-right: 1px solid #e8ecf0; color: #1a1a2e; }
 body, p, div, span, label         { color: #1a1a2e; }
 
+/* ── Multiselect pills — light green ── */
+[data-baseweb="tag"] {
+    background-color: #d4edda !important;
+    border: 1px solid #a8d5b5 !important;
+    border-radius: 20px !important;
+}
+[data-baseweb="tag"] span {
+    color: #1a5c2e !important;
+    font-weight: 600 !important;
+}
+[data-baseweb="tag"] svg { fill: #1a5c2e !important; }
+
 /* ── Search input ── */
 .stTextInput > div > div > input {
     font-size: 1.05rem;
@@ -361,7 +373,7 @@ with st.sidebar:
         )
 
     st.markdown("## ⚙️ Search Settings")
-    top_k = st.slider("Results to return", min_value=1, max_value=20, value=5)
+    top_k = st.slider("Results to return", min_value=1, max_value=20, value=3)
 
     st.markdown("---")
 
@@ -411,7 +423,7 @@ with st.sidebar:
     filter_media_types = st.multiselect(
         "File Type",
         options=_ALL_TYPES,
-        default=_ALL_TYPES,
+        default=[],
         format_func=lambda x: _TYPE_LABELS.get(x, x),
         key="filter_types",
     )
@@ -419,7 +431,7 @@ with st.sidebar:
     filter_systems = st.multiselect(
         "System",
         options=_ALL_SYSTEMS,
-        default=_ALL_SYSTEMS,
+        default=[],
         key="filter_systems",
     )
 
@@ -441,10 +453,12 @@ with st.sidebar:
         st.session_state.pop(_topic_key, None)
         st.session_state[_prev_sys_key] = list(_active_systems)
 
+    # Auto-select all topics for the chosen system(s); empty if no system picked
+    _topic_default = _available_topics if filter_systems else []
     filter_topics = st.multiselect(
         "Topic",
         options=_available_topics,
-        default=_available_topics,
+        default=_topic_default,
         key=_topic_key,
     )
 
@@ -527,7 +541,7 @@ if searcher is None:
 # ── Trigger search ────────────────────────────────────────────────────────────
 query = query_input.strip()
 
-MIN_SCORE = 0.38   # relevance floor — filters handle system/topic isolation
+MIN_SCORE = 0.45   # relevance floor — let filters + top_k handle precision
 
 if query and (search_btn or query != st.session_state.last_query):
     with st.spinner("Searching…"):
@@ -551,23 +565,84 @@ _raw_results = st.session_state.results
 # Apply sidebar filters (instant — no re-query needed)
 # Results are sorted by score; filter then cap to top_k
 # System: always include "Other" (IgniteIQ/Robot) when all 3 systems selected
-_filter_systems_expanded = list(filter_systems) + (["Other"] if not filter_systems or set(filter_systems) == set(_ALL_SYSTEMS) else [])
-# Topic: only filter by topic if user explicitly deselected something;
-# if all available topics are still selected, skip topic filter entirely
-_topic_filter_active = set(filter_topics) != set(_available_topics)
-# "text" = all written articles (text + text_image)
-# "text_image" alone = only pages that also have images
-# audio / video are always strict
-_mt_expanded = set(filter_media_types)
+# Empty selection = no filter (show all)
+_systems_active = filter_systems if filter_systems else _ALL_SYSTEMS
+_filter_systems_expanded = list(_systems_active) + (["Other"] if not filter_systems or set(filter_systems) == set(_ALL_SYSTEMS) else [])
+# Topic: empty or full selection = no topic filter
+_topic_filter_active = bool(filter_topics) and set(filter_topics) != set(_available_topics)
+# File type: empty = all types; "text" also includes text_image
+_types_active = set(filter_media_types) if filter_media_types else set(_ALL_TYPES)
+_mt_expanded = _types_active
 if "text" in _mt_expanded:
-    _mt_expanded.add("text_image")
+    _mt_expanded = _mt_expanded | {"text_image"}
 
-results = [
+_filtered = [
     r for r in _raw_results
     if r.get("media_type") in _mt_expanded
     and _get_system(r) in _filter_systems_expanded
     and (not _topic_filter_active or _get_topic(r) in filter_topics)
-][:top_k]
+]
+
+# ── Topic-intent re-ranking ───────────────────────────────────────────────────
+# When the query clearly signals a topic, boost matching results so they
+# surface above semantically-adjacent but off-topic pages.
+_q_lower = st.session_state.last_query.lower()
+
+_TOPIC_BOOSTS = {
+    "Authentication": {
+        "keywords": ["log in", "login", "log out", "logout", "sign in", "password",
+                     "forgot", "employee id", "credentials", "authenticate"],
+        "boost": 0.20,
+    },
+    "Cash Drawer": {
+        "keywords": ["cash drawer", "start balance", "end balance", "cash drop"],
+        "boost": 0.20,
+    },
+    "Sales": {
+        "keywords": ["rewash", "add wash", "alacarte", "lobby product"],
+        "boost": 0.20,
+    },
+    "Gift Cards": {
+        "keywords": ["gift card", "giftcard"],
+        "boost": 0.20,
+    },
+    "Tender": {
+        "keywords": ["tender", "credit card", "pay cash"],
+        "boost": 0.20,
+    },
+    "Customers": {
+        "keywords": ["customer", "add customer", "edit customer"],
+        "boost": 0.20,
+    },
+    "Queue Management": {
+        "keywords": ["queue", "wash queue", "auto send", "send vehicle"],
+        "boost": 0.20,
+    },
+    "Retracts": {
+        "keywords": ["retract"],
+        "boost": 0.20,
+    },
+    "Devices": {
+        "keywords": ["override device", "wait down", "tunnel device"],
+        "boost": 0.20,
+    },
+    "Insights": {
+        "keywords": ["sales data", "labor statistics", "plan analysis", "plan churn",
+                     "multi-stats", "insights", "historical report"],
+        "boost": 0.20,
+    },
+}
+
+def _boosted_score(r: dict) -> float:
+    base = r["score"]
+    topic = _get_topic(r)
+    cfg = _TOPIC_BOOSTS.get(topic)
+    if cfg and any(kw in _q_lower for kw in cfg["keywords"]):
+        return base + cfg["boost"]
+    return base
+
+_filtered.sort(key=_boosted_score, reverse=True)
+results = _filtered[:top_k]
 
 # Show empty state if no query has been typed yet — filter changes alone
 # must NOT trigger results from a previous session
@@ -625,7 +700,11 @@ for result in results:
     safe_url   = _html.escape(result["url"])
     score_pct  = round(result["score"] * 100, 1)
 
-    has_image = bool(result.get("images"))
+    # Suppress thumbnails only when user explicitly chose Text but NOT Image+Text
+    _text_only_mode = bool(filter_media_types) and (
+        "text" in filter_media_types and "text_image" not in filter_media_types
+    )
+    has_image = bool(result.get("images")) and not _text_only_mode
     if has_image:
         col_text, col_thumb = st.columns([5, 1])
     else:
@@ -634,10 +713,11 @@ for result in results:
 
     with col_text:
         _mtype = result.get("media_type", "text")
+        # Hide IMAGE+TEXT badge when user explicitly chose Text-only mode
         _media_badge = {
             "audio":      '<span style="background:#fff3e0;color:#e65100;border-radius:20px;padding:2px 9px;font-size:0.72rem;font-weight:700;">🎧 AUDIO</span>',
             "video":      '<span style="background:#f3e5f5;color:#6a1b9a;border-radius:20px;padding:2px 9px;font-size:0.72rem;font-weight:700;">🎬 VIDEO</span>',
-            "text_image": '<span style="background:#e3f2fd;color:#1565c0;border-radius:20px;padding:2px 9px;font-size:0.72rem;font-weight:700;">🖼 IMAGE+TEXT</span>',
+            "text_image": "" if _text_only_mode else '<span style="background:#e3f2fd;color:#1565c0;border-radius:20px;padding:2px 9px;font-size:0.72rem;font-weight:700;">🖼 IMAGE+TEXT</span>',
         }.get(_mtype, "")
         _sys_label   = _html.escape(_get_system(result))
         _topic_label = _html.escape(_get_topic(result))
@@ -706,10 +786,10 @@ for result in results:
                 with open(_abs_media, "rb") as _vf:
                     st.video(_vf.read())
 
-        # ── Images (text+image chunks) ────────────────────────────────────────
+        # ── Images (text+image chunks) — hidden when user chose Text-only mode ──
         else:
             images = doc.get("images", [])
-            if images:
+            if images and not _text_only_mode:
                 st.markdown('<div style="margin-top:1.4rem;"></div>', unsafe_allow_html=True)
                 img_cols = st.columns(min(len(images), 3))
                 for i, img_url in enumerate(images[:3]):
