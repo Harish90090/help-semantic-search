@@ -1047,169 +1047,352 @@
   {
     "chunk_id": "sitewatch_0_0",
     "page_id": "sitewatch_0",
-    "title": "Log In to Patheon Portal",
-    "content": "Log In to Patheon Portal Use these steps to log in to the Patheon Portal application. Open a web browser with an internet connection and navigate to https://patheon.drb.com. A DRB Patheon dialog opens. In Username, enter the employee username. In Password, enter the corresponding password. In Client Code, enter the organization's client code. Select Log In. If a user's password has expired, a Password reset required dialog opens; otherwise, the Patheon Portal application opens.",
+    "title": "SW Historical General Sales Data",
+    "content": "SW Historical General Sales Data The SW Historical General Sales Data dashboard provides summarized historical SiteWatch data for all sites or a specific site (that have converted from SiteWatch to Patheon), for the following metrics: paid single wash, unlimited plans, prepaid sales, total revenue, and total car count. The data can be filtered each month, up to 24 months from a site's SiteWatch-to-Patheon conversion month (depending on the availability of historical data from its SiteWatch Server). The data is static; it does not include live or current data. It only includes historical SiteWatch data. Detailed information about each dashboard is provided below. SINGLE WASH SALES Total Money Received Insights 2.0 dashboards are accessible from within Patheon Portal, or directly from any mobile device or desktop computer at Insights.DRB.com. Dashboard Location Insights 2.0>SW Historical Dashboards>SW Historical General Sales Data The SW Historical General Sales Data dashboard includes the following functions: refresh, sign out, select a site, and select a time period. The dashboard header provides a refresh function to manually force a data refresh. Note: SiteWatch data is historical data and does not need to be refreshed. The dashboard header provides a user icon, which when selected, provides a Sign Out function to sign out of Insights 2.0. The dashboard provides a site selector to open a list of all sites within the organization, and then select a site to view its data in the dashboards. Selecting the site selector (it's set to All Sites by default), opens a list with all sites. Users can navigate up and down the list to select a site. In addition, the site list includes the following features: site search, select all sites, deselect all sites, and multi-site selection. Search: A search tool is available at the top of the site list for multi-site organizations that have a large number of sites. It can be used to quickly locate a site without navigating through the entire list. Note: The search function is case-sensitive. Select all / Deselect all: All sites can be selected or deselected. Multi-Site Select: Multiple, select sites can be selected. Select a site to include it; select it again to not include it. Select a Time Period A month(s) and year(s) time period selector is provided to choose the month(s) and year(s) to view the dashboard for. By default, the month time period is set to All Months and the year time period is set to All Years. The month selector is set to All Months when the dashboard is opened. Select it to open the month selector and choose a specific month, select all months, or select multiple specific months. The month selector.includes a Select all / Deselect all toggle function and each calendar month. A selected month has a red background; a deselected month has a white background. An Apply function is provided to confirm any selection and open the dashboard for the selected month(s).",
     "images": [
-      "https://help.drb.com/assets/images/applications/prtl/prtl-lgn.png",
-      "https://help.drb.com/assets/images/applications/prtl/prtl-pw-rst-rqrd-dlg.png",
-      "https://help.drb.com/assets/images/applications/prtl/prtl-stsgrps-sts.png"
+      "https://help.drb.com/assets/images/applications/prtl/mbl-insts-sw-hst-gnrl-sls-dt.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-mn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-gsr-st.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-gsr-st-mn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-gsr-tm.png"
     ],
-    "url": "https://help.drb.com/topics/manuals/manage/auth/lg-in-pthn-prtl.htm",
+    "url": "https://help.drb.com/topics/applications/insights/app/insights-sw-hst-gnrl-sls.htm",
     "media_type": "text_image",
     "media_path": null,
-    "system": "Back Office",
-    "topic": "Authentication",
+    "system": "SiteWatch",
+    "topic": "Insights",
     "faiss_index": 76
+  },
+  {
+    "chunk_id": "sitewatch_0_1",
+    "page_id": "sitewatch_0",
+    "title": "SW Historical General Sales Data",
+    "content": "Note: Use the month selector in conjunction with the year selector (below) to view specific month and year data. The year selector is set to All Years when the dashboard is opened. Select it to open the year selector and choose a specific year, all years, or select multiple specific years. The year selector.includes a Select all / Deselect all toggle function and each year of data that is available (in YYYY format). A selected year has a red background; a deselected year has a white background. An Apply function is provided to confirm any selection and open the dashboard for the selected year(s). Note: Use the year selector in conjunction with the month selector (above) to view specific month and year data. SINGLE WASH SALES The Single Wash Sales section provides the following data: single wash car count, single wash revenue, and single wash ticket average.for each site, and a total for all sites: The Site column provides the name of each site within the organization. The column can be sorted in ascending or descending alphanumerical order by selecting its header. Car Count (Single Washes) The Car Count (Single Washes) column provides the paid single wash car count for the selected time period. The column can be sorted in ascending or descending numerical order by selecting its header. Single Wash Sales Revenue The Single Wash Sales Revenue column provides the paid single wash sales revenue for the selected time period. The column can be sorted in ascending or descending numerical order by selecting its header. Single Wash Ticket Average The Single Wash Ticket Average column provides the paid single wash ticket average for the selected time period. The column can be sorted in ascending or descending numerical order by selecting its header. The Unlimited Plans section provides the following data: unlimited plan redemption car count, unlimited plan revenue, unlimited plans sold count, unlimited plans reloaded count, unlimited plans discontinued count, unlimited plans terminated count, and unlimited number of plans switched count.for each site, and a total for all sites. The Site column provides the name of each site within the organization. The column can be sorted in ascending or descending alphanumerical order by selecting its header. The Unlimited Plans column provides the unlimited wash redemption car count for the selected time period. The column can be sorted in ascending or descending numerical order by selecting its header. Unlimited Plan Revenue The Unlimited Plan Revenue column provides the unlimited plan revenue (plans sold and reloaded) for the selected time period. The column can be sorted in ascending or descending numerical order by selecting its header. Member Plans Reloaded The Member Plans Reloaded column provides the number of unlimited plans reloaded for the selected time period. The column can be sorted in ascending or descending numerical order by selecting its header. Member Plans Discontinued The Member Plans Discontinued column provides the number of unlimited plans discontinued for the selected time period.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/prtl/mbl-insts-sw-hst-gnrl-sls-dt.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-mn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-gsr-st.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-gsr-st-mn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-gsr-tm.png"
+    ],
+    "url": "https://help.drb.com/topics/applications/insights/app/insights-sw-hst-gnrl-sls.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "SiteWatch",
+    "topic": "Insights",
+    "faiss_index": 77
+  },
+  {
+    "chunk_id": "sitewatch_0_2",
+    "page_id": "sitewatch_0",
+    "title": "SW Historical General Sales Data",
+    "content": "The column can be sorted in ascending or descending numerical order by selecting its header. Member Plans Terminated The Member Plans Terminated column provides the number of unlimited plans terminated for the selected time period. The column can be sorted in ascending or descending numerical order by selecting its header. Member Plans Switched The Member Plans Switched column provides the number of unlimited plans switched for the selected time period. The column can be sorted in ascending or descending numerical order by selecting its header. The Prepaid Plans section provides the following data: prepaid redeemed car count, prepaid sold count, and prepaid revenue.for each site, and a total for all sites: The Site column provides the name of each site within the organization. The column can be sorted in ascending or descending alphanumerical order by selecting its header. Prepaid Redeemed Car Count The Prepaid Redeemed Car Count column provides the number of prepaid redeems car count for the month selected. The column can be sorted in ascending or descending numerical order by selecting its header. Prepaid Sold Count The Prepaid Sold Count column provides the number of prepaid sold for the month selected. The column can be sorted in ascending or descending numerical order by selecting its header. The Prepaid Revenue column provides the total amount of revenue for the month selected. Important: This only includes incoming cash. It does not include liabilities. The column can be sorted in ascending or descending numerical order by selecting its header. Total Money Received The Total Money Received amount is the total revenue, after discounts, liabilities, and expenses have been deducted, for the selected site and time period. This is the Total to Account amount on the SiteWatch General Sales Report. The Total Car Count number is the total number of vehicles that received a wash, including paid single washes, prepaid redeemed washes, unlimited redeemed washes, and rewashes, for the selected site and time period.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/prtl/mbl-insts-sw-hst-gnrl-sls-dt.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-mn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-gsr-st.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-gsr-st-mn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-gsr-tm.png"
+    ],
+    "url": "https://help.drb.com/topics/applications/insights/app/insights-sw-hst-gnrl-sls.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "SiteWatch",
+    "topic": "Insights",
+    "faiss_index": 78
   },
   {
     "chunk_id": "sitewatch_1_0",
     "page_id": "sitewatch_1",
-    "title": "Log Out of Patheon Portal",
-    "content": "Log Out of Patheon Portal Use these steps to log out of the Patheon Portal application. Select the logged in user's initials in the top right corner. A menu opens. Select Logout. The application logs the user out, closes, and opens the log in dialog.",
+    "title": "SW Historical Labor Statistics",
+    "content": "SW Historical Labor Statistics The SW Historical Labor Statistics dashboard provides the following summarized SiteWatch labor data: cars per labor hour, labor cost per car, labor percentage, and sales per labor hour. It is similar to the Insights 2.0 Multi-Site Stats dashboard, which provides Patheon data. The data can be filtered each month, up to 24 months from a site's SiteWatch-to-Patheon conversion month (depending on the availability of historical data from its SiteWatch Server). The data is static; it does not include live or current data. It only includes historical SiteWatch data. Detailed information about the dashboard is provided below. Labor Statistics Insights 2.0 dashboards are accessible from within Patheon Portal, or directly from any mobile device or desktop computer at Insights.DRB.com. Dashboard Location Insights 2.0>SW Historical Dashboards>SW Historical Labor Statistics The SW Historical Labor Statistics dashboard includes the following functions: refresh, sign out, select a site tool, and select a time period tool. The dashboard header provides a refresh function to manually force a data refresh. Note: SiteWatch data is historical data and does not need to be refreshed. The dashboard header provides a user icon, which when selected, provides a Sign Out function to sign out of Insights 2.0. The dashboard provides a site selector to open a list of all sites within the organization, and then select a site to view its data in the dashboards. Selecting the site selector (it's set to All Sites by default), opens a list with all sites. Users can navigate up and down the list to select a site. In addition, the site list includes the following features: site search, select all sites, deselect all sites, and multi-site selection. Search: A search tool is available at the top of the site list for multi-site organizations that have a large number of sites. It can be used to quickly locate a site without navigating through the entire list. Note: The search function is case-sensitive. Select all / Deselect all: All sites can be selected or deselected. Multi-Site Select: Multiple, select sites can be selected. Select a site to include it; select it again to not include it. Select a Time Period A month(s) and year(s) time period selector is provided to choose the month(s) and year(s) to view the dashboard for. By default, the month time period is set to All Months and the year time period is set to All Years. The month selector is set to All Months when the dashboard is opened. Select it to open the month selector and choose a specific month, select all months, or select multiple specific months. The month selector.includes a Select all / Deselect all toggle function and each calendar month. A selected month has a red background; a deselected month has a white background. An Apply function is provided to confirm any selection and open the dashboard for the selected month(s). Note: Use the month selector in conjunction with the year selector (below) to view specific month and year data.",
     "images": [
-      "https://help.drb.com/assets/images/applications/prtl/prtl-stsgrps-sts-lgt.png",
-      "https://help.drb.com/assets/images/applications/prtl/prtl-lgn.png"
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-lbr.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-mn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-lbr-st.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-lbr-st-mn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-lbr-tm.png"
     ],
-    "url": "https://help.drb.com/topics/manuals/manage/auth/lg-out-pthn-prtl.htm",
+    "url": "https://help.drb.com/topics/applications/insights/app/insights-sw-hst-lbr-sts.htm",
     "media_type": "text_image",
     "media_path": null,
-    "system": "Back Office",
-    "topic": "Authentication",
-    "faiss_index": 77
+    "system": "SiteWatch",
+    "topic": "Insights",
+    "faiss_index": 79
+  },
+  {
+    "chunk_id": "sitewatch_1_1",
+    "page_id": "sitewatch_1",
+    "title": "SW Historical Labor Statistics",
+    "content": "The year selector is set to All Years when the dashboard is opened. Select it to open the year selector and choose a specific year, all years, or select multiple specific years. The year selector.includes a Select all / Deselect all toggle function and each year of data that is available (in YYYY format). A selected year has a red background; a deselected year has a white background. An Apply function is provided to confirm any selection and open the dashboard for the selected year(s). Note: Use the year selector in conjunction with the month selector (above) to view specific month and year data. Labor Statistics Table The SW Historical Labor Statistics dashboard consists of one table. It provides the following historical SiteWatch labor statistics: total car count, cars per labor hour, labor cost per car, labor percentage, sales per car, and sales per labor hour, for the selected site and time period. The Site column provides the name of each site within the organization. The column can be sorted in ascending or descending alphanumerical order by selecting its header. The Total Cars column provides the total number of cars that received a wash for the selected site and time period. The column can be sorted in ascending or descending numerical order by selecting its header. Cars Per Labor Hour The Cars Per Labor Hour column provides the average number of cars washed per labor hour. It is the total car count divided by the total labor hour count. The column can be sorted in ascending or descending numerical order by selecting its header. Labor Cost Per Car The Labor Cost Per Car column provides the average labor cost per washed car. It is the total labor dollars divided by total car count. The column can be sorted in ascending or descending numerical order by selecting its header. The Labor % column provides the total labor divided by the total sales, then multiplied by 100. The column can be sorted in ascending or descending numerical order by selecting its header. The Sales Per Car column provides the average dollar amount for each car. It is the total wash revenue divided by total car count. The column can be sorted in ascending or descending numerical order by selecting its header. Sales Per Labor Hour The Sales Per Labor Hour column provides the total sales revenue divided by the total labor hours. The column can be sorted in ascending or descending numerical order by selecting its header.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-lbr.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-mn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-lbr-st.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-lbr-st-mn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-lbr-tm.png"
+    ],
+    "url": "https://help.drb.com/topics/applications/insights/app/insights-sw-hst-lbr-sts.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "SiteWatch",
+    "topic": "Insights",
+    "faiss_index": 80
   },
   {
     "chunk_id": "sitewatch_2_0",
     "page_id": "sitewatch_2",
-    "title": "Add a New Customer",
-    "content": "Add a New Customer Use these steps to add a new customer in Patheon Portal. Note that customers can also be added at a cashier terminal. Log in to Patheon Portal. Select Configuration. Select Customers. The Customers panel opens. Select Add New Customer. The Customer Details panel opens. Navigate to the Account Details section. In First Name*, enter the customer’s first name, 50 characters or less. In Last Name*, enter the customer’s last name, 50 characters or less. Navigate to the Contact section. In Phone 1*, enter the customer’s phone number. In Type, select a phone number category: Mobile, Work, or Home. Navigate to the Address section. In State/Province/Region*, select the customer's location. In Postal Code*, enter the customer's zip code. Select Save. The new customer's profile is saved.",
+    "title": "SW Historical Plan Analysis",
+    "content": "SW Historical Plan Analysis The SW Historical Plan Analysis dashboard provides summarized historical SiteWatch unlimited plan data: wash plan use, wash plan use by customer, total plans sold value, unlimited plan revenue value, and active vehicle count value. The dashboard can be generated for each month, up to 2 years from a site's SiteWatch-to-Patheon conversion month (depending on the availability of historical data from its SiteWatch Server). The dashboard provides historical SiteWatch data, so the data is static; it does not include live or current data. Detailed information about each dashboard is provided below. PLAN USAGE STATS PLAN USAGE BY CUSTOMER Total Plans Sold Value Unlimited Plan Revenue Value Active Vehicle Count Value Insights 2.0 dashboards are accessible from within Patheon Portal, or directly from any mobile device or desktop computer at Insights.DRB.com. Dashboard Location Insights 2.0>SW Historical Dashboards>SW Historical Plan Analysis The SW Historical Plan Analysis dashboard includes the following functions: refresh, sign out, select a site tool, and select a time period tool. The dashboard header provides a refresh function to manually force a data refresh. Note: SiteWatch data is historical data and does not need to be refreshed. The dashboard header provides a user icon, which when selected, provides a Sign Out function to sign out of Insights 2.0. The dashboard provides a site selector to open a list of all sites within the organization, and then select a site to view its data in the dashboards. Selecting the site selector (it's set to All Sites by default), opens a list with all sites. Users can navigate up and down the list to select a site. In addition, the site list includes the following features: site search, select all sites, deselect all sites, and multi-site selection. Search: A search tool is available at the top of the site list for multi-site organizations that have a large number of sites. It can be used to quickly locate a site without navigating through the entire list. Note: The search function is case-sensitive. Select all / Deselect all: All sites can be selected or deselected. Multi-Site Select: Multiple, select sites can be selected. Select a site to include it; select it again to not include it. Select a Time Period A month(s) and year(s) time period selector is provided to choose the month(s) and year(s) to view the dashboard for. By default, the month time period is set to All Months and the year time period is set to All Years. The month selector is set to All Months when the dashboard is opened. Select it to open the month selector and choose a specific month, select all months, or select multiple specific months. The month selector.includes a Select all / Deselect all toggle function and each calendar month. A selected month has a red background; a deselected month has a white background. An Apply function is provided to confirm any selection and open the dashboard for the selected month(s).",
     "images": [
-      "https://help.drb.com/assets/images/applications/prtl/prtl-sts.png",
-      "https://help.drb.com/assets/images/applications/prtl/prtl-cstmrs.png",
-      "https://help.drb.com/assets/images/applications/prtl/prtl-cstmr-dtls.png",
-      "https://help.drb.com/assets/images/applications/prtl/prtl-cstmr-dtls-ddrss.png"
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-pln-anlys.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-mn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-pln-st.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-pln-st-mn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-pln-tm.png"
     ],
-    "url": "https://help.drb.com/topics/manuals/manage/customers/add-cstmr.htm",
+    "url": "https://help.drb.com/topics/applications/insights/app/insights-sw-hst-pln-anlys.htm",
     "media_type": "text_image",
     "media_path": null,
-    "system": "Back Office",
-    "topic": "Customers",
-    "faiss_index": 78
+    "system": "SiteWatch",
+    "topic": "Insights",
+    "faiss_index": 81
+  },
+  {
+    "chunk_id": "sitewatch_2_1",
+    "page_id": "sitewatch_2",
+    "title": "SW Historical Plan Analysis",
+    "content": "Note: Use the month selector in conjunction with the year selector (below) to view specific month and year data. The year selector is set to All Years when the dashboard is opened. Select it to open the year selector and choose a specific year, all years, or select multiple specific years. The year selector.includes a Select all / Deselect all toggle function and each year of data that is available (in YYYY format). A selected year has a red background; a deselected year has a white background. An Apply function is provided to confirm any selection and open the dashboard for the selected year(s). Note: Use the year selector in conjunction with the month selector (above) to view specific month and year data. PLAN USAGE STATS The Plan Usage Stats section provides a table with total plan redemptions, for the selected site(s) and time period. The Site column provides the name of each site within the organization. The column can be sorted in ascending or descending alphanumerical order by selecting its header. Total Plan Redemption The Total Plan Redemption column provides the total number of times a wash plan was redeemed, for the selected site(s) and time period. The column can be sorted in ascending or descending numerical order by selecting its header. PLAN USAGE BY CUSTOMER The Plan Usage by Customer section provides a table with total plan redemptions, for the selected site(s) and time period. The Customer column provides the customer ID that corresponds to each customer, for the selected site(s) and time period. The column can be sorted in ascending or descending alphanumerical order by selecting its header. The Reload Site column provides the site where the corresponding customer's wash plan is reloaded, for the selected site(s) and time period.. The column can be sorted in ascending or descending alphanumerical order by selecting its header. The Plan column provides the name of the wash plan to which the corresponding customer belonged, for the selected site(s) and time period, for the selected time period and site(s). The column can be sorted in ascending or descending alphanumerical order by selecting its header. Total Plan Redemptions The Total Plan Redemptions column provides the number of times the wash plan was redeemed by the corresponding customer, for the selected time period and site(s). The column can be sorted in ascending or descending numerical order by selecting its header. The Tenure by Plan column provides length of time the corresponding customer was a member of the wash plan, for the selected time period and site(s). The column can be sorted in ascending or descending numerical order by selecting its header. The LTV By Plan column provides the lifetime value of the corresponding customer's plan membership. It is the total plan revenue received from the plan customer, for the selected time period and site(s). The column can be sorted in ascending or descending numerical order by selecting its header.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-pln-anlys.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-mn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-pln-st.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-pln-st-mn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-pln-tm.png"
+    ],
+    "url": "https://help.drb.com/topics/applications/insights/app/insights-sw-hst-pln-anlys.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "SiteWatch",
+    "topic": "Insights",
+    "faiss_index": 82
+  },
+  {
+    "chunk_id": "sitewatch_2_2",
+    "page_id": "sitewatch_2",
+    "title": "SW Historical Plan Analysis",
+    "content": "Total Plans Sold Value The Total Plans Sold Value provides the total unlimited wash plan revenue recorded for new plan memberships, for the selected time period and site(s). Unlimited Plan Revenue Value The Unlimited Plan Revenue Value provides the total unlimited plan revenue recorded, for the selected time period and site(s). Active Vehicle Count Value The Active Vehicle Count Value provides the total number of active vehicles with a plan membership, for the selected time period and site(s).",
+    "images": [
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-pln-anlys.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-mn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-pln-st.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-pln-st-mn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-pln-tm.png"
+    ],
+    "url": "https://help.drb.com/topics/applications/insights/app/insights-sw-hst-pln-anlys.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "SiteWatch",
+    "topic": "Insights",
+    "faiss_index": 83
   },
   {
     "chunk_id": "sitewatch_3_0",
     "page_id": "sitewatch_3",
-    "title": "Change the Payment Card for a Customer Plan",
-    "content": "Change the Payment Card for a Customer Plan Use these steps to change the payment card used to renew a customer's plan from Patheon Portal. Note that plan renewal payment cards can also be changed from a customer's profile at a cashier terminal. Log in to Patheon Portal. Select Configuration. Select Customers. The Customers panel opens. Locate the customer to edit. Select the customer’s name. The customer overview panel opens. Navigate to the Plans section. Navigate to the Reload Payment Details section. Select the payment card to use for all future plan renewals. Select Save. The changes are saved.",
+    "title": "SW Historical Plan Churn",
+    "content": "SW Historical Plan Churn The Insights 2.0 SW Historical Plan Churn dashboard provides the following summarized historical SiteWatch wash plan churn data: total churn, voluntary churn, involuntary churn, and churn rate loss by status. The dashboard can be generated for each month, up to 2 years from a site's SiteWatch-to-Patheon conversion month (depending on the availability of historical data from its SiteWatch Server). The dashboard provides historical SiteWatch data, so the data is static; it does not include live or current data. Detailed information about each dashboard is provided below. Involuntary Churn CHURN RATE LOSS BY PLAN STATUS Insights 2.0 dashboards are accessible from within Patheon Portal, or directly from any mobile device or desktop computer at Insights.DRB.com. Dashboard Location Insights 2.0>SW Historical Dashboards>SW Historical Plan Analysis The SW Historical Plan Churn dashboard includes the following functions: refresh, sign out, select a site tool, and select a time period tool. The dashboard header provides a refresh function to manually force a data refresh. Note: SiteWatch data is historical data and does not need to be refreshed. The dashboard header provides a user icon, which when selected, provides a Sign Out function to sign out of Insights 2.0. The dashboard provides a site selector to open a list of all sites within the organization, and then select a site to view its data in the dashboards. Selecting the site selector (it's set to All Sites by default), opens a list with all sites. Users can navigate up and down the list to select a site. In addition, the site list includes the following features: site search, select all sites, deselect all sites, and multi-site selection. Search: A search tool is available at the top of the site list for multi-site organizations that have a large number of sites. It can be used to quickly locate a site without navigating through the entire list. Note: The search function is case-sensitive. Select all / Deselect all: All sites can be selected or deselected. Multi-Site Select: Multiple, select sites can be selected. Select a site to include it; select it again to not include it. Select a Time Period A month(s) and year(s) time period selector is provided to choose the month(s) and year(s) to view the dashboard for. By default, the month time period is set to All Months and the year time period is set to All Years. The month selector is set to All Months when the dashboard is opened. Select it to open the month selector and choose a specific month, select all months, or select multiple specific months. The month selector.includes a Select all / Deselect all toggle function and each calendar month. A selected month has a red background; a deselected month has a white background. An Apply function is provided to confirm any selection and open the dashboard for the selected month(s). Note: Use the month selector in conjunction with the year selector (below) to view specific month and year data.",
     "images": [
-      "https://help.drb.com/assets/images/applications/prtl/prtl-sts.png",
-      "https://help.drb.com/assets/images/applications/prtl/prtl-cstmrs.png",
-      "https://help.drb.com/assets/images/applications/prtl/prtl-cstmrs-rld-pymnt-dtls.png"
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-pln-chrn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-mn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-pln-chrn-st.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-pln-chrn-st-mn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-pln-chrn-tm.png"
     ],
-    "url": "https://help.drb.com/topics/manuals/manage/customers/chng-pln-pymnt-crd-cstmr.htm",
+    "url": "https://help.drb.com/topics/applications/insights/app/insights-sw-hst-pln-chrn.htm",
     "media_type": "text_image",
     "media_path": null,
-    "system": "Back Office",
-    "topic": "Customers",
-    "faiss_index": 79
+    "system": "SiteWatch",
+    "topic": "Insights",
+    "faiss_index": 84
+  },
+  {
+    "chunk_id": "sitewatch_3_1",
+    "page_id": "sitewatch_3",
+    "title": "SW Historical Plan Churn",
+    "content": "The year selector is set to All Years when the dashboard is opened. Select it to open the year selector and choose a specific year, all years, or select multiple specific years. The year selector.includes a Select all / Deselect all toggle function and each year of data that is available (in YYYY format). A selected year has a red background; a deselected year has a white background. An Apply function is provided to confirm any selection and open the dashboard for the selected year(s). Note: Use the year selector in conjunction with the month selector (above) to view specific month and year data. The Total Churn value is the sum of voluntary and involuntary churn for monthly automatic reload wash plans (only), for the selected time period and site(s). The Voluntary Churn value is the percentage of wash plan customers that discontinued or terminated their monthly automatic reload wash plans (only), for the selected time period and site(s). Involuntary Churn The Involuntary Churn value is the percentage of wash plan customers whose plan changed to inactive (unpaid) due to a declined payment, for the selected time period and site(s). CHURN RATE LOSS BY PLAN STATUS The Churn Rate Loss by Plan Status section provides a table with the following historical SiteWatch churn data: voluntary churn count, involuntary churn count, discontinued churn count, and terminated churn count, for the selected time period and site(s). The Site column provides the names of the sites that were selected with the site selector. The column can be sorted in ascending or descending alphanumerical order by selecting its header. The Voluntary Churn column provides the percentage of unlimited automatic monthly reload plans that ended due to voluntary churn, for the selected time period and site(s). The column can be sorted in ascending or descending numerical order by selecting its header. Involuntary Churn The Involuntary Churn column provides the percentage of unlimited automatic monthly reload plans that ended due to involuntary churn, for the selected time period and site(s). The column can be sorted in ascending or descending numerical order by selecting its header. The Discontinued column provides the number of unlimited automatic monthly reload plans that were discontinued, for the selected time period and site(s). The column can be sorted in ascending or descending numerical order by selecting its header. The Terminated column provides the number of unlimited automatic monthly reload plans that were terminated, for the selected time period and site(s). The column can be sorted in ascending or descending numerical order by selecting its header.",
+    "images": [
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-pln-chrn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-mn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-pln-chrn-st.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-pln-chrn-st-mn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-pln-chrn-tm.png"
+    ],
+    "url": "https://help.drb.com/topics/applications/insights/app/insights-sw-hst-pln-chrn.htm",
+    "media_type": "text_image",
+    "media_path": null,
+    "system": "SiteWatch",
+    "topic": "Insights",
+    "faiss_index": 85
   },
   {
     "chunk_id": "sitewatch_4_0",
     "page_id": "sitewatch_4",
-    "title": "Remove a Payment Card from a Customer Profile",
-    "content": "Remove a Payment Card from a Customer Profile Use these steps to remove a payment card from a customer's profile in Patheon Portal. Note that payment cards can also be removed from a customer's profile at a cashier terminal. Log in to Patheon Portal. Select Configuration. Select Customers. The Customers panel opens. Locate the customer to edit. Select the customer’s name. The customer overview panel opens. Navigate to the Payment section. Select delete () for the credit card that's being removed. An Are you sure? dialog opens. Select Remove Card. The dialog closes and the credit card is removed from the customer's profile.",
+    "title": "SW Multi-Stats Historical",
+    "content": "SW Multi-Stats Historical The SW Multi-Stats Historical dashboard provides the following summarized historical SiteWatch multi-site statistics: total car count, total $ per car, paid single wash car count, unlimited plan redeemed car count, prepaid redeemed car count, unlimited plans reloaded, unlimited plans sold, unlimited capture rate, cars per labor hour, labor cost per car, and labor percentage. It is similar to the Multi-Site Stats dashboard (except the SiteWatch historical dashboard doesn't include rewashes). The dashboard can be generated for each month, up to 2 years from a site's SiteWatch-to-Patheon conversion month (depending on the availability of historical data from its SiteWatch Server). The dashboard provides historical SiteWatch data, so the data is static; it does not include live or current data. Detailed information about the dashboard is provided below. Multi-Site Statistics Insights 2.0 dashboards are accessible from within Patheon Portal, or directly from any mobile device or desktop computer at Insights.DRB.com. Dashboard Location Insights 2.0>SW Historical Dashboards>SW Multi-Stats Historical The SW Multi-Stats Historical dashboard includes the following functions: refresh, sign out, select a site tool, and select a time period tool. The dashboard header provides a refresh function to manually force a data refresh. Note: SiteWatch data is historical data and does not need to be refreshed. The dashboard header provides a user icon, which when selected, provides a Sign Out function to sign out of Insights 2.0. The dashboard provides a site selector to open a list of all sites within the organization, and then select a site to view its data in the dashboards. Selecting the site selector (it's set to All Sites by default), opens a list with all sites. Users can navigate up and down the list to select a site. In addition, the site list includes the following features: site search, select all sites, deselect all sites, and multi-site selection. Search: A search tool is available at the top of the site list for multi-site organizations that have a large number of sites. It can be used to quickly locate a site without navigating through the entire list. Note: The search function is case-sensitive. Select all / Deselect all: All sites can be selected or deselected. Multi-Site Select: Multiple, select sites can be selected. Select a site to include it; select it again to not include it. Select a Time Period A month(s) and year(s) time period selector is provided to choose the month(s) and year(s) to view the dashboard for. By default, the month time period is set to All Months and the year time period is set to All Years. The month selector is set to All Months when the dashboard is opened. Select it to open the month selector and choose a specific month, select all months, or select multiple specific months. The month selector.includes a Select all / Deselect all toggle function and each calendar month. A selected month has a red background; a deselected month has a white background.",
     "images": [
-      "https://help.drb.com/assets/images/applications/prtl/prtl-sts.png",
-      "https://help.drb.com/assets/images/applications/prtl/prtl-cstmrs.png",
-      "https://help.drb.com/assets/images/applications/prtl/prtl-cstmrs-cstmr-rmv-cc-dlg.png"
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-mlt-sts.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-mn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-mlt-sts-hdr.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-mlt-sts-sts.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-mlt-sts-tm.png"
     ],
-    "url": "https://help.drb.com/topics/manuals/manage/customers/rmv-pymnt-crd-cstmr-prfl.htm",
+    "url": "https://help.drb.com/topics/applications/insights/app/insights-sw-mlt-sts-hst.htm",
     "media_type": "text_image",
     "media_path": null,
-    "system": "Back Office",
-    "topic": "Customers",
-    "faiss_index": 80
+    "system": "SiteWatch",
+    "topic": "Insights",
+    "faiss_index": 86
   },
   {
-    "chunk_id": "sitewatch_5_0",
-    "page_id": "sitewatch_5",
-    "title": "Look Up an Employee Username",
-    "content": "Look Up an Employee Username Use these steps to look up an employee's username in Patheon Portal. This may be necessary if the employee needs to log in to Patheon and they forgot their username. Log in to Patheon Portal. Select Configuration. Select Employees. The Employees panel opens. Locate the employee in the employees list. The employee's username is in the Username column.",
+    "chunk_id": "sitewatch_4_1",
+    "page_id": "sitewatch_4",
+    "title": "SW Multi-Stats Historical",
+    "content": "An Apply function is provided to confirm any selection and open the dashboard for the selected month(s). Note: Use the month selector in conjunction with the year selector (below) to view specific month and year data. The year selector is set to All Years when the dashboard is opened. Select it to open the year selector and choose a specific year, all years, or select multiple specific years. The year selector.includes a Select all / Deselect all toggle function and each year of data that is available (in YYYY format). A selected year has a red background; a deselected year has a white background. An Apply function is provided to confirm any selection and open the dashboard for the selected year(s). Note: Use the year selector in conjunction with the month selector (above) to view specific month and year data. Multi-Site Statistics The multi-site statistics table provides a site-by-site comparison for total car count, total $ per car, paid single wash car count, unlimited plan redeemed car count, prepaid redeemed car count, unlimited plans reloaded, unlimited plans sold, unlimited capture rate, cars per labor hour, labor cost per car, and labor percentage: The Site column provides the site that were selected with the site selector. The column can be sorted in ascending or descending alphanumerical order by selecting its header. The Total Car Count column provides the count of paid single washes, unlimited plan redeemed washes, prepaid redeemed count, and rewash car count. The column can be sorted in ascending or descending numerical order by selecting its header. Total $ Per Wash The Total $ Per Wash column provides the total revenue divided by total cars, for the selected time period and site(s). The column can be sorted in ascending or descending numerical order by selecting its header. Paid Single Wash The Paid Single Wash column provides the count of washes purchased that were not an unlimited plan wash, rewash, or a prepaid wash (it does not include unlimited/unit redemptions or rewash transactions), for the selected time period and site(s). The column can be sorted in ascending or descending numerical order by selecting its header. Unlimited Plan Washes (\"Unltd Plan Washes\") The Unlimited Plan Washes (\"Unltd Plan Washes\") column provides the count of washes redeemed by unlimited plan members (automatic reloads only), for the selected time period and site(s). The column can be sorted in ascending or descending numerical order by selecting its header. Prepaid Redeemed Washes (\"Ppd Rdmd\") The Prepaid Redeemed Washes (\"Ppd Rdmd\") column provides the count of washes that were a unit plan redemption (includes free wash codes), for the selected time period and site(s). The column can be sorted in ascending or descending numerical order by selecting its header. Unlimited Plans Reloaded (\"Unltd Plans Reloaded\") The Unlimited Plans Reloaded column provides the number of unlimited plans reloaded (includes both automatic and manual reloads), for the selected time period and site(s). The column can be sorted in ascending or descending numerical order by selecting its header.",
     "images": [
-      "https://help.drb.com/assets/images/applications/prtl/prtl-emplys.png",
-      "https://help.drb.com/assets/images/applications/sm/sm-empl-list-username-column.png"
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-mlt-sts.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-mn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-mlt-sts-hdr.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-mlt-sts-sts.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-mlt-sts-tm.png"
     ],
-    "url": "https://help.drb.com/topics/manuals/manage/employees/look-up-employee-username.htm",
+    "url": "https://help.drb.com/topics/applications/insights/app/insights-sw-mlt-sts-hst.htm",
     "media_type": "text_image",
     "media_path": null,
-    "system": "Back Office",
-    "topic": "Employees",
-    "faiss_index": 81
+    "system": "SiteWatch",
+    "topic": "Insights",
+    "faiss_index": 87
   },
   {
-    "chunk_id": "sitewatch_6_0",
-    "page_id": "sitewatch_6",
-    "title": "Reset an Employee Password",
-    "content": "Reset an Employee Password Use these steps to reset an employee's password in Patheon Portal. This may be necessary if the employee needs to log in to Patheon and they forgot their password. Log in to Patheon Portal. Select Configuration. Select Employees. The Employees panel opens. Locate the employee in the employees list. Select the employee's name. The Employee Profile panel opens. Navigate to the Credentials section. Select edit (). The Edit Employee panel opens. Navigate to the Portal/POS Login section. In Enter Password*, enter the employee's new password. In Verify Password*, re-enter the new password. Note: The password must be typed; copy/paste is not supported.",
+    "chunk_id": "sitewatch_4_2",
+    "page_id": "sitewatch_4",
+    "title": "SW Multi-Stats Historical",
+    "content": "Unlimited Plans Sold (\"Unltd Plans Sold\") The Unlimited Plans Sold column provides the number of unlimited plans (automatic reload and manual reload) sold, for the selected time period and site(s). The column can be sorted in ascending or descending numerical order by selecting its header. Unlimited Capture Rate (\"Unltd Capture Rate\") The Unlimited Capture Rate (\"Unltd Capture Rate\") column provides the percentage of customers that came to the site and converted to an unlimited plan member (includes both automatic and manual reloads), for the selected time period and site(s). The column can be sorted in ascending or descending numerical order by selecting its header. Cars per man hour The Cars per man hour column provides the total cars divided by total labor hours, for the selected time period and site(s). The column can be sorted in ascending or descending numerical order by selecting its header. Labor cost per car The Labor cost per car column provides the total labor dollars divided by total cars, for the selected time period and site(s). The column can be sorted in ascending or descending numerical order by selecting its header. The Labor % column provides the total labor cost divided by total sales, for the selected time period and site(s). The column can be sorted in ascending or descending numerical order by selecting its header. Sales per labor hour The Sales per labor hour column provides the total sales revenue divided by total labor hours, for the selected time period and site(s). The column can be sorted in ascending or descending numerical order by selecting its header.",
     "images": [
-      "https://help.drb.com/assets/images/applications/prtl/prtl-emplys.png",
-      "https://help.drb.com/assets/images/applications/prtl/prtl-emplys-vw.png",
-      "https://help.drb.com/assets/images/applications/prtl/prtl-emplys-crntls.png",
-      "https://help.drb.com/assets/images/applications/prtl/prtl-emplys-edt-emply.png"
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-mlt-sts.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-hst-mn.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-mlt-sts-hdr.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-mlt-sts-sts.png",
+      "https://help.drb.com/assets/images/applications/prtl/insghts-sw-mlt-sts-tm.png"
     ],
-    "url": "https://help.drb.com/topics/manuals/manage/employees/reset-an-employee-password.htm",
+    "url": "https://help.drb.com/topics/applications/insights/app/insights-sw-mlt-sts-hst.htm",
     "media_type": "text_image",
     "media_path": null,
-    "system": "Back Office",
-    "topic": "Employees",
-    "faiss_index": 82
+    "system": "SiteWatch",
+    "topic": "Insights",
+    "faiss_index": 88
   },
   {
-    "chunk_id": "sitewatch_7_0",
-    "page_id": "sitewatch_7",
-    "title": "View Business Insights",
-    "content": "View Business Insights Use these steps to access the Insights application. Log In to Patheon Portal. Select Insights. A DRB Patheon dialog opens. Important: The Insights option in Patheon Portal is only available if Insights access? is set to Yes for the logged in employee. In Username, enter the employee username. In Password, enter the corresponding password. In Client Code, enter the organization's client code. Select Log In. The Insights application opens. Select a dashboard to view.",
-    "images": [
-      "https://help.drb.com/assets/images/applications/prtl/prtl-lgn.png"
-    ],
-    "url": "https://help.drb.com/topics/manuals/manage/reports/vw-bsnss-nsghts.htm",
-    "media_type": "text_image",
-    "media_path": null,
-    "system": "Back Office",
-    "topic": "Reports",
-    "faiss_index": 83
+    "chunk_id": "tunnel_audio_0",
+    "page_id": "tunnel_audio_0",
+    "title": "TunnelWatch Queue Management Audio Guide",
+    "content": "This guide explains how to manage the wash queue in TunnelWatch. To change the wash queue order, open TunnelWatch and go to the Queue tab. Select the vehicle you want to move and drag it to the desired position. To remove a vehicle from the wash queue, select the vehicle card and tap Remove. To clear the entire wash queue, press Clear Queue and confirm. To send a vehicle to any position, use Send to Position from the vehicle menu.",
+    "images": [],
+    "url": "",
+    "media_type": "audio",
+    "media_path": "assets/audio/tunnel_queue_audio.mp3",
+    "system": "TunnelWatch",
+    "topic": "Queue Management",
+    "faiss_index": 89
   },
   {
-    "chunk_id": "sitewatch_8_0",
-    "page_id": "sitewatch_8",
-    "title": "View Paginated Reports",
-    "content": "View Paginated Reports Use these steps to access Patheon paginated reports. Log In to Patheon Portal. Select Reports. The Financial Reports panel opens. Select a report to generate.",
-    "images": [
-      "https://help.drb.com/assets/images/applications/prtl/prtl-rprts-fnncl-rprts.png"
-    ],
-    "url": "https://help.drb.com/topics/manuals/manage/reports/vw-pgntd-rprts.htm",
-    "media_type": "text_image",
-    "media_path": null,
-    "system": "Back Office",
-    "topic": "Reports",
-    "faiss_index": 84
+    "chunk_id": "tunnel_audio_1",
+    "page_id": "tunnel_audio_1",
+    "title": "TunnelWatch Devices Audio Guide",
+    "content": "This audio guide covers device management in TunnelWatch. To wait down the tunnel, go to Devices and select Wait Down. To override a device, select it from the device list and choose Override. Enter credentials if prompted and confirm the override. Always consult a supervisor before overriding critical devices.",
+    "images": [],
+    "url": "",
+    "media_type": "audio",
+    "media_path": "assets/audio/tunnel_devices_audio.mp3",
+    "system": "TunnelWatch",
+    "topic": "Devices",
+    "faiss_index": 90
   },
   {
-    "chunk_id": "sitewatch_9_0",
-    "page_id": "sitewatch_9",
-    "title": "Generate the Transaction Report V2",
-    "content": "Generate the Transaction Report V2 Use these steps to generate the Patheon Transaction Report V2 to view details for a specific transaction or set of transactions. This report provides a way to view (cash accounting format) specific transaction(s) by type(s) (sale, rewash, plan use, or recharge), by specific customer(s), specific payment card, specific sale ID, or any combination of these parameters. It can be generated for a single site, multiple sites, a site group, or multiple site groups. Note: The similar Transaction Report V1 provides details for transactions in an accrual accounting format. Log in to Patheon Portal. Select Reports. The Financial Reports panel opens. Select Transaction Report V2. The Preview Parameters section of the Transaction Report V2 panel opens. In START DATE, select the opening date and time range for the report. By default, the field is set to 1 week (7 days) prior to the current date, 12:00 AM. In END DATE, select the closing date and time range for the report. By default, the field is set to the current day, 11:59 PM. In SITE GROUP, select the site group(s) to include. All groups (default), select multiple groups, one group, or no groups can be selected. Important: The site group(s) selected here control which site(s) can be selected in SITES. In SITES, select the site(s) to include. All sites (default), select multiple sites, or one site can be selected. In TRANSACTION TYPE, select the type(s) to include. All types (default), select multiple types, or one type can be selected. In TRANSACTION STATUS, select the status(es) to include. All statuses (default), select multiple statuses, or one status can be selected. In CUSTOMER, select the customer(s) to include. All customers (default) or one customer can be selected. Note: Specific customers can't be multi-selected. Generate the report for all customers or one specific customer. In CUSTOMER EMAIL, select the customer email(s) to include. All customer emails (default) or one customer email can be selected. Note: Specific customer emails can't be multi-selected. Generate the report for all customer emails or one specific customer email. In TRAILING CC DIGITS, enter the last digits of a specific payment card account to view only charges associated with that card. Leave this blank (default) to include all payment cards. Note: More than one payment card may be returned if the last digits are identical. In SALE ID, enter the sale ID to include. Blank (default) or any numeric string can be entered. In CHANNEL, select the revenue source to include. All (default), Retail Only, or ECommerce Only can be selected. In SUMMARIZATION, select the amount of data to include. Summary (default) or Detail can be selected. Select Submit. The report generates for the provided parameters. Tip: Select the Preview Parameters icon to close the section and expand the report to the full panel. To generate the report with different parameters, open the Preview Parameters section, enter new parameters, and select Submit.",
-    "images": [
-      "https://help.drb.com/assets/images/applications/prtl/prtl-rprts-fnncl-rprts.png",
-      "https://help.drb.com/assets/images/manuals/prtl-rprts-trnsctn-v2-rprt-prvw-prmtrs.png",
-      "https://help.drb.com/assets/images/manuals/prtl-rprts-trnsctn-rprt-v2-prvw-prmtrs-st-grp.png",
-      "https://help.drb.com/assets/images/manuals/prtl-rprts-trnsctn-rprt-v2-prvw-prmtrs-sts.png",
-      "https://help.drb.com/assets/images/manuals/prtl-rprts-trnsctn-rprt-v2-prvw-prmtrs-trnsacttyp.png"
-    ],
-    "url": "https://help.drb.com/topics/manuals/manage/reports/gnrt-rprt-trnsctn-rprt-v2.htm",
-    "media_type": "text_image",
-    "media_path": null,
-    "system": "Back Office",
-    "topic": "Reports (Transactions)",
-    "faiss_index": 85
+    "chunk_id": "tunnel_video_0",
+    "page_id": "tunnel_video_0",
+    "title": "TunnelWatch How to Manage the Wash Queue Video",
+    "content": "Video walkthrough: managing the wash queue in TunnelWatch. Shows how to change queue order by dragging vehicle cards, remove a vehicle from the queue, clear the entire queue, enable or disable auto send, and send a vehicle to any queue position.",
+    "images": [],
+    "url": "",
+    "media_type": "video",
+    "media_path": "assets/video/tunnel_queue_video.mp4",
+    "system": "TunnelWatch",
+    "topic": "Queue Management",
+    "faiss_index": 91
+  },
+  {
+    "chunk_id": "tunnel_video_1",
+    "page_id": "tunnel_video_1",
+    "title": "TunnelWatch How to Manage Vehicle Retracts Video",
+    "content": "Video walkthrough: managing vehicle retracts in TunnelWatch. Shows how to add retracts to a vehicle, remove retracts, view assigned retracts, and replace retracts before tunnel entry.",
+    "images": [],
+    "url": "",
+    "media_type": "video",
+    "media_path": "assets/video/tunnel_retracts_video.mp4",
+    "system": "TunnelWatch",
+    "topic": "Retracts",
+    "faiss_index": 92
+  },
+  {
+    "chunk_id": "sitewatch_audio_0",
+    "page_id": "sitewatch_audio_0",
+    "title": "SiteWatch General Sales Insights Audio Guide",
+    "content": "This guide explains how to use the SiteWatch historical general sales report. Log in to SiteWatch Insights and navigate to Historical Reports. Select General Sales Data to view revenue trends. Use the date range picker to filter by day, week, month, or custom period. Export the report to CSV or PDF using the export button.",
+    "images": [],
+    "url": "",
+    "media_type": "audio",
+    "media_path": "assets/audio/sitewatch_sales_audio.mp3",
+    "system": "SiteWatch",
+    "topic": "Insights",
+    "faiss_index": 93
+  },
+  {
+    "chunk_id": "sitewatch_audio_1",
+    "page_id": "sitewatch_audio_1",
+    "title": "SiteWatch Plan Analysis Insights Audio Guide",
+    "content": "This audio guide covers plan analysis reporting in SiteWatch Insights. Open the Insights dashboard and select Historical Plan Analysis. View active member counts, plan upgrades, downgrades, and cancellations. The plan churn report shows cancelled or switched plans in a period. Use this data to identify retention issues and improve membership offerings.",
+    "images": [],
+    "url": "",
+    "media_type": "audio",
+    "media_path": "assets/audio/sitewatch_plans_audio.mp3",
+    "system": "SiteWatch",
+    "topic": "Insights",
+    "faiss_index": 94
+  },
+  {
+    "chunk_id": "sitewatch_video_0",
+    "page_id": "sitewatch_video_0",
+    "title": "SiteWatch Historical General Sales Report Video",
+    "content": "Video walkthrough: accessing the SiteWatch Historical General Sales report. Shows how to log in to Insights, navigate to Historical Reports, set the date range, view sales totals and averages, and export the report.",
+    "images": [],
+    "url": "",
+    "media_type": "video",
+    "media_path": "assets/video/sitewatch_sales_video.mp4",
+    "system": "SiteWatch",
+    "topic": "Insights",
+    "faiss_index": 95
+  },
+  {
+    "chunk_id": "sitewatch_video_1",
+    "page_id": "sitewatch_video_1",
+    "title": "SiteWatch Historical Plan Analysis Report Video",
+    "content": "Video walkthrough: using the SiteWatch Historical Plan Analysis report. Shows how to view member plan performance, filter by site and plan type, check plan churn data, and export results for further analysis.",
+    "images": [],
+    "url": "",
+    "media_type": "video",
+    "media_path": "assets/video/sitewatch_plans_video.mp4",
+    "system": "SiteWatch",
+    "topic": "Insights",
+    "faiss_index": 96
   }
 ]

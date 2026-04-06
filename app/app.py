@@ -28,14 +28,12 @@ def _get_system(doc: dict) -> str:
     """Return which product system a document belongs to."""
     # 1. Explicit field set during scraping (TunnelWatch / Back Office records)
     explicit = doc.get("system", "")
-    if explicit in ("TunnelWatch", "Back Office"):
+    if explicit in ("TunnelWatch", "SiteWatch"):
         return explicit
-    if explicit == "SiteWatch":
-        return "Back Office"
     # 2. chunk_id prefix (fallback)
     cid = doc.get("chunk_id", "")
     if cid.startswith("tunnel"):    return "TunnelWatch"
-    if cid.startswith("sitewatch"): return "Back Office"
+    if cid.startswith("sitewatch"): return "SiteWatch"
     # 3. IgniteIQ / Robot — internal only, not shown in form
     if "igniteiq" in cid: return "Other"
     if "robot"    in cid: return "Other"
@@ -390,7 +388,7 @@ with st.sidebar:
 
     _ALL_TYPES   = ["text", "text_image", "audio", "video"]
     # Only 3 systems shown in the form
-    _ALL_SYSTEMS = ["Patheon", "TunnelWatch", "Back Office"]
+    _ALL_SYSTEMS = ["Patheon", "TunnelWatch", "SiteWatch"]
 
     # Topics per system (one system selected = only its topics shown)
     _SYSTEM_TOPICS = {
@@ -398,7 +396,7 @@ with st.sidebar:
                         "Tender", "Customers", "Void & Refund", "Members",
                         "Access", "Diagnostics"],
         "TunnelWatch": ["Queue Management", "Devices", "Retracts"],
-        "SiteWatch":   ["Authentication", "Customers", "Employees", "Reports"],
+        "SiteWatch":   ["Insights"],
     }
 
     _TYPE_LABELS = {
@@ -553,11 +551,13 @@ _raw_results = st.session_state.results
 # Apply sidebar filters (instant — no re-query needed)
 # Results are sorted by score; filter then cap to top_k
 # System: always include "Other" (IgniteIQ/Robot) when all 3 systems selected
-_filter_systems_expanded = list(filter_systems) + (["Other"] if set(filter_systems) == set(_ALL_SYSTEMS) else [])
+_filter_systems_expanded = list(filter_systems) + (["Other"] if not filter_systems or set(filter_systems) == set(_ALL_SYSTEMS) else [])
 # Topic: only filter by topic if user explicitly deselected something;
 # if all available topics are still selected, skip topic filter entirely
 _topic_filter_active = set(filter_topics) != set(_available_topics)
-# "text" in filter also matches "text_image" — TunnelWatch/Back Office have no pure-text pages
+# "text" = all written articles (text + text_image)
+# "text_image" alone = only pages that also have images
+# audio / video are always strict
 _mt_expanded = set(filter_media_types)
 if "text" in _mt_expanded:
     _mt_expanded.add("text_image")

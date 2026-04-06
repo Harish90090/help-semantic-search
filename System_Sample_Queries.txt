@@ -1,64 +1,108 @@
 ========================================
+HOW TO USE THE FILTERS
+========================================
+
+1. Select SYSTEM in the sidebar (Patheon / TunnelWatch / SiteWatch)
+2. Select FILE TYPE to narrow by media:
+      Text        = pure text articles only
+      Image+Text  = articles with screenshots
+      Audio       = spoken audio guides
+      Video       = video walkthroughs
+3. Type a query and press Search
+
+========================================
 PATHEON — Sample Queries
 ========================================
 
-TEXT / IMAGE+TEXT:
-1. How do I log in to the cashier application?
-2. How do I sell a gift card at the POS?
-3. How do I add a new customer to the system?
-4. How do I record a cash drawer start balance?
-5. How do I void a sale in the cashier application?
+IMAGE+TEXT  (select System = Patheon, File Type = Image+Text)
+ 1. How do I log in to the cashier application?
+ 2. How do I sell a gift card at the POS?
+ 3. How do I add a new customer to the system?
+ 4. How do I record a cash drawer start balance?
+ 5. How do I void a sale in the cashier application?
+ 6. How do I edit customer information?
+ 7. How do I turn on semi-attended mode?
+ 8. How do I lock or unlock the cash drawer?
+ 9. How do I tender a sale to credit card?
+10. How do I lower the members lane gate?
 
-AUDIO:
-6. How do I tender a sale to cash?
-7. How do I log out of the cashier application?
+AUDIO  (select System = Patheon, File Type = Audio)
+ 1. How do I tender a sale to cash?
+ 2. How do I log out of the cashier application?
+ 3. How do I sell a gift card?
+ 4. How do I void a sale?
+ 5. How do I add a customer note?
 
-VIDEO:
-8. How do I rewash a vehicle?
-9. How do I raise the kiosk gate?
-10. How do I clear the kiosk cart?
+VIDEO  (select System = Patheon, File Type = Video)
+ 1. How do I rewash a vehicle?
+ 2. How do I raise the kiosk gate?
+ 3. How do I clear the kiosk cart?
+ 4. How do I log in to the kiosk staff screen?
+ 5. How do I print a test receipt?
 
 ========================================
 TUNNELWATCH — Sample Queries
 ========================================
 
-IMAGE+TEXT (Queue Management):
-1. How do I change the wash queue order?
-2. How do I remove a vehicle from the wash queue?
-3. How do I clear the wash queue?
-4. How do I send a vehicle to any queue position?
-5. How do I enable or disable auto send?
+IMAGE+TEXT  (select System = TunnelWatch, File Type = Image+Text)
 
-IMAGE+TEXT (Devices):
-6. How do I wait down the tunnel?
-7. How do I override a device in the tunnel?
+  Queue Management:
+   1. How do I change the wash queue order?
+   2. How do I remove a vehicle from the wash queue?
+   3. How do I clear the wash queue?
+   4. How do I send a vehicle to any queue position?
+   5. How do I enable or disable auto send?
 
-IMAGE+TEXT (Retracts):
-8. How do I add retracts to a vehicle?
-9. How do I remove retracts from a vehicle?
-10. How do I view retracts assigned to a vehicle?
+  Devices:
+   6. How do I wait down the tunnel?
+   7. How do I override a device in the tunnel?
+
+  Retracts:
+   8. How do I add retracts to a vehicle?
+   9. How do I remove retracts from a vehicle?
+  10. How do I view retracts assigned to a vehicle?
+
+AUDIO  (select System = TunnelWatch, File Type = Audio)
+ 1. How do I manage the wash queue in TunnelWatch?
+ 2. How do I override a device in the tunnel?
+
+VIDEO  (select System = TunnelWatch, File Type = Video)
+ 1. How do I manage the wash queue? (video)
+ 2. How do I add or remove vehicle retracts? (video)
 
 ========================================
-BACK OFFICE — Sample Queries
+SITEWATCH — Sample Queries
 ========================================
 
-NOTE: Select System = Back Office before searching.
-All Back Office results are Image+Text type.
+IMAGE+TEXT  (select System = SiteWatch, File Type = Image+Text)
+ 1. general sales data sitewatch
+ 2. labor statistics sitewatch
+ 3. plan analysis sitewatch
+ 4. plan churn sitewatch
+ 5. multi-stats historical sitewatch
 
-Authentication:
-1. log in to portal
-2. log out of portal
+AUDIO  (select System = SiteWatch, File Type = Audio)
+ 1. How do I view general sales data in SiteWatch?
+ 2. How do I analyze plan performance in SiteWatch?
 
-Customers:
-3. add a customer back office
-4. change customer payment card
-5. remove payment card customer profile
+VIDEO  (select System = SiteWatch, File Type = Video)
+ 1. SiteWatch historical general sales report walkthrough
+ 2. SiteWatch plan analysis and churn report walkthrough
 
-Employees:
-6. look up employee username
-7. reset employee password back office
+========================================
+CROSS-SYSTEM QUERIES  (all systems selected)
+========================================
 
-Reports:
-8. view business insights report
-9. view paginated reports site manager
-10. generate transaction report
+These queries return results from multiple systems at once.
+Select ALL systems and the specific file type you want.
+
+ 1. how do I log in?                  (Patheon + TunnelWatch have auth pages)
+ 2. how do I view reports?            (Patheon + SiteWatch)
+ 3. how do I manage queue?            (TunnelWatch)
+ 4. how do I rewash a vehicle?        (Patheon Kiosk)
+ 5. sales data report                 (SiteWatch Insights)
+ 6. override device                   (TunnelWatch)
+ 7. plan churn analysis               (SiteWatch)
+ 8. retract vehicle tunnel            (TunnelWatch)
+ 9. tender cash payment               (Patheon)
+10. gift card balance                 (Patheon)
