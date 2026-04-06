@@ -433,8 +433,14 @@ with st.sidebar:
                 _available_topics.append(_t)
                 _seen.add(_t)
 
-    # Key includes selected systems so topic list resets when systems change
+    # When system selection changes, clear the old topic widget state so
+    # the new topic list renders fully selected (not stale from old system)
     _topic_key = "filter_topics_" + "_".join(sorted(_active_systems))
+    _prev_sys_key = "filter_systems_prev"
+    if st.session_state.get(_prev_sys_key) != _active_systems:
+        st.session_state.pop(_topic_key, None)
+        st.session_state[_prev_sys_key] = list(_active_systems)
+
     filter_topics = st.multiselect(
         "Topic",
         options=_available_topics,
@@ -543,13 +549,17 @@ if query and (search_btn or query != st.session_state.last_query):
 _raw_results = st.session_state.results
 
 # Apply sidebar filters (instant — no re-query needed)
-# Results are already sorted by score; filter then cap to top_k
-_filter_systems_expanded = filter_systems + (["Other"] if set(filter_systems) == set(_ALL_SYSTEMS) else [])
+# Results are sorted by score; filter then cap to top_k
+# System: always include "Other" (IgniteIQ/Robot) when all 3 systems selected
+_filter_systems_expanded = list(filter_systems) + (["Other"] if set(filter_systems) == set(_ALL_SYSTEMS) else [])
+# Topic: only filter by topic if user explicitly deselected something;
+# if all available topics are still selected, skip topic filter entirely
+_topic_filter_active = set(filter_topics) != set(_available_topics)
 results = [
     r for r in _raw_results
     if r.get("media_type") in filter_media_types
     and _get_system(r) in _filter_systems_expanded
-    and _get_topic(r) in filter_topics
+    and (not _topic_filter_active or _get_topic(r) in filter_topics)
 ][:top_k]
 
 if not _raw_results and not st.session_state.last_query:
