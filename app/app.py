@@ -555,9 +555,14 @@ _filter_systems_expanded = list(filter_systems) + (["Other"] if set(filter_syste
 # Topic: only filter by topic if user explicitly deselected something;
 # if all available topics are still selected, skip topic filter entirely
 _topic_filter_active = set(filter_topics) != set(_available_topics)
+# "text" in filter also matches "text_image" — TunnelWatch/SiteWatch have no pure-text pages
+_mt_expanded = set(filter_media_types)
+if "text" in _mt_expanded:
+    _mt_expanded.add("text_image")
+
 results = [
     r for r in _raw_results
-    if r.get("media_type") in filter_media_types
+    if r.get("media_type") in _mt_expanded
     and _get_system(r) in _filter_systems_expanded
     and (not _topic_filter_active or _get_topic(r) in filter_topics)
 ][:top_k]
@@ -632,24 +637,23 @@ for result in results:
             "video":      '<span style="background:#f3e5f5;color:#6a1b9a;border-radius:20px;padding:2px 9px;font-size:0.72rem;font-weight:700;">🎬 VIDEO</span>',
             "text_image": '<span style="background:#e3f2fd;color:#1565c0;border-radius:20px;padding:2px 9px;font-size:0.72rem;font-weight:700;">🖼 IMAGE+TEXT</span>',
         }.get(_mtype, "")
-        _sys_tag   = _html.escape(_get_system(result))
-        _topic_tag = _html.escape(_get_topic(result))
-        _hide_snip = _mtype in ("audio", "video")   # no text preview for media results
+        _sys_label   = _html.escape(_get_system(result))
+        _topic_label = _html.escape(_get_topic(result))
+        _hide_snip   = _mtype in ("audio", "video")
+        _sys_badge   = f'<span style="background:#f0f4ff;color:#3949ab;border-radius:20px;padding:2px 9px;font-size:0.72rem;font-weight:700">&#9881; {_sys_label}</span>'
+        _topic_badge = f'<span style="background:#f1f8e9;color:#33691e;border-radius:20px;padding:2px 9px;font-size:0.72rem;font-weight:700"># {_topic_label}</span>'
+        _snip_html   = "" if _hide_snip else f'<div class="card-snip">{safe_snip}</div>'
         st.markdown(
-            f"""
-<div class="{card_cls}">
-  <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;">
-    <span class="card-rank">#{result['rank']}</span>
-    <span class="badge">Match {score_pct}%</span>
-    {_media_badge}
-    <span style="background:#f0f4ff;color:#3949ab;border-radius:20px;padding:2px 9px;font-size:0.72rem;font-weight:700;">⚙ {_sys_tag}</span>
-    <span style="background:#f1f8e9;color:#33691e;border-radius:20px;padding:2px 9px;font-size:0.72rem;font-weight:700;"># {_topic_tag}</span>
-  </div>
-  <div class="card-title">{safe_title}</div>
-  {"" if _hide_snip else f'<div class="card-snip">{safe_snip}</div>'}
-  <div class="card-url">🔗 {safe_url}</div>
-</div>
-""",
+            f'<div class="{card_cls}">'
+            f'<div style="display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;">'
+            f'<span class="card-rank">#{result["rank"]}</span>'
+            f'<span class="badge">Match {score_pct}%</span>'
+            f'{_media_badge}{_sys_badge}{_topic_badge}'
+            f'</div>'
+            f'<div class="card-title">{safe_title}</div>'
+            f'{_snip_html}'
+            f'<div class="card-url">&#128279; {safe_url}</div>'
+            f'</div>',
             unsafe_allow_html=True,
         )
         btn_label = "▲ Close" if is_selected else "View Details"
