@@ -30,23 +30,17 @@ def _get_system(doc: dict) -> str:
     otherwise falls back to URL-pattern detection for legacy records.
     """
     # Explicit field — set by scrape_new_systems.py for TunnelWatch / SiteWatch
-    if doc.get("system"):
-        return doc["system"]
-    url   = doc.get("url", "")
-    cid   = doc.get("chunk_id", "")
-    title = doc.get("title", "").lower()
-    if "igniteiq" in cid:
-        return "IgniteIQ"
-    if "robot" in cid:
-        return "Robot Demo"
-    if "/cashier/" in url:
-        return "Patheon Cashier"
-    if "/kiosk/" in url:
-        return "Patheon Kiosk"
-    # fallback for DRB audio/video (no URL) — guess from title
-    if any(w in title for w in ["kiosk", "gate", "camera", "receipt", "cart", "rfid"]):
-        return "Patheon Kiosk"
-    return "Patheon Cashier"
+    sys = doc.get("system", "")
+    if sys in ("TunnelWatch", "SiteWatch"):
+        return sys
+    # All Patheon sub-systems (Cashier, Kiosk) → "Patheon"
+    url = doc.get("url", "")
+    cid = doc.get("chunk_id", "")
+    if any(x in cid for x in ("igniteiq", "robot")):
+        return "Other"   # kept for domain locking but hidden from form
+    if any(p in url for p in ("/cashier/", "/kiosk/", "/tunnel/", "/manage/")):
+        return "Patheon" if "/cashier/" in url or "/kiosk/" in url else sys or "Patheon"
+    return "Patheon"
 
 
 def _get_topic(doc: dict) -> str:
@@ -395,21 +389,16 @@ with st.sidebar:
     st.markdown("## 🔽 Filters")
 
     _ALL_TYPES   = ["text", "text_image", "audio", "video"]
-    _ALL_SYSTEMS = [
-        "Patheon Cashier", "Patheon Kiosk",
-        "TunnelWatch", "SiteWatch",
-        "IgniteIQ", "Robot Demo",
-    ]
+    # Only 3 systems shown in the form
+    _ALL_SYSTEMS = ["Patheon", "TunnelWatch", "SiteWatch"]
 
-    # Topics keyed by system — selecting a system auto-enables its topics
+    # Topics per system (one system selected = only its topics shown)
     _SYSTEM_TOPICS = {
-        "Patheon Cashier": ["Authentication", "Cash Drawer", "Sales", "Gift Cards",
-                            "Tender", "Customers", "Void & Refund", "Members"],
-        "Patheon Kiosk":   ["Access", "Diagnostics"],
-        "TunnelWatch":     ["Queue Management", "Devices", "Retracts"],
-        "SiteWatch":       ["Authentication", "Customers", "Employees", "Reports"],
-        "IgniteIQ":        ["IgniteIQ"],
-        "Robot Demo":      ["Robotics"],
+        "Patheon":     ["Authentication", "Cash Drawer", "Sales", "Gift Cards",
+                        "Tender", "Customers", "Void & Refund", "Members",
+                        "Access", "Diagnostics"],
+        "TunnelWatch": ["Queue Management", "Devices", "Retracts"],
+        "SiteWatch":   ["Authentication", "Customers", "Employees", "Reports"],
     }
 
     _TYPE_LABELS = {
@@ -419,8 +408,7 @@ with st.sidebar:
         "video":      "🎬 Video",
     }
 
-    # Apply reset before rendering widgets
-    _do_reset = st.session_state.pop("_reset_filters", False)
+    st.session_state.pop("_reset_filters", False)
 
     filter_media_types = st.multiselect(
         "File Type",
@@ -429,33 +417,40 @@ with st.sidebar:
         format_func=lambda x: _TYPE_LABELS.get(x, x),
         key="filter_types",
     )
-    filter_systems = st.multiselect(
+
+    # Radio — only ONE system at a time (or All)
+    _sys_choice = st.radio(
         "System",
-        options=_ALL_SYSTEMS,
-        default=_ALL_SYSTEMS,
-        key="filter_systems",
+        options=["All"] + _ALL_SYSTEMS,
+        index=0,
+        key="filter_system_radio",
+        horizontal=False,
     )
 
-    # Derive the available topics from whichever systems are selected
-    _available_topics: list[str] = []
-    _seen = set()
-    for _sys in (filter_systems or _ALL_SYSTEMS):
-        for _t in _SYSTEM_TOPICS.get(_sys, []):
-            if _t not in _seen:
-                _available_topics.append(_t)
-                _seen.add(_t)
+    # Topics for the chosen system only
+    if _sys_choice == "All":
+        _available_topics: list[str] = []
+        _seen: set = set()
+        for _t_list in _SYSTEM_TOPICS.values():
+            for _t in _t_list:
+                if _t not in _seen:
+                    _available_topics.append(_t)
+                    _seen.add(_t)
+        filter_systems = _ALL_SYSTEMS   # match all three
+    else:
+        _available_topics = _SYSTEM_TOPICS[_sys_choice]
+        filter_systems = [_sys_choice]
 
     filter_topics = st.multiselect(
         "Topic",
         options=_available_topics,
-        default=_available_topics,   # all topics for selected systems are on by default
-        key="filter_topics",
+        default=_available_topics,
+        key=f"filter_topics_{_sys_choice}",   # key changes with system → auto-resets
     )
 
     if st.button("↩ Reset Filters", use_container_width=True):
-        st.session_state["_reset_filters"] = True
-        # Clear widget keys so Streamlit re-renders with defaults
-        for _k in ("filter_types", "filter_systems", "filter_topics"):
+        for _k in ("filter_types", "filter_system_radio",
+                   *[f"filter_topics_{s}" for s in ["All"] + _ALL_SYSTEMS]):
             st.session_state.pop(_k, None)
         st.rerun()
 
